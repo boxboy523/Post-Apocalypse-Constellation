@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dkl4r4wanrt5s"]
+
+[ext_resource type="Script" uid="uid://de35dkul3w1kv" path="res://dropzone.gd" id="1_ho6w0"]
+[ext_resource type="Script" uid="uid://dwc46uuv7uxhv" path="res://itemslot.gd" id="1_xx2fs"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lquwl"]
+
+[node name="CanvasLayer" type="Node2D" unique_id=1078531170]
+scale = Vector2(0.4, 0.4)
+
+[node name="Dropzone" type="Control" parent="." unique_id=1446556376]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1024.9999
+offset_bottom = 1017.4999
+script = ExtResource("1_ho6w0")
+
+[node name="ItemSlot" type="TextureRect" parent="Dropzone" unique_id=1062798761]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 512.0
+texture = SubResource("NoiseTexture2D_lquwl")
+script = ExtResource("1_xx2fs")
