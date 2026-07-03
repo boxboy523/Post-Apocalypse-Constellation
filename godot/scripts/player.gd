@@ -28,6 +28,15 @@ func _process(delta: float) -> void:
 			print(str(follower.progress_ratio))
 			if follower and follower.progress_ratio < 1.0:
 				follower.progress += SPEED * delta
+			else:
+				var path := follower.get_parent() as PathChoice
+				var last_pos = path.global_transform * path.curve.get_point_position(path.curve.get_point_count() - 1)
+				if path.next_set:
+					var new_map = path.next_set.instantiate() as ChoiceMap
+					get_tree().current_scene.add_child(new_map)
+					new_map.position = last_pos
+					path_choices = new_map.get_paths()
+					state = State.TO_PATH
 		State.TO_PATH:
 			position = position.move_toward(Vector2.ZERO, SPEED * delta)
 			if position == Vector2.ZERO:
