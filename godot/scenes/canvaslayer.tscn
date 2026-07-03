@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dwcysdoxq4gqe"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_sv0qt"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=965002566]
+
+[node name="DropZone" type="Control" parent="." unique_id=1433524047]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemSlot" type="TextureRect" parent="DropZone" unique_id=1646150696]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AnimatedTexture_sv0qt")
