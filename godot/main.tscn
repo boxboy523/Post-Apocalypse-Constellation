@@ -1,33 +1,39 @@
 [gd_scene format=3 uid="uid://bxydsb3ub7npf"]
 
 [ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://player.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://nh208vrke0dq" path="res://block.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://cp7v1qqq58odj" path="res://player.gd" id="2_lquwl"]
+
+[sub_resource type="Curve2D" id="Curve2D_lquwl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 337, 437, 0, 0, 0, 0, 631, 434, 0, 0, 0, 0, 718, 501)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_7mycd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 337, 437, 0, 0, 0, 0, 631, 434, 0, 0, 0, 0, 701, 371)
+}
+point_count = 3
 
 [node name="Main" type="Node2D" unique_id=1160899106]
 
-[node name="Player" parent="." unique_id=1675211555 instance=ExtResource("1_0xm2m")]
-position = Vector2(556, 328)
+[node name="Player" parent="." unique_id=1675211555 node_paths=PackedStringArray("path_choices") instance=ExtResource("1_0xm2m")]
+position = Vector2(338, 436)
+script = ExtResource("2_lquwl")
+path_choices = [NodePath("../PathDown/PathFollowDown"), NodePath("../PathUp/PathFollowUp")]
 
-[node name="Block" parent="." unique_id=560276513 instance=ExtResource("2_h2yge")]
-position = Vector2(338, 457)
+[node name="PathDown" type="Path2D" parent="." unique_id=832966303]
+curve = SubResource("Curve2D_lquwl")
 
-[node name="Block2" parent="." unique_id=2107557888 instance=ExtResource("2_h2yge")]
-position = Vector2(476, 472)
+[node name="PathFollowDown" type="PathFollow2D" parent="PathDown" unique_id=429237988]
+position = Vector2(337, 437)
+rotation = -0.0102037275
+loop = false
 
-[node name="Block3" parent="." unique_id=1904938371 instance=ExtResource("2_h2yge")]
-position = Vector2(825, 472)
+[node name="PathUp" type="Path2D" parent="." unique_id=414682385]
+curve = SubResource("Curve2D_7mycd")
 
-[node name="Block4" parent="." unique_id=862349046 instance=ExtResource("2_h2yge")]
-position = Vector2(699, 473)
-
-[node name="Block5" parent="." unique_id=438339812 instance=ExtResource("2_h2yge")]
-position = Vector2(521, 471)
-
-[node name="Block6" parent="." unique_id=794489024 instance=ExtResource("2_h2yge")]
-position = Vector2(568, 471)
-
-[node name="Block7" parent="." unique_id=1743965813 instance=ExtResource("2_h2yge")]
-position = Vector2(622, 474)
-
-[node name="Block8" parent="." unique_id=480744086 instance=ExtResource("2_h2yge")]
-position = Vector2(420, 473)
+[node name="PathFollowUp" type="PathFollow2D" parent="PathUp" unique_id=108091815]
+position = Vector2(337, 437)
+rotation = -0.0102037275
+loop = false

@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://oj0oouh4mwtt"]
 
-[ext_resource type="Script" uid="uid://cp7v1qqq58odj" path="res://player.gd" id="1_4flbx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
-size = Vector2(32, 32)
+[sub_resource type="GDScript" id="GDScript_sh265"]
+script/source = "extends CharacterBody2D
+"
 
 [sub_resource type="Gradient" id="Gradient_sh265"]
 colors = PackedColorArray(0, 1, 0, 1, 0, 1, 0, 1)
@@ -14,12 +13,7 @@ width = 32
 height = 32
 
 [node name="Player" type="CharacterBody2D" unique_id=1675211555]
-script = ExtResource("1_4flbx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1027453410]
-shape = SubResource("RectangleShape2D_sh265")
+script = SubResource("GDScript_sh265")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1367374429]
 texture = SubResource("GradientTexture2D_sweqy")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=263254464]
