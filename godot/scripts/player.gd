@@ -1,28 +1,32 @@
-extends CharacterBody2D
+extends Node2D
 
-@export var path_choices: Array[PathFollow2D] = []
+@export var map: ChoiceMap
 
+var path_choices: Array[PathChoice]
 const SPEED = 200.0
 var idx = 0
 enum State {ON_PATH, TO_PATH, READY}
 var state = State.TO_PATH
 
-func follow(follower: PathFollow2D) -> void:
+func _ready() -> void:
+	path_choices = map.get_paths()
+
+func follow(path: PathChoice) -> void:
 	#get_parent().remove_child(self)
-	var new_follower = follower
+	var new_follower = path.get_follower()
 	reparent(new_follower, true)
+	$Camera2D.reset_smoothing()
 	state = State.TO_PATH
 	
 func _process(delta: float) -> void:
 	if not (get_parent() is PathFollow2D):
 		return
 	var follower := get_parent() as PathFollow2D
-	var path = follower.get_parent() as Path2D
-	print(str(position))
+	print(str(state))
 	match state:
 		State.ON_PATH:
+			print(str(follower.progress_ratio))
 			if follower and follower.progress_ratio < 1.0:
-				print(str(follower.progress_ratio))
 				follower.progress += SPEED * delta
 		State.TO_PATH:
 			position = position.move_toward(Vector2.ZERO, SPEED * delta)
