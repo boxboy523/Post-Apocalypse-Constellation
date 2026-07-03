@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://db03it5f4c2al"]
+
+[ext_resource type="Script" uid="uid://57nxd88ew6wa" path="res://scripts/choice_map.gd" id="1_v6wkn"]
+[ext_resource type="Script" uid="uid://bsg5drt3fprvl" path="res://scripts/path_choice.gd" id="2_v6wkn"]
+
+[sub_resource type="Curve2D" id="Curve2D_ya7al"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 337, 437, 0, 0, 0, 0, 538.75854, 431, 0, 0, 0, 0, 639.9943, 333, 0, 0, 0, 0, 712, 333)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_tysbb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 337, 437, 0, 0, 0, 0, 631, 434, 0, 0, 0, 0, 699, 508, 0, 0, 0, 0, 880, 509)
+}
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_tysbb"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k5pvu"]
+gradient = SubResource("Gradient_tysbb")
+
+[node name="MapBase" type="Node2D" unique_id=342723024]
+script = ExtResource("1_v6wkn")
+metadata/_custom_type_script = "uid://57nxd88ew6wa"
+
+[node name="PathUp" type="Path2D" parent="." unique_id=1440970172]
+position = Vector2(-331, -437)
+curve = SubResource("Curve2D_ya7al")
+script = ExtResource("2_v6wkn")
+desc = "윗길"
+metadata/_custom_type_script = "uid://bsg5drt3fprvl"
+
+[node name="PathFollowUp" type="PathFollow2D" parent="PathUp" unique_id=2026021078]
+position = Vector2(337, 437)
+rotation = -0.029729754
+loop = false
+
+[node name="PathDown" type="Path2D" parent="." unique_id=430652331]
+position = Vector2(-337, -436)
+curve = SubResource("Curve2D_tysbb")
+script = ExtResource("2_v6wkn")
+desc = "아랫길"
+metadata/_custom_type_script = "uid://bsg5drt3fprvl"
+
+[node name="PathFollowDown" type="PathFollow2D" parent="PathDown" unique_id=2006360128]
+position = Vector2(337, 437)
+rotation = -0.0102037275
+loop = false
+
+[node name="BackgroundPlaceholder" type="Sprite2D" parent="." unique_id=1023462773]
+z_index = -3
+position = Vector2(259.5, -13.999996)
+scale = Vector2(9.109375, 3.875)
+texture = SubResource("GradientTexture2D_k5pvu")
