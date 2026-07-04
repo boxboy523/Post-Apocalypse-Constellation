@@ -1,10 +1,11 @@
 extends PathFollow2D
 
 @export var map: ChoiceMap
+@export var bubble: Control
 
 var path_choices: Array[PathChoice]
 var current_path: PathChoice
-const SPEED = 200.0
+const SPEED = 130.0
 var idx = 0
 # READY -> ON_PATH -> FINISHED -> -> READY -> ON_PATH -> FINISHED ... -> END
 enum PlayerState {ON_PATH, READY, END, FINISHED}
@@ -13,6 +14,7 @@ var state = PlayerState.READY
 var stop = false
 
 func _ready() -> void:
+	$LerfFollow.global_position = global_position
 	call_deferred("follow", map.get_paths()[0])
 
 func follow(path: PathChoice) -> void:
@@ -24,7 +26,6 @@ func follow(path: PathChoice) -> void:
 	global_position = pos
 	current_path = path
 	path_choices = current_path.get_paths()
-	$"LerfFollow/Camera2D".reset_smoothing()
 
 func stop_event(time: float):
 	stop = true
@@ -56,7 +57,7 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("choose_path_1"): # 경로 1번
-		stop_event(1.0)
+		say("이게 뭐야?")
 		#elif event.is_action_pressed("choose_path_2"): # 경로 2번
 			#follow(path_choices[1])
 		#state = PlayerState.TO_PATH
@@ -64,3 +65,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		state = PlayerState.ON_PATH
 	elif event.is_action_pressed("start_path"):
 		print("스페이스바 눌렸지만 상태가 READY가 아님. 현재 상태: ", state)
+		
+		
+
+func say(content: String):
+	bubble.set_content(content)
+	bubble.fade_in()
+	await get_tree().create_timer(1.5).timeout
+	bubble.fade_out()
+	

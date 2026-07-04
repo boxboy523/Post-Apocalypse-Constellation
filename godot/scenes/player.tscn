@@ -8,7 +8,20 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
 size = Vector2(32, 32)
 
-[node name="Player" type="PathFollow2D" unique_id=1170953966 groups=["player"]]
+[sub_resource type="GDScript" id="GDScript_dqkch"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Player" type="PathFollow2D" unique_id=1170953966]
 rotates = false
 loop = false
 script = ExtResource("1_4flbx")
@@ -25,10 +38,8 @@ script = ExtResource("2_qhqgy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LerfFollow/PlayerLogic/Area2D" unique_id=2076691829]
 shape = SubResource("RectangleShape2D_4kf0v")
 
-[node name="Camera2D" type="Camera2D" parent="LerfFollow" unique_id=1313566457]
-position_smoothing_enabled = true
-
 [node name="Sprite2D" type="Sprite2D" parent="LerfFollow" unique_id=1367374429]
 position = Vector2(0, -11)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_g2els")
+script = SubResource("GDScript_dqkch")
