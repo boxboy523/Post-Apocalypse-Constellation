@@ -1,34 +1,45 @@
-[gd_scene format=3 uid="uid://dtp6go3uonxjd"]
+[gd_scene format=3 uid="uid://chn8l3kh04bdy"]
 
-[ext_resource type="Texture2D" uid="uid://b2ka4u17n5u1x" path="res://images/icon.svg" id="2_drdry"]
+[ext_resource type="Texture2D" uid="uid://b2ka4u17n5u1x" path="res://images/icon.svg" id="1_qfvab"]
 
 [sub_resource type="GDScript" id="GDScript_ku0vp"]
 script/source = "extends Area2D
 
-@export_enum(\"normal\", \"hurt\", \"enemy\", \"guide\")
+@export_enum(\"default\", \"hurt\", \"enemy\", \"guide\")
 var obstacle_type: String = \"hurt\"
+
+@export var damage: int = 1
+@export_range(0.0, 1.0, 0.01)
+var guide_option_1_chance: float = 0.5
 
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
-	
-func _on_area_entered(area) -> void:
+
+func _on_area_entered(area: Area2D) -> void:
 	match obstacle_type:
-		\"normal\":
+		\"default\":
 			print(\"충돌\")
+
 		\"hurt\":
 			print(\"부상 입음\")
+			print(\"대미지: \", damage)
+
 		\"enemy\":
 			print(\"적과 조우\")
+
 		\"guide\":
 			print(\"표지판에 도달\")
-		
-		
+
+			if randf() < guide_option_1_chance:
+				print(\"1번\")
+			else:
+				print(\"2번\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
 size = Vector2(46, 46)
 
-[node name="Obstacle" type="Node2D" unique_id=1268101773]
+[node name="ObstacleBase" type="Node2D" unique_id=1268101773]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1290125556]
 script = SubResource("GDScript_ku0vp")
@@ -39,4 +50,4 @@ shape = SubResource("RectangleShape2D_4kf0v")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=291111805]
 position = Vector2(3.8146973e-06, 3.8146973e-06)
 scale = Vector2(0.3671875, 0.3671875)
-texture = ExtResource("2_drdry")
+texture = ExtResource("1_qfvab")

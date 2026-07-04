@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://db03it5f4c2al" path="res://scenes/map_base.tscn" id="2_sugp2"]
-[ext_resource type="PackedScene" uid="uid://dtp6go3uonxjd" path="res://scenes/obstacle.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvaslayer.tscn" id="4_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cw3ggho3tcjel" path="res://scenes/item_coin.tscn" id="5_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://chn8l3kh04bdy" path="res://scenes/obstacle_base.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node2D" unique_id=1160899106]
 
@@ -15,16 +15,16 @@ position = Vector2(341, 437)
 position = Vector2(338, 436)
 map = NodePath("../MapBase")
 
-[node name="MapBase" parent="." unique_id=547791557 instance=ExtResource("2_sugp2")]
+[node name="MapBase2" parent="." unique_id=252168903 instance=ExtResource("2_sugp2")]
 position = Vector2(341, 437)
-
-[node name="Node2D" parent="." unique_id=1268101773 instance=ExtResource("3_sugp2")]
-position = Vector2(449, 435)
 
 [node name="ItemCoin2" parent="." unique_id=492544432 instance=ExtResource("5_jyhfs")]
 position = Vector2(527, 367)
 
 [node name="ItemCoin" parent="." unique_id=1334348440 instance=ExtResource("5_jyhfs")]
-position = Vector2(412.00003, 357)
+position = Vector2(450, 367)
 
 [node name="CanvasLayer" parent="." unique_id=965425245 instance=ExtResource("4_sugp2")]
+
+[node name="ObstacleBase" parent="." unique_id=1268101773 instance=ExtResource("5_tbgi4")]
+position = Vector2(409, 434)
