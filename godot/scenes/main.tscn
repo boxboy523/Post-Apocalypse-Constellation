@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvas_layer.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cw3ggho3tcjel" path="res://scenes/item_coin.tscn" id="4_jyhfs"]
 [ext_resource type="Resource" uid="uid://bfsght4a85mtr" path="res://items/item_coin.tres" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://b5prsy5lykhyt" path="res://scenes/item_can.tscn" id="5_a8y0u"]
 [ext_resource type="PackedScene" uid="uid://cthy6631yq0qw" path="res://scenes/obstacle_hurt.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://u4k4gkvyyr56" path="res://scenes/obstacle_guide.tscn" id="8_tipki"]
@@ -31,6 +32,8 @@ item_res = ExtResource("4_tbgi4")
 [node name="ItemCoin" parent="." unique_id=1334348440 instance=ExtResource("4_jyhfs")]
 position = Vector2(412.00003, 357)
 item_res = ExtResource("4_tbgi4")
+
+[node name="ItemCan" parent="." unique_id=1275209978 instance=ExtResource("5_a8y0u")]
 
 [node name="CanvasLayer" parent="." unique_id=965425245 instance=ExtResource("3_sugp2")]
 

@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dald4k4kxuywi" path="res://scripts/item_res.gd" id="1_85tw6"]
 [ext_resource type="Texture2D" uid="uid://b2ka4u17n5u1x" path="res://images/icon.svg" id="1_ct34h"]
-[ext_resource type="PackedScene" uid="uid://cw3ggho3tcjel" path="res://scenes/item_coin.tscn" id="2_8ploj"]
 
 [resource]
 script = ExtResource("1_85tw6")
-name = "Coin"
+item_name = "Coin"
 description = "It's a coin"
 icon = ExtResource("1_ct34h")
-item = ExtResource("2_8ploj")
+item_scene_path = "uid://cw3ggho3tcjel"
 metadata/_custom_type_script = "uid://dald4k4kxuywi"

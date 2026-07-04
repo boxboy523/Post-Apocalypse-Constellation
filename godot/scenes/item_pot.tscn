@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://pdu8rrkl0f7b"]
+
+[ext_resource type="Script" uid="uid://c6qxep8buv5ec" path="res://scripts/item_pot.gd" id="1_0rlp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qio8"]
+size = Vector2(119, 119)
+
+[node name="ItemPot" type="Area2D" unique_id=1984528209]
+script = ExtResource("1_0rlp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=769145386]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=140634628]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_1qio8")

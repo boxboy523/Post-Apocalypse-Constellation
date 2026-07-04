@@ -6,14 +6,14 @@
 
 [sub_resource type="Resource" id="Resource_c4rma"]
 script = ExtResource("2_d3twg")
-name = "Coin"
+item_name = "Coin"
 description = "It's a coin"
 metadata/_custom_type_script = "uid://dald4k4kxuywi"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3twg"]
 size = Vector2(119, 119)
 
-[node name="ItemCoin" type="Area2D" unique_id=492544432]
+[node name="ItemCoin" type="Area2D" unique_id=799046021]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_x7npw")
 item_res = SubResource("Resource_c4rma")
