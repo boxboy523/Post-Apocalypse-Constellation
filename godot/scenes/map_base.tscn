@@ -3,6 +3,15 @@
 [ext_resource type="Script" uid="uid://57nxd88ew6wa" path="res://scripts/choice_map.gd" id="1_v6wkn"]
 [ext_resource type="Script" uid="uid://bsg5drt3fprvl" path="res://scripts/path_choice.gd" id="2_v6wkn"]
 [ext_resource type="PackedScene" uid="uid://d4mhcllvsytp5" path="res://scenes/map_base2.tscn" id="3_yg4uq"]
+[ext_resource type="PackedScene" uid="uid://bwcl3gt3hq10b" path="res://scenes/gizmos/ground1.tscn" id="4_hwiab"]
+[ext_resource type="PackedScene" uid="uid://bbu1dt70fxiev" path="res://scenes/gizmos/ground2.tscn" id="5_qtbca"]
+[ext_resource type="PackedScene" uid="uid://bej7oimsvo0nh" path="res://scenes/gizmos/ground3.tscn" id="6_ulq5i"]
+[ext_resource type="Texture2D" uid="uid://d2ft1hfkg72g8" path="res://images/backgrounds/farBackground.png" id="7_1qtpx"]
+[ext_resource type="Texture2D" uid="uid://cpmfimls62ox2" path="res://images/backgrounds/벽위의풀.png" id="8_q4vrv"]
+[ext_resource type="Texture2D" uid="uid://ccmb3qex8jawm" path="res://images/backgrounds/벽.png" id="9_qh52y"]
+[ext_resource type="Texture2D" uid="uid://cy3nki1qp717q" path="res://images/backgrounds/아파트2.png" id="10_85pf1"]
+[ext_resource type="Texture2D" uid="uid://dbxqrspq56epv" path="res://images/backgrounds/sky.png" id="11_2d4xf"]
+[ext_resource type="Texture2D" uid="uid://cb733fv30bu33" path="res://images/backgrounds/아파트1.png" id="12_q4vrv"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -16,11 +25,6 @@ _data = {
 }
 point_count = 3
 
-[sub_resource type="Gradient" id="Gradient_tysbb"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_k5pvu"]
-gradient = SubResource("Gradient_tysbb")
-
 [sub_resource type="Curve2D" id="Curve2D_yg4uq"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0)
@@ -31,6 +35,7 @@ point_count = 2
 script = ExtResource("1_v6wkn")
 
 [node name="PathUp" type="Path2D" parent="." unique_id=1440970172]
+z_index = 1
 position = Vector2(-331, -437)
 curve = SubResource("Curve2D_ya7al")
 script = ExtResource("2_v6wkn")
@@ -39,6 +44,7 @@ next_set = ExtResource("3_yg4uq")
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="PathDown" type="Path2D" parent="." unique_id=430652331]
+z_index = 1
 position = Vector2(-337, -436)
 curve = SubResource("Curve2D_tysbb")
 script = ExtResource("2_v6wkn")
@@ -46,15 +52,60 @@ desc = "아랫길"
 next_set = ExtResource("3_yg4uq")
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
-[node name="BackgroundPlaceholder" type="Sprite2D" parent="." unique_id=1023462773]
-z_index = -3
-position = Vector2(259.5, -13.999996)
-scale = Vector2(9.109375, 3.875)
-texture = SubResource("GradientTexture2D_k5pvu")
-
 [node name="PathChoice" type="Path2D" parent="." unique_id=1893640462 node_paths=PackedStringArray("next_paths")]
+z_index = 1
+scale = Vector2(1.0074867, 1)
 curve = SubResource("Curve2D_yg4uq")
 script = ExtResource("2_v6wkn")
 next_paths = [NodePath("../PathUp"), NodePath("../PathDown")]
 is_primary = true
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
+
+[node name="Ground1" parent="." unique_id=1416573282 instance=ExtResource("4_hwiab")]
+position = Vector2(310, 0)
+
+[node name="Ground3" parent="." unique_id=771854443 instance=ExtResource("5_qtbca")]
+position = Vector2(620, 0)
+
+[node name="Ground2" parent="." unique_id=691678204 instance=ExtResource("6_ulq5i")]
+
+[node name="FarBackground" type="Sprite2D" parent="." unique_id=1060769494]
+z_index = -3
+position = Vector2(338, -699)
+texture = ExtResource("7_1qtpx")
+
+[node name="벽위의풀" type="Sprite2D" parent="." unique_id=1102706896]
+position = Vector2(644, -335)
+texture = ExtResource("8_q4vrv")
+
+[node name="벽" type="Sprite2D" parent="." unique_id=157123074]
+z_index = -1
+position = Vector2(661, -260)
+texture = ExtResource("9_qh52y")
+
+[node name="아파트2" type="Sprite2D" parent="." unique_id=654370978]
+z_index = -2
+position = Vector2(371, -661)
+texture = ExtResource("10_85pf1")
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=927819877]
+z_index = -5
+position = Vector2(335, -705)
+texture = ExtResource("11_2d4xf")
+
+[node name="Ground4" parent="." unique_id=547482861 instance=ExtResource("4_hwiab")]
+position = Vector2(-310, 0)
+
+[node name="Ground5" parent="." unique_id=690845758 instance=ExtResource("5_qtbca")]
+position = Vector2(-620, 0)
+
+[node name="아파트1" type="Sprite2D" parent="." unique_id=409490339]
+z_index = -3
+position = Vector2(-230, -663)
+texture = ExtResource("12_q4vrv")
+
+[node name="Ground6" parent="." unique_id=562477825 instance=ExtResource("4_hwiab")]
+position = Vector2(930, 0)
+
+[node name="Ground7" parent="." unique_id=523684915 instance=ExtResource("4_hwiab")]
+position = Vector2(1240, 0)

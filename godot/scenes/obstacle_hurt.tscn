@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cthy6631yq0qw"]
 
 [ext_resource type="Script" uid="uid://kmismit5ol7r" path="res://scripts/obstacle_hurt.gd" id="1_egm7n"]
-[ext_resource type="Texture2D" uid="uid://cxhcen17u4bhu" path="res://images/깨진유리.jpg" id="2_egm7n"]
+[ext_resource type="Texture2D" uid="uid://cxhcen17u4bhu" path="res://images/items/깨진유리.jpg" id="2_egm7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6041l"]
 size = Vector2(36, 12)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0hhqyjiw7t6i"
-path="res://.godot/imported/좀비.png-50509672cee4e2d72bf98bd7abf0ff8f.ctex"
+uid="uid://cpmfimls62ox2"
+path="res://.godot/imported/벽위의풀.png-ff7eaeddc15fceb1d40a27523e5c200d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/좀비.png"
-dest_files=["res://.godot/imported/좀비.png-50509672cee4e2d72bf98bd7abf0ff8f.ctex"]
+source_file="res://images/backgrounds/벽위의풀.png"
+dest_files=["res://.godot/imported/벽위의풀.png-ff7eaeddc15fceb1d40a27523e5c200d.ctex"]
 
 [params]
 

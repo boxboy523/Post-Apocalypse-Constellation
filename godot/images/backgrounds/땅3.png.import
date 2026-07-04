@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bayfssq0gaiqg"
-path="res://.godot/imported/can_cola.png-76bea75d2172e64e274eed8d6f1b15b8.ctex"
+uid="uid://5kywqowagllo"
+path="res://.godot/imported/땅3.png-48956fdfd14e97925d81833efac8b499.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/can_cola.png"
-dest_files=["res://.godot/imported/can_cola.png-76bea75d2172e64e274eed8d6f1b15b8.ctex"]
+source_file="res://images/backgrounds/땅3.png"
+dest_files=["res://.godot/imported/땅3.png-48956fdfd14e97925d81833efac8b499.ctex"]
 
 [params]
 
