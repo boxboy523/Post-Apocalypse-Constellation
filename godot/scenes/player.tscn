@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://d4md5vu07c0se" path="res://images/main_character/fall/쓰러짐12.png" id="34_fcu33"]
 [ext_resource type="Texture2D" uid="uid://2dhm261xrcg1" path="res://images/main_character/fall/쓰러짐13.png" id="35_qmsq4"]
 [ext_resource type="Texture2D" uid="uid://bkb3xwy3pjfa" path="res://images/main_character/knife_attack/칼 (1).png" id="36_5vs2b"]
+[ext_resource type="Texture2D" uid="uid://56s6ikr7odk8" path="res://images/main_character/소녀.png" id="36_8txt3"]
 [ext_resource type="Texture2D" uid="uid://ccm836dnhjqnu" path="res://images/main_character/knife_attack/칼 (2).png" id="37_a7i4v"]
 [ext_resource type="Texture2D" uid="uid://dwokrhfjh8wx1" path="res://images/main_character/knife_attack/칼 (3).png" id="38_b5l0c"]
 [ext_resource type="Texture2D" uid="uid://cisj4ytk8evei" path="res://images/main_character/knife_attack/칼 (4).png" id="39_2a33p"]
@@ -195,6 +196,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("36_8txt3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("36_5vs2b")
 }, {
 "duration": 1.0,
@@ -266,6 +275,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("56_77pet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_e8m1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_5c21n")
 }],
 "loop": 0,
 "name": &"trapped",
@@ -336,6 +351,6 @@ script = SubResource("GDScript_dqkch")
 position = Vector2(12, -11)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_k5pvu")
-animation = &"bat_attack"
-frame = 8
+animation = &"trapped"
+frame = 4
 frame_progress = 1.0

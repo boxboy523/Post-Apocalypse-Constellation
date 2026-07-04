@@ -3,6 +3,8 @@ extends PathFollow2D
 @export var map: ChoiceMap
 @export var bubble: Control
 
+@onready var anim_sprite = $"LerfFollow/AnimatedSprite2D"
+
 var path_choices: Array[PathChoice]
 var current_path: PathChoice
 const SPEED = 130.0
@@ -16,6 +18,7 @@ var stop = false
 func _ready() -> void:
 	$LerfFollow.global_position = global_position
 	call_deferred("follow", map.get_paths()[0])
+	anim_sprite.play('idle')
 
 func follow(path: PathChoice) -> void:
 	if path.next_set and not path.map: # 다음 맵 생성
@@ -29,8 +32,10 @@ func follow(path: PathChoice) -> void:
 
 func stop_event(time: float):
 	stop = true
+	anim_sprite.play('idle')
 	await get_tree().create_timer(time).timeout
 	stop = false
+	anim_sprite.play('walk')
 
 func _process(delta: float) -> void:
 	if not (current_path is PathChoice) or stop:
@@ -41,6 +46,7 @@ func _process(delta: float) -> void:
 			if self.progress_ratio < 1.0:
 				self.progress += SPEED * delta # 경로를 따라 이동
 			else:
+				anim_sprite.play('idle')
 				if path_choices.size() == 0:
 					state = PlayerState.END
 				else:
@@ -63,6 +69,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		#state = PlayerState.TO_PATH
 	if event.is_action_pressed("start_path") and state == PlayerState.READY and not stop: # 이동 시작
 		state = PlayerState.ON_PATH
+		anim_sprite.play('walk')
 	elif event.is_action_pressed("start_path"):
 		print("스페이스바 눌렸지만 상태가 READY가 아님. 현재 상태: ", state)
 		

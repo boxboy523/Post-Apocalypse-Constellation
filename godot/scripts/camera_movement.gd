@@ -11,5 +11,4 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var direction := Input.get_axis("ui_right", "ui_left")
 	position.x -= direction * speed * delta
-	print(position.x, "left: ", limit_left, "right: ", limit_right, "half: ", half)
 	position.x = clamp(position.x, limit_left + half.x, limit_right - half.x)
