@@ -19,13 +19,13 @@
 [ext_resource type="Texture2D" uid="uid://cpmfimls62ox2" path="res://images/backgrounds/벽위의풀.png" id="15_h0u1d"]
 [ext_resource type="Texture2D" uid="uid://lxwjxo01o50x" path="res://images/backgrounds/올라가는계단.png" id="16_2qxq1"]
 [ext_resource type="Texture2D" uid="uid://b5ssgp53whtj1" path="res://images/backgrounds/내려가는계단.png" id="17_tjit4"]
-[ext_resource type="Texture2D" uid="uid://c6qi3y5birve3" path="res://images/backgrounds/표지판 봉.png" id="18_bkxnn"]
 [ext_resource type="Texture2D" uid="uid://dhohm4lqg1d0k" path="res://images/backgrounds/자동차.png" id="19_6dpta"]
 [ext_resource type="Texture2D" uid="uid://b467oas3hbmx8" path="res://images/backgrounds/실외기.png" id="20_s11mi"]
 [ext_resource type="Script" uid="uid://cr8tdwgul18mg" path="res://scripts/camera_movement.gd" id="23_2qxq1"]
 [ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvas_layer.tscn" id="24_tjit4"]
 [ext_resource type="PackedScene" uid="uid://b3k0nnxxx03ag" path="res://scenes/speech_bubble.tscn" id="25_bkxnn"]
 [ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="26_6dpta"]
+[ext_resource type="PackedScene" uid="uid://u4k4gkvyyr56" path="res://scenes/obstacle_guide.tscn" id="27_bkxnn"]
 [ext_resource type="Texture2D" uid="uid://cxgktbk1cpxrs" path="res://images/backgrounds/나무2.png" id="27_tjit4"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
@@ -187,10 +187,6 @@ position = Vector2(962, -235)
 scale = Vector2(1, 0.97840536)
 texture = ExtResource("17_tjit4")
 
-[node name="표지판봉" type="Sprite2D" parent="." unique_id=2090155518]
-position = Vector2(513, -605)
-texture = ExtResource("18_bkxnn")
-
 [node name="자동차" type="Sprite2D" parent="." unique_id=199955438]
 z_index = 1
 position = Vector2(-327, -215.75)
@@ -295,3 +291,6 @@ texture = ExtResource("14_e0xmi")
 position = Vector2(-1180, -668)
 scale = Vector2(0.7330827, 0.7330828)
 texture = ExtResource("27_tjit4")
+
+[node name="ObstacleGuide" parent="." unique_id=812544508 instance=ExtResource("27_bkxnn")]
+position = Vector2(463, -389)
