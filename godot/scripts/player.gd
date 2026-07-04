@@ -1,4 +1,4 @@
-extends Node2D
+extends PathFollow2D
 
 @export var map: ChoiceMap
 
@@ -38,7 +38,8 @@ func _process(delta: float) -> void:
 					state = PlayerState.FINISHED
 		PlayerState.TO_PATH: # 플레이어가 경로의 시작점으로 이동 중
 			position = position.move_toward(current_path.curve.get_point_position(0), SPEED * delta)
-			if position == current_path.curve.get_point_position(0):
+			# 부동소수점 비교 대신 거리 기반 비교 사용
+			if position.distance_to(current_path.curve.get_point_position(0)) < 5.0:
 				state = PlayerState.READY
 		PlayerState.FINISHED:
 			var next_path = current_path.get_random_path()
@@ -59,3 +60,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		#state = PlayerState.TO_PATH
 	if event.is_action_pressed("start_path") and state == PlayerState.READY: # 이동 시작
 		state = PlayerState.ON_PATH
+	elif event.is_action_pressed("start_path"):
+		print("스페이스바 눌렸지만 상태가 READY가 아님. 현재 상태: ", state)
+	
