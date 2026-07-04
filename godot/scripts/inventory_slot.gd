@@ -1,9 +1,7 @@
-# inventory_slot.gd
 extends Control
 
-const ITEM_COIN_SCENE = preload("res://scenes/item_coin.tscn")
+const ITEM_COIN_SCENE = preload("res://scenes/item_coin.tscn") # 주의: 나중에 여러 아이템을 버리려면 동적으로 씬을 불러오게 수정해야 합니다!
 
-# GridContainer 안에서 자신이 몇 번째 자식인지 자동 인덱스 사용
 var slot_index: int:
 	get: return get_index()
 
@@ -16,22 +14,21 @@ func _gui_input(event: InputEvent) -> void:
 		if slot_index < inventory_manager.items.size() and inventory_manager.items[slot_index] != null:
 			var current_item = inventory_manager.items[slot_index]
 			
-			if current_item.name == "Coin":
-				is_right_dragging = true
-				print("🔄 [슬롯 %d] 우클릭 드래그 시작!" % slot_index)
-				
-				# 프리뷰 생성
-				drag_preview = TextureRect.new()
-				drag_preview.texture = current_item.icon
-				drag_preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-				drag_preview.size = Vector2(40, 40)
-				drag_preview.custom_minimum_size = Vector2(40, 40)
-				drag_preview.modulate.a = 0.6
-				drag_preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
-				
-				get_tree().current_scene.add_child(drag_preview)
-				_update_preview_position()
-				get_viewport().set_input_as_handled()
+			# 아이템 이름 검사("Coin") 조건문을 삭제하여 모든 아이템에 적용되도록 수정
+			is_right_dragging = true
+			
+			# 프리뷰 생성
+			drag_preview = TextureRect.new()
+			drag_preview.texture = current_item.icon
+			drag_preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			drag_preview.size = Vector2(40, 40)
+			drag_preview.custom_minimum_size = Vector2(40, 40)
+			drag_preview.modulate.a = 0.6
+			drag_preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			
+			get_tree().current_scene.add_child(drag_preview)
+			_update_preview_position()
+			get_viewport().set_input_as_handled()
 
 func _input(event: InputEvent) -> void:
 	if not is_right_dragging:
@@ -42,34 +39,57 @@ func _input(event: InputEvent) -> void:
 		
 	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and not event.pressed:
 		is_right_dragging = false
-		print("🏁 [슬롯 %d] 드롭!" % slot_index)
 		
 		if drag_preview:
 			drag_preview.queue_free()
 			drag_preview = null
 		
-		# 원래 아이템 데이터 백업
-		var dropped_item_data = inventory_manager.items[slot_index]
+		# 마우스를 놓은 곳이 어느 슬롯인지 확인
+		var target_slot_index = _get_target_slot_index()
 		
-		# 데이터 삭제 및 UI 갱신
-		inventory_manager.items[slot_index] = null
-		if inventory_manager.ui:
-			inventory_manager.ui.queue_redraw()
+		if target_slot_index != -1:
+			# 1️⃣ 인벤토리 내 다른 슬롯에 드롭했을 때 -> 스왑(Swap)
+			if target_slot_index != slot_index:
+				var temp = inventory_manager.items[target_slot_index]
+				inventory_manager.items[target_slot_index] = inventory_manager.items[slot_index]
+				inventory_manager.items[slot_index] = temp
+				
+				if inventory_manager.ui:
+					inventory_manager.ui.queue_redraw()
+		else:
+			# 2️⃣ 인벤토리 바깥(배경)에 드롭했을 때 -> 월드에 버리기(Drop)
+			var dropped_item_data = inventory_manager.items[slot_index]
+			inventory_manager.items[slot_index] = null
 			
-		# 월드에 아이템 이미지 소환
-		var new_coin = ITEM_COIN_SCENE.instantiate()
-		
-		new_coin.item_res = dropped_item_data
-		
-		new_coin.global_position = get_tree().current_scene.get_global_mouse_position()
-		get_tree().current_scene.add_child(new_coin)
-		
-		if new_coin.has_method("on_dropped"):
-			new_coin.on_dropped()
+			if inventory_manager.ui:
+				inventory_manager.ui.queue_redraw()
+				
+			var new_item = ITEM_COIN_SCENE.instantiate()
+			new_item.item_res = dropped_item_data
+			new_item.global_position = get_tree().current_scene.get_global_mouse_position()
+			get_tree().current_scene.add_child(new_item)
 			
+			if new_item.has_method("on_dropped"):
+				new_item.on_dropped()
+				
 		get_viewport().set_input_as_handled()
 
 func _update_preview_position() -> void:
 	if drag_preview and drag_preview.get_parent():
 		var mouse_pos = drag_preview.get_parent().get_local_mouse_position()
 		drag_preview.position = mouse_pos - (drag_preview.size / 2)
+
+# 현재 마우스 위치가 몇 번째 슬롯 위인지 찾아내는 함수
+func _get_target_slot_index() -> int:
+	var container = get_parent() # 현재 노드(Slot)의 부모는 SlotContainer입니다.
+	if not container:
+		return -1
+		
+	var mouse_pos = container.get_local_mouse_position()
+	
+	for child in container.get_children():
+		if child is Control:
+			var rect = Rect2(child.position, child.size)
+			if rect.has_point(mouse_pos):
+				return child.get_index()
+	return -1

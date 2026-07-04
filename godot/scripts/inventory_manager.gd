@@ -1,7 +1,7 @@
 extends Node
 
-@export var width: int = 4
-@export var height: int = 4
+@export var width: int = 8
+@export var height: int = 1
 var items: Array[ItemRes] = []
 var ui: Control
 
