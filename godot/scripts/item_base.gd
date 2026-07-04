@@ -8,7 +8,8 @@ var is_left_dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
 var start_drag_position: Vector2 = Vector2.ZERO
 var float_tween: Tween
-var original_scale: Vector2 = Vector2.ONE 
+var original_scale: Vector2 = Vector2.ONE
+var is_cleared: bool = false # 캐릭터에게 위험 요소인지 판단 
 
 signal pickup
 
@@ -90,6 +91,8 @@ func _on_dropped_in_world() -> void:
 
 # 🌟 [오리지널 로직 복구] 가장 가까운 Path2D 선을 찾아 Y축 높이를 맞추는 함수
 func start_floating() -> void:
+	is_cleared = true
+	
 	if float_tween: float_tween.kill()
 	float_tween = create_tween()
 	
