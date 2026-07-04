@@ -52,6 +52,9 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrsjh"]
+size = Vector2(6950, 274)
+
 [node name="Map1" type="Node2D" unique_id=342723024 groups=["player"]]
 position = Vector2(343, 420)
 script = ExtResource("1_08vx1")
@@ -378,3 +381,12 @@ texture = ExtResource("33_uqgso")
 
 [node name="ObstacleGuide" parent="." unique_id=812544508 instance=ExtResource("34_qww0w")]
 position = Vector2(778, -395)
+
+[node name="CrashGround" type="Area2D" parent="." unique_id=229524399 groups=["crashground"]]
+position = Vector2(-1682, -169)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrashGround" unique_id=1158255701]
+position = Vector2(-264, -22)
+shape = SubResource("RectangleShape2D_nrsjh")
