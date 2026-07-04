@@ -2,10 +2,12 @@ extends "res://scripts/obstacle_base.gd"
 
 @export var enemy_scene: PackedScene
 
-func _on_area_entered(area: Area2D) -> void:
-	var player = area.get_parent()
-	if not player.is_in_group("player"):
-		return
+func _ready() -> void:
+	stop_time = 1.0
+	super._ready()
+
+func _on_player_entered(player) -> void:
+		
 	print("소음 발생")
 	player.add_noise_stack()
 	if player.noise_triggered(1):
