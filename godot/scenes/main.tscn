@@ -14,8 +14,10 @@ position = Vector2(341, 437)
 position = Vector2(338, 436)
 map = NodePath("../MapBase")
 
-[node name="ItemCoin" parent="." unique_id=492544432 instance=ExtResource("4_jyhfs")]
-position = Vector2(504, 363)
-scale = Vector2(0.3, 0.3)
+[node name="ItemCoin2" parent="." unique_id=492544432 instance=ExtResource("4_jyhfs")]
+position = Vector2(527, 367)
+
+[node name="ItemCoin" parent="." unique_id=1334348440 instance=ExtResource("4_jyhfs")]
+position = Vector2(412.00003, 357)
 
 [node name="CanvasLayer" parent="." unique_id=965425245 instance=ExtResource("3_sugp2")]
