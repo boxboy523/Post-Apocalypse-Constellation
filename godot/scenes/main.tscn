@@ -10,7 +10,7 @@
 position = Vector2(-86, 1081)
 
 [node name="ItemCan" parent="." unique_id=1275209978 instance=ExtResource("5_a8y0u")]
-position = Vector2(314, 751)
+position = Vector2(-4221, 781)
 
 [node name="ItemPot" parent="." unique_id=1984528209 instance=ExtResource("4_tbgi4")]
-position = Vector2(-367, 215)
+position = Vector2(-4511, 452)
