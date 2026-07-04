@@ -6,7 +6,7 @@ var path_choices: Array[PathChoice]
 var current_path: PathChoice
 const SPEED = 200.0
 var idx = 0
-# READY -> ON_PATH -> READY ... -> END
+# READY -> ON_PATH -> FINISHED -> -> READY -> ON_PATH -> FINISHED ... -> END
 enum PlayerState {ON_PATH, READY, END, FINISHED}
 var state = PlayerState.READY
 
