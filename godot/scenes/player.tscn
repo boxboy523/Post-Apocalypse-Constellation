@@ -10,6 +10,9 @@ gradient = SubResource("Gradient_sh265")
 width = 32
 height = 32
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
+size = Vector2(32, 32)
+
 [node name="Player" type="Node2D" unique_id=1859245618]
 script = ExtResource("1_4flbx")
 
@@ -18,3 +21,8 @@ texture = SubResource("GradientTexture2D_sweqy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1313566457]
 position_smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1968832790]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2076691829]
+shape = SubResource("RectangleShape2D_4kf0v")
