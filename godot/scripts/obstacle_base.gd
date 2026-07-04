@@ -31,7 +31,6 @@ func _on_area_entered(area: Area2D) -> void:
 
 		"guide":
 			print("표지판에 도달")
-
 			if randf() < guide_option_1_chance:
 				print("1번")
 			else:
