@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://p7h6s7m6ie7b"]
 
 [ext_resource type="Script" uid="uid://dcyvtct0pnukp" path="res://scripts/obstacle_noise.gd" id="1_kxcwh"]
+[ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="2_e84i8"]
 [ext_resource type="Texture2D" uid="uid://bayfssq0gaiqg" path="res://images/can_cola.png" id="2_kxcwh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
@@ -8,6 +9,7 @@ size = Vector2(25, 38)
 
 [node name="ObstacleNoise" type="Area2D" unique_id=812544508]
 script = ExtResource("1_kxcwh")
+enemy_scene = ExtResource("2_e84i8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081822613]
 position = Vector2(0.5, -1)

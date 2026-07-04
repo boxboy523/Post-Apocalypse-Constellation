@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bmvfm0tncc7gi" path="res://scripts/obstacle_enemy.gd" id="1_xipry"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
+size = Vector2(21, 43)
 
 [node name="ObstacleEnemy" type="Area2D" unique_id=326172621]
 script = ExtResource("1_xipry")
@@ -14,4 +15,5 @@ scale = Vector2(0.065417685, 0.06541768)
 texture = ExtResource("1_0msgn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=401879642]
+position = Vector2(-0.5, -11.5)
 shape = SubResource("RectangleShape2D_4kf0v")

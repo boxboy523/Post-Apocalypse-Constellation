@@ -17,7 +17,8 @@
 position = Vector2(343, 420)
 
 [node name="Player" parent="." unique_id=1675211555 node_paths=PackedStringArray("map") instance=ExtResource("1_0wfyh")]
-position = Vector2(338, 436)
+position = Vector2(339, 429)
+loop = false
 map = NodePath("../MapBase")
 
 [node name="ItemCoin2" parent="." unique_id=492544432 instance=ExtResource("4_jyhfs")]
@@ -31,16 +32,16 @@ item_res = ExtResource("4_tbgi4")
 [node name="CanvasLayer" parent="." unique_id=965425245 instance=ExtResource("3_sugp2")]
 
 [node name="ObstacleHurt" parent="." unique_id=812544508 instance=ExtResource("6_tefeu")]
-position = Vector2(383, 435)
+position = Vector2(381, 421)
 
 [node name="ObstacleEnemy" parent="." unique_id=326172621 instance=ExtResource("7_o6xl0")]
-position = Vector2(419, 436)
+position = Vector2(418, 437)
 
 [node name="ObstacleGuide" parent="." unique_id=1575274116 instance=ExtResource("8_tipki")]
-position = Vector2(452, 444)
+position = Vector2(448, 439)
 
 [node name="ObstacleNoise" parent="." unique_id=1217144772 instance=ExtResource("9_85g3d")]
-position = Vector2(483, 432)
+position = Vector2(481, 428)
 
 [node name="ObstacleHeal" parent="." unique_id=115392575 instance=ExtResource("10_choun")]
-position = Vector2(519, 434)
+position = Vector2(519, 423)

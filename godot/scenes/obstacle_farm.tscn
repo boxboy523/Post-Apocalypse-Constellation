@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c8x06we1s67xb"]
+
+[ext_resource type="Script" uid="uid://dcnw0l2238njq" path="res://scripts/obstacle_farm.gd" id="1_0wr18"]
+[ext_resource type="Texture2D" path="res://images/trashbin.png" id="2_0wr18"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
+size = Vector2(19, 24)
+
+[node name="ObstacleFarm" type="Area2D" unique_id=326172621]
+script = ExtResource("1_0wr18")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1919147978]
+position = Vector2(4.7683716e-07, -7)
+scale = Vector2(0.16604221, 0.1660422)
+texture = ExtResource("2_0wr18")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=401879642]
+position = Vector2(0.5, -4)
+shape = SubResource("RectangleShape2D_4kf0v")
