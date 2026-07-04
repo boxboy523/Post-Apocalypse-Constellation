@@ -335,7 +335,7 @@ offset = Vector2(-30, -75)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("27_qoppm")]
-position = Vector2(-582, -263)
+position = Vector2(-4639, -462)
 current_path = NodePath("../PathChoice")
 bubble = NodePath("../CanvasLayer/SpeechBubble")
 

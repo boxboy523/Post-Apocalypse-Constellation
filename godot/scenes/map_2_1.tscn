@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cxgktbk1cpxrs" path="res://images/backgrounds/나무2.png" id="24_642ed"]
 [ext_resource type="Texture2D" uid="uid://cb733fv30bu33" path="res://images/backgrounds/아파트1.png" id="25_gvu4s"]
 [ext_resource type="Texture2D" uid="uid://cb7k6gatjknfk" path="res://images/backgrounds/드럼통.png" id="26_47v3x"]
+[ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="27_1p4a6"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -256,3 +257,18 @@ texture = ExtResource("26_47v3x")
 [node name="드럼통3" type="Sprite2D" parent="." unique_id=1886715945]
 position = Vector2(-1755, -559)
 texture = ExtResource("26_47v3x")
+
+[node name="ObstacleEnemy" parent="." unique_id=326172621 instance=ExtResource("27_1p4a6")]
+position = Vector2(-2389, -296)
+
+[node name="ObstacleEnemy2" parent="." unique_id=536668431 instance=ExtResource("27_1p4a6")]
+position = Vector2(-1955, -296)
+
+[node name="ObstacleEnemy3" parent="." unique_id=1856165273 instance=ExtResource("27_1p4a6")]
+position = Vector2(-1738, -296)
+
+[node name="ObstacleEnemy4" parent="." unique_id=1238921845 instance=ExtResource("27_1p4a6")]
+position = Vector2(-746, -296)
+
+[node name="ObstacleEnemy5" parent="." unique_id=870914674 instance=ExtResource("27_1p4a6")]
+position = Vector2(-33, -296)
