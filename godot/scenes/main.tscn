@@ -68,7 +68,7 @@ position = Vector2(394, 424)
 farm_type = "random"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1043574470]
-position = Vector2(418, 250)
+position = Vector2(372, 127)
 limit_left = -300
 limit_right = 2000
 script = ExtResource("12_eb6dy")

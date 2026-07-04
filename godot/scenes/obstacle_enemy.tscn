@@ -2,18 +2,76 @@
 
 [ext_resource type="Texture2D" uid="uid://0hhqyjiw7t6i" path="res://images/units/좀비.png" id="1_0msgn"]
 [ext_resource type="Script" uid="uid://bmvfm0tncc7gi" path="res://scripts/obstacle_enemy.gd" id="1_xipry"]
+[ext_resource type="Texture2D" uid="uid://cij7tu2i1jlgq" path="res://images/units/좀비/좀비 (1).png" id="3_4275c"]
+[ext_resource type="Texture2D" uid="uid://j8ynq70gs45e" path="res://images/units/좀비/좀비 (2).png" id="4_se1gw"]
+[ext_resource type="Texture2D" uid="uid://dqpl28udhoqhu" path="res://images/units/좀비/좀비 (3).png" id="5_17bp0"]
+[ext_resource type="Texture2D" uid="uid://bjtltpnw75qnp" path="res://images/units/좀비/좀비 (4).png" id="6_elycp"]
+[ext_resource type="Texture2D" uid="uid://c00vvdkabm550" path="res://images/units/좀비/좀비 (5).png" id="7_tafia"]
+[ext_resource type="Texture2D" uid="uid://c7i556vmn8d2a" path="res://images/units/좀비/좀비 (6).png" id="8_u4xy6"]
+[ext_resource type="Texture2D" uid="uid://cdv7yydko6uya" path="res://images/units/좀비/좀비 (7).png" id="9_ye1m4"]
+[ext_resource type="Texture2D" uid="uid://cd8d2p04hvffr" path="res://images/units/좀비/좀비 (8).png" id="10_j7xjo"]
+[ext_resource type="Texture2D" uid="uid://bsorwisdbpnw1" path="res://images/units/좀비/좀비 (9).png" id="11_mfn7s"]
+[ext_resource type="Texture2D" uid="uid://diy657w0qkudp" path="res://images/units/좀비/좀비 (10).png" id="12_tb8by"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
-size = Vector2(21, 43)
+size = Vector2(50, 175.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k5pvu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4275c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_se1gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_17bp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_elycp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tafia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u4xy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ye1m4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_j7xjo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_mfn7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tb8by")
+}],
+"loop": 1,
+"name": &"moving",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0msgn")
+}],
+"loop": 1,
+"name": &"standing",
+"speed": 5.0
+}]
 
 [node name="ObstacleEnemy" type="Area2D" unique_id=326172621]
 script = ExtResource("1_xipry")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1919147978]
-position = Vector2(-4.000004, -14)
-scale = Vector2(0.065417685, 0.06541768)
-texture = ExtResource("1_0msgn")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=401879642]
-position = Vector2(-0.5, -11.5)
+position = Vector2(5, -18)
 shape = SubResource("RectangleShape2D_4kf0v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=268583696]
+position = Vector2(-8, -18)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_k5pvu")
+animation = &"standing"
+frame_progress = 0.26738033
