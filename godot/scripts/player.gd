@@ -16,6 +16,7 @@ var state = PlayerState.READY
 var stop = false
 
 func _ready() -> void:
+	global_position = current_path.to_global(current_path.curve.get_point_position(0))
 	$LerfFollow.global_position = global_position
 	follow.call_deferred(current_path)
 	anim_sprite.play('idle')
