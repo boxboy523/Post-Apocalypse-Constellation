@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://blm3hytbdagob"]
 
+[ext_resource type="Script" uid="uid://c3r22s0ygo016" path="res://scenes/game_over.gd" id="1_tbwuq"]
 [ext_resource type="FontFile" uid="uid://bho0rppjjvsyf" path="res://fonts/GalmuriMono7.ttf" id="1_wqhvx"]
 [ext_resource type="Script" uid="uid://dl43ivpdb613k" path="res://scripts/button_restart.gd" id="2_tbwuq"]
-[ext_resource type="Texture2D" uid="uid://bl5kk8wrmh21" path="res://images/units/천사.png" id="3_tbwuq"]
-[ext_resource type="Script" uid="uid://dmietufkyffmv" path="res://scripts/angel_cursor.gd" id="4_racf3"]
 
 [node name="GameOver" type="Node2D" unique_id=219297321]
+script = ExtResource("1_tbwuq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1327568908]
 
@@ -27,12 +27,3 @@ theme_override_fonts/font = ExtResource("1_wqhvx")
 theme_override_font_sizes/font_size = 80
 text = "다시하기"
 script = ExtResource("2_tbwuq")
-
-[node name="AngelCursor" type="TextureRect" parent="CanvasLayer" unique_id=316338805]
-z_index = 100
-offset_right = 494.0
-offset_bottom = 720.0
-scale = Vector2(0.08, 0.08)
-mouse_filter = 2
-texture = ExtResource("3_tbwuq")
-script = ExtResource("4_racf3")

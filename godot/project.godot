@@ -19,6 +19,7 @@ config/icon="res://images/icon.svg"
 
 inventory_manager="*uid://dutvlp2h6srjh"
 EventBus="*uid://bcllsg48me76s"
+GlobalUI="*uid://ddu46ykwntk3a"
 
 [display]
 

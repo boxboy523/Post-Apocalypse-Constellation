@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bsg5drt3fprvl" path="res://scripts/path_choice.gd" id="2_v6wkn"]
 [ext_resource type="PackedScene" uid="uid://d4mhcllvsytp5" path="res://scenes/map_base2.tscn" id="3_yg4uq"]
 [ext_resource type="PackedScene" uid="uid://bwcl3gt3hq10b" path="res://scenes/gizmos/ground1.tscn" id="4_hwiab"]
+[ext_resource type="PackedScene" uid="uid://cdiy8ery1c25l" path="res://scenes/map_1.tscn" id="4_qh52y"]
 [ext_resource type="PackedScene" uid="uid://bbu1dt70fxiev" path="res://scenes/gizmos/ground2.tscn" id="5_qtbca"]
 [ext_resource type="PackedScene" uid="uid://bej7oimsvo0nh" path="res://scenes/gizmos/ground3.tscn" id="6_ulq5i"]
 [ext_resource type="Texture2D" uid="uid://d2ft1hfkg72g8" path="res://images/backgrounds/farBackground.png" id="7_1qtpx"]
@@ -12,6 +13,17 @@
 [ext_resource type="Texture2D" uid="uid://cy3nki1qp717q" path="res://images/backgrounds/아파트2.png" id="10_85pf1"]
 [ext_resource type="Texture2D" uid="uid://dbxqrspq56epv" path="res://images/backgrounds/sky.png" id="11_2d4xf"]
 [ext_resource type="Texture2D" uid="uid://cb733fv30bu33" path="res://images/backgrounds/아파트1.png" id="12_q4vrv"]
+[ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="13_g2jlr"]
+[ext_resource type="PackedScene" uid="uid://cw3ggho3tcjel" path="res://scenes/item_coin.tscn" id="14_wq6ni"]
+[ext_resource type="Resource" uid="uid://bfsght4a85mtr" path="res://items/item_coin.tres" id="15_bxby3"]
+[ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvas_layer.tscn" id="16_ua132"]
+[ext_resource type="PackedScene" uid="uid://b3k0nnxxx03ag" path="res://scenes/speech_bubble.tscn" id="17_0shdw"]
+[ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="19_658wo"]
+[ext_resource type="PackedScene" uid="uid://u4k4gkvyyr56" path="res://scenes/obstacle_guide.tscn" id="20_fk3n2"]
+[ext_resource type="PackedScene" uid="uid://p7h6s7m6ie7b" path="res://scenes/obstacle_noise.tscn" id="21_ger18"]
+[ext_resource type="PackedScene" uid="uid://f86dtsntcv55" path="res://scenes/obstacle_heal.tscn" id="22_mrodp"]
+[ext_resource type="PackedScene" uid="uid://c8x06we1s67xb" path="res://scenes/obstacle_farm.tscn" id="23_xrok2"]
+[ext_resource type="Script" uid="uid://cr8tdwgul18mg" path="res://scripts/camera_movement.gd" id="24_vxmhd"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -49,7 +61,7 @@ position = Vector2(-337, -436)
 curve = SubResource("Curve2D_tysbb")
 script = ExtResource("2_v6wkn")
 desc = "아랫길"
-next_set = ExtResource("3_yg4uq")
+next_set = ExtResource("4_qh52y")
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="PathChoice" type="Path2D" parent="." unique_id=1893640462 node_paths=PackedStringArray("next_paths")]
@@ -58,7 +70,6 @@ scale = Vector2(1.0074867, 1)
 curve = SubResource("Curve2D_yg4uq")
 script = ExtResource("2_v6wkn")
 next_paths = [NodePath("../PathUp"), NodePath("../PathDown")]
-is_primary = true
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="Ground1" parent="." unique_id=1416573282 instance=ExtResource("4_hwiab")]
@@ -113,3 +124,57 @@ position = Vector2(930, 0)
 
 [node name="Ground7" parent="." unique_id=523684915 instance=ExtResource("4_hwiab")]
 position = Vector2(1240, 0)
+
+[node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("13_g2jlr")]
+position = Vector2(7, -3)
+current_path = NodePath("../PathChoice")
+bubble = NodePath("../CanvasLayer/SpeechBubble")
+
+[node name="ItemCoin2" parent="." unique_id=492544432 instance=ExtResource("14_wq6ni")]
+position = Vector2(195, -65)
+item_res = ExtResource("15_bxby3")
+
+[node name="ItemCoin" parent="." unique_id=1392405137 instance=ExtResource("14_wq6ni")]
+position = Vector2(80.00003, -75)
+item_res = ExtResource("15_bxby3")
+
+[node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("16_ua132")]
+
+[node name="SpeechBubble" parent="CanvasLayer" unique_id=1994342399 node_paths=PackedStringArray("talker") instance=ExtResource("17_0shdw")]
+offset_left = 423.0
+offset_top = -24.0
+offset_right = 525.0
+offset_bottom = -1.0
+talker = NodePath("../../Player")
+offset = Vector2(-30, -75)
+metadata/_edit_use_anchors_ = true
+
+[node name="ObstacleEnemy" parent="." unique_id=326172621 instance=ExtResource("19_658wo")]
+position = Vector2(113, -21)
+
+[node name="ObstacleGuide" parent="." unique_id=1938780022 instance=ExtResource("20_fk3n2")]
+position = Vector2(241, -5)
+path_up_path = NodePath("../MapBase")
+direction = "down"
+
+[node name="ObstacleNoise" parent="." unique_id=1006132324 instance=ExtResource("21_ger18")]
+position = Vector2(542, 87)
+
+[node name="ObstacleHeal" parent="." unique_id=220950717 instance=ExtResource("22_mrodp")]
+position = Vector2(684, 84)
+
+[node name="ObstacleFarm" parent="." unique_id=271637512 instance=ExtResource("23_xrok2")]
+position = Vector2(831, 102)
+farm_type = "random"
+
+[node name="ObstacleFarm2" parent="." unique_id=58684523 instance=ExtResource("23_xrok2")]
+position = Vector2(62, -8)
+farm_type = "random"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1819461983]
+position = Vector2(332, -293)
+limit_left = -471
+limit_top = -10000229
+limit_right = 1829
+limit_bottom = 9999771
+script = ExtResource("24_vxmhd")

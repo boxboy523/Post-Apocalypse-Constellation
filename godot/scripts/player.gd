@@ -1,13 +1,12 @@
 extends PathFollow2D
 
-@export var map: ChoiceMap
+@export var current_path: PathChoice
 @export var bubble: Control
 
 @onready var anim_sprite = $"LerfFollow/AnimatedSprite2D"
 @onready var logic = $"LerfFollow/PlayerLogic"
 
 var path_choices: Array[PathChoice]
-var current_path: PathChoice
 const SPEED = 130.0
 var idx = 0
 # READY -> ON_PATH -> FINISHED -> -> READY -> ON_PATH -> FINISHED ... -> END
@@ -18,12 +17,10 @@ var stop = false
 
 func _ready() -> void:
 	$LerfFollow.global_position = global_position
-	call_deferred("follow", map.get_paths()[0])
+	follow.call_deferred(current_path)
 	anim_sprite.play('idle')
 
 func follow(path: PathChoice) -> void:
-	if path.next_set and not path.map: # 다음 맵 생성
-		path.instantiate_map()
 	var pos = global_position
 	reparent(path, true)
 	self.progress = 0.0
@@ -50,11 +47,14 @@ func _process(delta: float) -> void:
 				self.progress += SPEED * delta # 경로를 따라 이동
 			else:
 				anim_sprite.play('idle')
-				if path_choices.size() == 0:
+				if path_choices.size() == 0 and (not current_path.next_set):
 					state = PlayerState.END
 				else:
 					state = PlayerState.FINISHED
 		PlayerState.FINISHED:
+			if current_path.next_set:
+				get_tree().change_scene_to_packed(current_path.next_set)
+				return
 			var next_path = current_path.get_random_path()
 			follow(next_path)
 			state = PlayerState.READY
