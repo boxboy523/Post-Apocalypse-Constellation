@@ -10,6 +10,8 @@ var idx = 0
 enum PlayerState {ON_PATH, READY, END, FINISHED}
 var state = PlayerState.READY
 
+var stop = false
+
 func _ready() -> void:
 	call_deferred("follow", map.get_paths()[0])
 
@@ -24,8 +26,13 @@ func follow(path: PathChoice) -> void:
 	path_choices = current_path.get_paths()
 	$"LerfFollow/Camera2D".reset_smoothing()
 
+func stop_event(time: float):
+	stop = true
+	await get_tree().create_timer(time).timeout
+	stop = false
+
 func _process(delta: float) -> void:
-	if not (current_path is PathChoice):
+	if not (current_path is PathChoice) or stop:
 		return
 	#print(state)
 	match state:
@@ -48,13 +55,12 @@ func _process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	#if state == PlayerState.FINISHED:
-		#if event.is_action_pressed("choose_path_1"): # 경로 1번
-			#follow(path_choices[0])
+	if event.is_action_pressed("choose_path_1"): # 경로 1번
+		stop_event(1.0)
 		#elif event.is_action_pressed("choose_path_2"): # 경로 2번
 			#follow(path_choices[1])
 		#state = PlayerState.TO_PATH
-	if event.is_action_pressed("start_path") and state == PlayerState.READY: # 이동 시작
+	if event.is_action_pressed("start_path") and state == PlayerState.READY and not stop: # 이동 시작
 		state = PlayerState.ON_PATH
 	elif event.is_action_pressed("start_path"):
 		print("스페이스바 눌렸지만 상태가 READY가 아님. 현재 상태: ", state)
