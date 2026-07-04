@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3k0nnxxx03ag"]
 
-[ext_resource type="Script" uid="uid://c0t8043ank485" path="res://scenes/speech_bubble.gd" id="1_a8ruc"]
+[ext_resource type="Script" uid="uid://c0t8043ank485" path="res://scripts/speech_bubble.gd" id="1_a8ruc"]
 [ext_resource type="FontFile" uid="uid://bho0rppjjvsyf" path="res://fonts/GalmuriMono7.ttf" id="2_x4eeu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j542"]
