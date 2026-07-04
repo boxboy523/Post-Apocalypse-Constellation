@@ -1,13 +1,105 @@
 [gd_scene format=3 uid="uid://dwcysdoxq4gqe"]
 
 [ext_resource type="Script" uid="uid://lii2cft1ufay" path="res://scripts/inventory_ui.gd" id="1_c4rma"]
+[ext_resource type="Script" uid="uid://cvoms4pioncnb" path="res://scripts/inventory_slot.gd" id="2_ghj5q"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=965002566]
 
 [node name="Inventory" type="Control" parent="." unique_id=84840714]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 256.0
+offset_bottom = 256.0
+
+[node name="InventoryUI" type="Control" parent="Inventory" unique_id=1321383720]
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 256.0
 script = ExtResource("1_c4rma")
-slot_size = 40
+
+[node name="SlotContainer" type="GridContainer" parent="Inventory" unique_id=1788726707]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 256.0
+mouse_filter = 2
+columns = 4
+
+[node name="Slot0" type="Control" parent="Inventory/SlotContainer" unique_id=1370988188]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot1" type="Control" parent="Inventory/SlotContainer" unique_id=188299316]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot2" type="Control" parent="Inventory/SlotContainer" unique_id=178623433]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot3" type="Control" parent="Inventory/SlotContainer" unique_id=1814321977]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot4" type="Control" parent="Inventory/SlotContainer" unique_id=1763980765]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot5" type="Control" parent="Inventory/SlotContainer" unique_id=975393142]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot6" type="Control" parent="Inventory/SlotContainer" unique_id=1075762163]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot7" type="Control" parent="Inventory/SlotContainer" unique_id=1358306908]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot8" type="Control" parent="Inventory/SlotContainer" unique_id=2024125899]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot9" type="Control" parent="Inventory/SlotContainer" unique_id=152391536]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot10" type="Control" parent="Inventory/SlotContainer" unique_id=1254154559]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot11" type="Control" parent="Inventory/SlotContainer" unique_id=2015949479]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot12" type="Control" parent="Inventory/SlotContainer" unique_id=190250752]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot13" type="Control" parent="Inventory/SlotContainer" unique_id=394546922]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot14" type="Control" parent="Inventory/SlotContainer" unique_id=720390712]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
+
+[node name="Slot15" type="Control" parent="Inventory/SlotContainer" unique_id=1042395835]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+script = ExtResource("2_ghj5q")
