@@ -2,96 +2,103 @@ extends Area2D
 class_name ItemBase
 
 @export var item_res: ItemRes
+@export var move_cost: int = 10 
 
-# 월드 드래그용 변수
 var is_left_dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
+var start_drag_position: Vector2 = Vector2.ZERO
 var float_tween: Tween
+var original_scale: Vector2 = Vector2.ONE 
 
 signal pickup
 
 func _ready() -> void:
-	start_bobbing()
+	original_scale = scale
 
-# 1️⃣ 아이템 위에서 발생하는 마우스 이벤트 (클릭 감지)
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-
-	# [우클릭] 아이템 획득
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-		_pickup()
-
-	# [좌클릭] 맵 내에서 드래그 시작
-	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		is_left_dragging = true
-		# 마우스와 아이템 중심 사이의 거리(오프셋)를 기억해서 자연스럽게 끌리도록 함
+		start_drag_position = global_position 
 		drag_offset = global_position - get_global_mouse_position()
-		
 		if float_tween:
 			float_tween.kill()
 
-# 2️⃣ 화면 전체에서 발생하는 마우스 이벤트 (클릭 뗌 감지)
 func _input(event: InputEvent) -> void:
-	# 마우스를 빠르게 움직여서 아이템 밖으로 커서가 벗어나더라도 드롭을 인식해야 하므로 _input 사용
 	if is_left_dragging and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 		is_left_dragging = false
-		start_floating()
+		_handle_drop()
 
-# 3️⃣ 매 프레임 실행 (드래그 중일 때 위치 이동)
 func _process(_delta: float) -> void:
 	if is_left_dragging:
 		global_position = get_global_mouse_position() + drag_offset
 
-func _pickup() -> void:
-	print("📦 [ItemBase] 아이템 획득: ", item_res.name)
+func _handle_drop() -> void:
+	var target_slot_index = _get_hovered_slot_index()
+	
+	if target_slot_index != -1:
+		_pickup_to_specific_slot(target_slot_index)
+	else:
+		if global_position.distance_to(start_drag_position) > 5.0:
+			_consume_cost() 
+		
+		# 🌟 [신규 추가] 자식 클래스에서 덮어쓸 수 있는 월드 상호작용 체크 함수
+		if _check_world_interaction():
+			return # 상호작용(예: 부착, 몹 킬)에 성공했으면 여기서 종료!
+			
+		_on_dropped_in_world() # 아무런 상호작용이 없었으면 기본 동작(둥둥 뜨기) 실행
 
-	if item_res and inventory_manager.add_item(item_res):
-		print("✅ [인벤토리] 아이템이 가방에 추가되었습니다: ", item_res.name)
+# 🌟 자식 클래스들이 덮어쓸 빈 함수 (부모에서는 false만 반환)
+func _check_world_interaction() -> bool:
+	return false
+
+# 🌟 [핵심] 씬 트리에서 SlotContainer를 찾아 화면 절대 좌표로 비교
+func _get_hovered_slot_index() -> int:
+	var current_scene = get_tree().current_scene
+	# 이름이 "SlotContainer"인 노드를 트리 전체에서 찾습니다.
+	var containers = current_scene.find_children("SlotContainer", "Control", true, false)
+	
+	if containers.size() > 0:
+		var slot_container = containers[0]
+		var mouse_pos = get_viewport().get_mouse_position()
+		
+		# 찾은 컨테이너 안의 자식(슬롯)들을 돌며 마우스가 그 위에 있는지 확인
+		for child in slot_container.get_children():
+			if child is Control and child.is_visible_in_tree():
+				if child.get_global_rect().has_point(mouse_pos):
+					return child.get_index() # 일치하는 슬롯의 번호 반환
+	return -1
+
+func _pickup_to_specific_slot(s_index: int) -> void:
+	if s_index < inventory_manager.items.size() and inventory_manager.items[s_index] == null:
+		inventory_manager.items[s_index] = item_res
+		
+		if inventory_manager.ui:
+			inventory_manager.ui.queue_redraw()
+			
+		print("✅ [인벤토리] " + str(s_index) + "번 슬롯에 획득 성공!")
 		pickup.emit()
-		_on_pickup_success()
 		queue_free()
 	else:
-		print("가방이 꽉 찼습니다!")
+		print("❌ 해당 슬롯이 꽉 찼습니다! 제자리로 복구.")
+		global_position = start_drag_position
+		_on_dropped_in_world()
 
-func _on_pickup_success() -> void:
-	pass
+func _consume_cost() -> void: pass
 
-func on_dropped() -> void:
+func _on_dropped_in_world() -> void:
 	start_floating()
 
+# --- 둥둥 트윈 함수 (유지) ---
 func start_floating() -> void:
-	if float_tween:
-		float_tween.kill()
-		
+	if float_tween: float_tween.kill()
 	float_tween = create_tween()
 	var target_y: float = global_position.y - 30.0 
-	var min_distance: float = INF
-	
-	var paths = get_tree().current_scene.find_children("*", "Path2D", true, false)
-	for node in paths:
-		if node is PathChoice:
-			var path = node as PathChoice
-			if path.curve:
-				var local_pos = path.to_local(global_position)
-				var closest_local = path.curve.get_closest_point(local_pos)
-				
-				# Transform을 곱해 회전/스케일이 뒤틀린 Path에서도 정확한 절대 좌표 계산
-				var closest_global = path.global_transform * closest_local
-				
-				var dist = global_position.distance_to(closest_global)
-				if dist < min_distance:
-					min_distance = dist
-					target_y = closest_global.y - 30.0
-					
-	# 목표 높이로 0.4초 동안 부드럽게 이동 후, 제자리 둥둥 시작!
 	float_tween.tween_property(self, "global_position:y", target_y, 0.4).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	float_tween.tween_callback(start_bobbing)
 
 func start_bobbing() -> void:
-	if float_tween:
-		float_tween.kill()
-		
+	if float_tween: float_tween.kill()
 	float_tween = create_tween().set_loops()
 	var current_y = global_position.y
-	
 	float_tween.tween_property(self, "global_position:y", current_y - 5.0, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	float_tween.tween_property(self, "global_position:y", current_y + 5.0, 1.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
