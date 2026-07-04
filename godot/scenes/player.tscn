@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://oj0oouh4mwtt"]
 
 [ext_resource type="Script" uid="uid://cp7v1qqq58odj" path="res://scripts/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dq2ekl4ug2hkq" path="res://scenes/lerf_follow.gd" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://btqitmv23qs1i" path="res://images/소녀.png" id="2_g2els"]
 [ext_resource type="Script" uid="uid://bxkrc241m5rr8" path="res://scenes/player_logic.gd" id="2_qhqgy"]
 
@@ -8,20 +9,26 @@
 size = Vector2(32, 32)
 
 [node name="Player" type="PathFollow2D" unique_id=1170953966]
+rotates = false
+loop = false
 script = ExtResource("1_4flbx")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1367374429]
+[node name="LerfFollow" type="Node2D" parent="." unique_id=634492600]
+top_level = true
+script = ExtResource("2_dqkch")
+
+[node name="PlayerLogic" type="Node2D" parent="LerfFollow" unique_id=1680381036]
+script = ExtResource("2_qhqgy")
+
+[node name="Area2D" type="Area2D" parent="LerfFollow/PlayerLogic" unique_id=1968832790]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LerfFollow/PlayerLogic/Area2D" unique_id=2076691829]
+shape = SubResource("RectangleShape2D_4kf0v")
+
+[node name="Camera2D" type="Camera2D" parent="LerfFollow" unique_id=1313566457]
+position_smoothing_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="LerfFollow" unique_id=1367374429]
 position = Vector2(0, -11)
 scale = Vector2(0.08410138, 0.08410138)
 texture = ExtResource("2_g2els")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1313566457]
-position_smoothing_enabled = true
-
-[node name="PlayerLogic" type="Node2D" parent="." unique_id=1680381036]
-script = ExtResource("2_qhqgy")
-
-[node name="Area2D" type="Area2D" parent="PlayerLogic" unique_id=1968832790]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerLogic/Area2D" unique_id=2076691829]
-shape = SubResource("RectangleShape2D_4kf0v")
