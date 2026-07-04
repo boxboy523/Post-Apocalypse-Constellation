@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dwcysdoxq4gqe"]
+
+[ext_resource type="Script" uid="uid://lii2cft1ufay" path="res://scripts/inventory_ui.gd" id="1_c4rma"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=965002566]
+
+[node name="Inventory" type="Control" parent="." unique_id=84840714]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_c4rma")
+slot_size = 40

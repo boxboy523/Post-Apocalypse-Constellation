@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://db03it5f4c2al" path="res://scenes/map_base.tscn" id="2_sugp2"]
-[ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvaslayer.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvas_layer.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cw3ggho3tcjel" path="res://scenes/item_coin.tscn" id="4_jyhfs"]
+[ext_resource type="Resource" uid="uid://bfsght4a85mtr" path="res://items/item_coin.tres" id="4_tbgi4"]
 
 [node name="Main" type="Node2D" unique_id=1160899106]
 
@@ -16,8 +17,10 @@ map = NodePath("../MapBase")
 
 [node name="ItemCoin2" parent="." unique_id=492544432 instance=ExtResource("4_jyhfs")]
 position = Vector2(527, 367)
+item_res = ExtResource("4_tbgi4")
 
 [node name="ItemCoin" parent="." unique_id=1334348440 instance=ExtResource("4_jyhfs")]
 position = Vector2(412.00003, 357)
+item_res = ExtResource("4_tbgi4")
 
 [node name="CanvasLayer" parent="." unique_id=965425245 instance=ExtResource("3_sugp2")]
