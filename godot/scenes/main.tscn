@@ -5,12 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvas_layer.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cw3ggho3tcjel" path="res://scenes/item_coin.tscn" id="4_jyhfs"]
 [ext_resource type="Resource" uid="uid://bfsght4a85mtr" path="res://items/item_coin.tres" id="4_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://chn8l3kh04bdy" path="res://scenes/obstacle_base.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://cthy6631yq0qw" path="res://scenes/obstacle_hurt.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://u4k4gkvyyr56" path="res://scenes/obstacle_guide.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://p7h6s7m6ie7b" path="res://scenes/obstacle_noise.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://f86dtsntcv55" path="res://scenes/obstacle_heal.tscn" id="10_choun"]
 
 [node name="Main" type="Node2D" unique_id=1160899106]
 
 [node name="MapBase" parent="." unique_id=547791557 instance=ExtResource("2_sugp2")]
-position = Vector2(341, 437)
+position = Vector2(343, 420)
 
 [node name="Player" parent="." unique_id=1675211555 node_paths=PackedStringArray("map") instance=ExtResource("1_0wfyh")]
 position = Vector2(338, 436)
@@ -27,5 +31,17 @@ item_res = ExtResource("4_tbgi4")
 
 [node name="CanvasLayer" parent="." unique_id=965425245 instance=ExtResource("3_sugp2")]
 
-[node name="ObstacleBase" parent="." unique_id=1719570084 instance=ExtResource("6_tefeu")]
-position = Vector2(433, 437)
+[node name="ObstacleHurt" parent="." unique_id=812544508 instance=ExtResource("6_tefeu")]
+position = Vector2(383, 435)
+
+[node name="ObstacleEnemy" parent="." unique_id=326172621 instance=ExtResource("7_o6xl0")]
+position = Vector2(419, 436)
+
+[node name="ObstacleGuide" parent="." unique_id=1575274116 instance=ExtResource("8_tipki")]
+position = Vector2(452, 444)
+
+[node name="ObstacleNoise" parent="." unique_id=1217144772 instance=ExtResource("9_85g3d")]
+position = Vector2(483, 432)
+
+[node name="ObstacleHeal" parent="." unique_id=115392575 instance=ExtResource("10_choun")]
+position = Vector2(519, 434)

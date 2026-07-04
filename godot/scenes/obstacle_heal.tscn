@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://f86dtsntcv55"]
+
+[ext_resource type="Script" uid="uid://drcjh6ibb4h3m" path="res://scripts/obstacle_heal.gd" id="1_oa6qx"]
+[ext_resource type="Texture2D" uid="uid://ditpsxa0iayf5" path="res://images/구급상자.jpg" id="2_oa6qx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tipki"]
+size = Vector2(36, 32)
+
+[node name="ObstacleHeal" type="Area2D" unique_id=812544508]
+script = ExtResource("1_oa6qx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081822613]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_tipki")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1900618562]
+position = Vector2(0, -1)
+scale = Vector2(0.14265989, 0.1426599)
+texture = ExtResource("2_oa6qx")
