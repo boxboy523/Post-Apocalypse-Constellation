@@ -15,21 +15,21 @@
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 522, 437, 0, 0, 0, 0, 639.9943, 333, 0, 0, 0, 0, 870, 329)
+"points": PackedVector2Array(0, 0, 0, 0, 641, 437, 0, 0, 0, 0, 831, 337, 0, 0, 0, 0, 1231, 337)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_tysbb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 528, 436, 0, 0, 0, 0, 695, 511, 0, 0, 0, 0, 880, 509)
+"points": PackedVector2Array(0, 0, 0, 0, 647, 436, 0, 0, 0, 0, 837, 536, 0, 0, 0, 0, 1237, 536)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_yg4uq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 307.69635, 0)
 }
-point_count = 2
+point_count = 3
 
 [node name="MapBase" type="Node2D" unique_id=342723024]
 script = ExtResource("1_v6wkn")
