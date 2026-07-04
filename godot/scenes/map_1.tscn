@@ -283,6 +283,7 @@ scale = Vector2(0.81766933, 0.74569535)
 texture = ExtResource("14_td2nl")
 
 [node name="오토바이" type="Sprite2D" parent="." unique_id=145858514]
+y_sort_enabled = true
 position = Vector2(650, -212)
 texture = ExtResource("15_rbd51")
 
@@ -373,6 +374,7 @@ position = Vector2(-1707, -761)
 texture = ExtResource("26_i6s2n")
 
 [node name="자동차" type="Sprite2D" parent="." unique_id=807389797]
+z_index = 1
 position = Vector2(-3660, -203)
 texture = ExtResource("33_uqgso")
 

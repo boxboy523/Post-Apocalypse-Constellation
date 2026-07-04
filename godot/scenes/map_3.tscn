@@ -169,6 +169,7 @@ scale = Vector2(1.7847594, 1.4953411)
 texture = ExtResource("13_fpiba")
 
 [node name="요구르트카트" type="Sprite2D" parent="." unique_id=1401524479]
+y_sort_enabled = true
 position = Vector2(865.9999, -447.00003)
 scale = Vector2(0.712963, 0.712963)
 texture = ExtResource("14_e0xmi")
@@ -283,6 +284,7 @@ scale = Vector2(1, 1.2135923)
 texture = ExtResource("8_08glf")
 
 [node name="요구르트카트2" type="Sprite2D" parent="." unique_id=1379293400]
+y_sort_enabled = true
 position = Vector2(-1118, -482)
 scale = Vector2(0.76666665, 0.76666665)
 texture = ExtResource("14_e0xmi")
