@@ -33,8 +33,6 @@ func _on_area_entered(area: Area2D) -> void:
 			print("표지판에 도달")
 
 			if randf() < guide_option_1_chance:
-				player.follow(player.path_choices[0])
 				print("1번")
 			else:
 				print("2번")
-				player.follow(player.path_choices[1])
