@@ -5,6 +5,7 @@ var hp: int = max_hp
 @export var spare_hp: int = 0
 
 @export var isInjured: bool = false
+@onready var anim_sprite = $"../AnimatedSprite2D"
 
 var noise_stack: int = 0
 
@@ -36,7 +37,10 @@ func take_damage() -> void:
 	if hp < max_hp:
 		isInjured = true
 		print("부상")
-	
+	var last_anim = anim_sprite.animation
+	anim_sprite.play("trapped")
+	await anim_sprite.animation_finished
+	anim_sprite.play(last_anim)
 func get_medkit() -> void:
 	if isInjured:
 		isInjured = false

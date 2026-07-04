@@ -12,7 +12,7 @@ func _on_player_entered(player) -> void:
 	player.add_noise_stack()
 	if player.noise_triggered(1):
 		queue_free()
-		spawn_enemy()
+		spawn_enemy.call_deferred()
 	#일정 스택 도달 -> 적 생성
 
 func spawn_enemy() -> void:
@@ -24,6 +24,6 @@ func spawn_enemy() -> void:
 	spawn_pos.x += 0
 
 	var enemy = enemy_scene.instantiate()
-	get_parent().add_child(enemy)
+	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = spawn_pos
 	print("enemy 스폰")
