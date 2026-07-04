@@ -22,6 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://c6qi3y5birve3" path="res://images/backgrounds/표지판 봉.png" id="18_bkxnn"]
 [ext_resource type="Texture2D" uid="uid://dhohm4lqg1d0k" path="res://images/backgrounds/자동차.png" id="19_6dpta"]
 [ext_resource type="Texture2D" uid="uid://b467oas3hbmx8" path="res://images/backgrounds/실외기.png" id="20_s11mi"]
+[ext_resource type="Script" uid="uid://cr8tdwgul18mg" path="res://scripts/camera_movement.gd" id="23_2qxq1"]
+[ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvas_layer.tscn" id="24_tjit4"]
+[ext_resource type="PackedScene" uid="uid://b3k0nnxxx03ag" path="res://scenes/speech_bubble.tscn" id="25_bkxnn"]
+[ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="26_6dpta"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -206,3 +210,26 @@ texture = ExtResource("20_s11mi")
 position = Vector2(586.0056, 194.57092)
 scale = Vector2(0.9650218, 0.99117255)
 texture = ExtResource("20_s11mi")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=686784963]
+position = Vector2(372, 127)
+limit_left = -300
+limit_right = 2000
+script = ExtResource("23_2qxq1")
+speed = 400.0
+
+[node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("24_tjit4")]
+
+[node name="SpeechBubble" parent="CanvasLayer" unique_id=1994342399 node_paths=PackedStringArray("talker") instance=ExtResource("25_bkxnn")]
+offset_left = 423.0
+offset_top = -24.0
+offset_right = 525.0
+offset_bottom = -1.0
+talker = NodePath("")
+offset = Vector2(-30, -75)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("map", "bubble") instance=ExtResource("26_6dpta")]
+position = Vector2(339, 429)
+map = NodePath("")
+bubble = NodePath("../CanvasLayer/SpeechBubble")
