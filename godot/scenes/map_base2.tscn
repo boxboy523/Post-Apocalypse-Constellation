@@ -1,44 +1,70 @@
 [gd_scene format=3 uid="uid://d4mhcllvsytp5"]
 
-[ext_resource type="Script" uid="uid://dafi2gplkwdia" path="res://scripts/choice_map.gd" id="1_oums2"]
+[ext_resource type="Script" uid="uid://57nxd88ew6wa" path="res://scripts/choice_map.gd" id="1_oums2"]
 [ext_resource type="Script" uid="uid://bsg5drt3fprvl" path="res://scripts/path_choice.gd" id="2_c1kc2"]
-
-[sub_resource type="Curve2D" id="Curve2D_ya7al"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 337, 437, 0, 0, 0, 0, 538.75854, 431, 0, 0, 0, 0, 639.9943, 333, 0, 0, 0, 0, 712, 333)
-}
-point_count = 4
-
-[sub_resource type="Curve2D" id="Curve2D_tysbb"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 337, 437, 0, 0, 0, 0, 631, 434, 0, 0, 0, 0, 699, 508, 0, 0, 0, 0, 880, 509)
-}
-point_count = 4
 
 [sub_resource type="Gradient" id="Gradient_tysbb"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_k5pvu"]
 gradient = SubResource("Gradient_tysbb")
 
+[sub_resource type="Curve2D" id="Curve2D_oums2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 61, -64, 0, 0, 0, 0, 129, -64, 0, 0, 0, 0, 176, -1)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_c1kc2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 53, 76, 0, 0, 0, 0, 134, 74, 0, 0, 0, 0, 176, 2)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_c8tqa"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 179, 0, 0, 0, 0, 0, 294, -1)
+}
+point_count = 2
+
 [node name="MapBase" type="Node2D" unique_id=342723024]
 script = ExtResource("1_oums2")
 
-[node name="PathUp" type="Path2D" parent="." unique_id=1440970172]
-position = Vector2(-331, -437)
-curve = SubResource("Curve2D_ya7al")
-script = ExtResource("2_c1kc2")
-desc = "윗길"
-metadata/_custom_type_script = "uid://bsg5drt3fprvl"
-
-[node name="PathDown" type="Path2D" parent="." unique_id=430652331]
-position = Vector2(-337, -436)
-curve = SubResource("Curve2D_tysbb")
-script = ExtResource("2_c1kc2")
-desc = "아랫길"
-metadata/_custom_type_script = "uid://bsg5drt3fprvl"
-
 [node name="BackgroundPlaceholder" type="Sprite2D" parent="." unique_id=1023462773]
 z_index = -3
-position = Vector2(259.5, -13.999996)
+position = Vector2(261, -17)
 scale = Vector2(9.109375, 3.875)
 texture = SubResource("GradientTexture2D_k5pvu")
+
+[node name="PathFirstUp" type="Path2D" parent="." unique_id=1899064192 node_paths=PackedStringArray("next_paths")]
+curve = SubResource("Curve2D_oums2")
+script = ExtResource("2_c1kc2")
+next_paths = [NodePath("../PathLine")]
+is_primary = true
+metadata/_custom_type_script = "uid://bsg5drt3fprvl"
+
+[node name="PathFirstDown" type="Path2D" parent="." unique_id=524960828 node_paths=PackedStringArray("next_paths")]
+curve = SubResource("Curve2D_c1kc2")
+script = ExtResource("2_c1kc2")
+next_paths = [NodePath("../PathLine")]
+is_primary = true
+metadata/_custom_type_script = "uid://bsg5drt3fprvl"
+
+[node name="PathLine" type="Path2D" parent="." unique_id=282014260 node_paths=PackedStringArray("next_paths")]
+curve = SubResource("Curve2D_c8tqa")
+script = ExtResource("2_c1kc2")
+next_paths = [NodePath("../PathSecondDown"), NodePath("../PathSecondUp")]
+metadata/_custom_type_script = "uid://bsg5drt3fprvl"
+
+[node name="PathSecondDown" type="Path2D" parent="." unique_id=664430983]
+position = Vector2(300, 0)
+curve = SubResource("Curve2D_c1kc2")
+script = ExtResource("2_c1kc2")
+is_primary = true
+metadata/_custom_type_script = "uid://bsg5drt3fprvl"
+
+[node name="PathSecondUp" type="Path2D" parent="." unique_id=659073029]
+position = Vector2(300, 0)
+curve = SubResource("Curve2D_oums2")
+script = ExtResource("2_c1kc2")
+is_primary = true
+metadata/_custom_type_script = "uid://bsg5drt3fprvl"

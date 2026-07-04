@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://db03it5f4c2al"]
 
-[ext_resource type="Script" uid="uid://dafi2gplkwdia" path="res://scripts/choice_map.gd" id="1_v6wkn"]
+[ext_resource type="Script" uid="uid://57nxd88ew6wa" path="res://scripts/choice_map.gd" id="1_v6wkn"]
 [ext_resource type="Script" uid="uid://bsg5drt3fprvl" path="res://scripts/path_choice.gd" id="2_v6wkn"]
 [ext_resource type="PackedScene" uid="uid://d4mhcllvsytp5" path="res://scenes/map_base2.tscn" id="3_yg4uq"]
 
@@ -30,6 +30,7 @@ curve = SubResource("Curve2D_ya7al")
 script = ExtResource("2_v6wkn")
 desc = "윗길"
 next_set = ExtResource("3_yg4uq")
+is_primary = true
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="PathDown" type="Path2D" parent="." unique_id=430652331]
@@ -38,6 +39,7 @@ curve = SubResource("Curve2D_tysbb")
 script = ExtResource("2_v6wkn")
 desc = "아랫길"
 next_set = ExtResource("3_yg4uq")
+is_primary = true
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="BackgroundPlaceholder" type="Sprite2D" parent="." unique_id=1023462773]
