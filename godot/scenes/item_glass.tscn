@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bt81btymolac1"]
+
+[ext_resource type="Script" uid="uid://55b2iafu0xqs" path="res://scripts/item_glass.gd" id="1_kdfuw"]
+[ext_resource type="Texture2D" uid="uid://cxhcen17u4bhu" path="res://images/items/깨진유리.jpg" id="1_ylgpl"]
+[ext_resource type="Resource" uid="uid://udhm43nbyf87" path="res://items/item_glass.tres" id="2_qi5s6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdfuw"]
+size = Vector2(1295.4545, 400)
+
+[node name="ItemGlass" type="Area2D" unique_id=1202927015]
+scale = Vector2(0.22, 0.22)
+script = ExtResource("1_kdfuw")
+item_res = ExtResource("2_qi5s6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=471701563]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_ylgpl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1674451369]
+position = Vector2(2.2727616, 13.63637)
+shape = SubResource("RectangleShape2D_kdfuw")

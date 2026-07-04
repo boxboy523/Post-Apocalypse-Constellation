@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemRes" format=3 uid="uid://brj4tkr4qdxnl"]
+
+[ext_resource type="Texture2D" uid="uid://cpajydafv4h0b" path="res://images/items/빛의 장막.png" id="1_cysow"]
+[ext_resource type="Script" uid="uid://dald4k4kxuywi" path="res://scripts/item_res.gd" id="1_e2sg0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
+atlas = ExtResource("1_cysow")
+region = Rect2(0, 633.4065, 492.96655, 446.5935)
+
+[resource]
+script = ExtResource("1_e2sg0")
+item_name = "LightBarrier"
+description = "빛의 장막 "
+icon = SubResource("AtlasTexture_tipki")
+item_scene_path = "uid://1ssexcqdihg3"
+metadata/_custom_type_script = "uid://dald4k4kxuywi"

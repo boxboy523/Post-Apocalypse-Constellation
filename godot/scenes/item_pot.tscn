@@ -1,15 +1,22 @@
 [gd_scene format=3 uid="uid://pdu8rrkl0f7b"]
 
 [ext_resource type="Script" uid="uid://c6qxep8buv5ec" path="res://scripts/item_pot.gd" id="1_0rlp3"]
+[ext_resource type="Resource" uid="uid://ccpws7ckp6e1g" path="res://items/item_pot.tres" id="2_4f7o0"]
+[ext_resource type="Texture2D" uid="uid://qq8s5158feno" path="res://images/items/화분.png" id="2_gtvhn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qio8"]
-size = Vector2(119, 119)
+size = Vector2(62, 113)
 
 [node name="ItemPot" type="Area2D" unique_id=1984528209]
 script = ExtResource("1_0rlp3")
+item_res = ExtResource("2_4f7o0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=769145386]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_gtvhn")
+region_enabled = true
+region_rect = Rect2(773.80005, 621.52, 110.880066, 192.7201)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=140634628]
-position = Vector2(-0.5, -0.5)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_1qio8")

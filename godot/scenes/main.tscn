@@ -1,8 +1,37 @@
 [gd_scene format=3 uid="uid://bxydsb3ub7npf"]
 
 [ext_resource type="PackedScene" uid="uid://cdiy8ery1c25l" path="res://scenes/map_1.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://bt81btymolac1" path="res://scenes/item_glass.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://pdu8rrkl0f7b" path="res://scenes/item_pot.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b5prsy5lykhyt" path="res://scenes/item_can.tscn" id="5_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://dxvkbxgs6gsx2" path="res://scenes/item_trap.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://1ssexcqdihg3" path="res://scenes/item_lightbarrier.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://djo1huegkloh6" path="res://scenes/item_signup.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://dwpg8veoi1u7f" path="res://scenes/item_signdown.tscn" id="8_tipki"]
 
 [node name="Main" type="Node2D" unique_id=1160899106]
 
 [node name="Map1" parent="." unique_id=342723024 instance=ExtResource("1_o5qli")]
 position = Vector2(-86, 1081)
+
+[node name="ItemCan" parent="." unique_id=1275209978 instance=ExtResource("5_a8y0u")]
+position = Vector2(528, 754)
+
+[node name="ItemGlass" parent="." unique_id=1202927015 instance=ExtResource("3_sugp2")]
+position = Vector2(264, 723.99994)
+
+[node name="ItemPot" parent="." unique_id=1984528209 instance=ExtResource("4_jyhfs")]
+position = Vector2(-60, 728)
+
+[node name="ItemTrap" parent="." unique_id=1102542396 instance=ExtResource("5_tbgi4")]
+position = Vector2(-288, 723)
+scale = Vector2(0.6, 0.6)
+
+[node name="ItemLightBarrier" parent="." unique_id=1584252908 instance=ExtResource("6_tefeu")]
+position = Vector2(-427, 750)
+
+[node name="ItemSign" parent="." unique_id=528071890 instance=ExtResource("7_o6xl0")]
+position = Vector2(-159, 716)
+
+[node name="ItemSignDown" parent="." unique_id=1511622309 instance=ExtResource("8_tipki")]
+position = Vector2(-197, 598)
