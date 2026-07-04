@@ -5,71 +5,137 @@
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=965002566]
 
-[node name="Inventory" type="Control" parent="." unique_id=84840714]
+[node name="MainHUD" type="Control" parent="." unique_id=762087573]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 540.0
-offset_bottom = 64.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
-[node name="InventoryUI" type="Control" parent="Inventory" unique_id=1321383720]
+[node name="LeftBottom_Group" type="VBoxContainer" parent="MainHUD" unique_id=487424231]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 300.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainHUD/LeftBottom_Group" unique_id=2008311755]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MainHUD/LeftBottom_Group/HBoxContainer" unique_id=507832143]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="MainHUD/LeftBottom_Group/HBoxContainer" unique_id=1656681757]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="MainHUD/LeftBottom_Group/HBoxContainer" unique_id=809883310]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+
+[node name="CenterBottom_Group" type="VBoxContainer" parent="MainHUD" unique_id=1281297759]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 283.0
+offset_top = -95.0
+offset_right = -329.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="MainHUD/CenterBottom_Group" unique_id=576135573]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Inventory" type="Control" parent="MainHUD/CenterBottom_Group" unique_id=84840714]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="InventoryUI" type="Control" parent="MainHUD/CenterBottom_Group/Inventory" unique_id=1321383720]
 anchors_preset = 0
 offset_right = 540.0
 offset_bottom = 64.0
 mouse_filter = 2
 script = ExtResource("1_c4rma")
 
-[node name="SlotContainer" type="GridContainer" parent="Inventory" unique_id=1788726707]
+[node name="SlotContainer" type="GridContainer" parent="MainHUD/CenterBottom_Group/Inventory" unique_id=1788726707]
 layout_mode = 0
 offset_right = 540.0
 offset_bottom = 64.0
 mouse_filter = 2
 columns = 8
 
-[node name="Slot0" type="Control" parent="Inventory/SlotContainer" unique_id=1370988188]
+[node name="Slot0" type="Control" parent="MainHUD/CenterBottom_Group/Inventory/SlotContainer" unique_id=1370988188]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
-[node name="Slot1" type="Control" parent="Inventory/SlotContainer" unique_id=188299316]
+[node name="Slot1" type="Control" parent="MainHUD/CenterBottom_Group/Inventory/SlotContainer" unique_id=188299316]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
-[node name="Slot2" type="Control" parent="Inventory/SlotContainer" unique_id=178623433]
+[node name="Slot2" type="Control" parent="MainHUD/CenterBottom_Group/Inventory/SlotContainer" unique_id=178623433]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
-[node name="Slot3" type="Control" parent="Inventory/SlotContainer" unique_id=1814321977]
+[node name="Slot3" type="Control" parent="MainHUD/CenterBottom_Group/Inventory/SlotContainer" unique_id=1814321977]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
-[node name="Slot4" type="Control" parent="Inventory/SlotContainer" unique_id=1763980765]
+[node name="Slot4" type="Control" parent="MainHUD/CenterBottom_Group/Inventory/SlotContainer" unique_id=1763980765]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
-[node name="Slot5" type="Control" parent="Inventory/SlotContainer" unique_id=975393142]
+[node name="Slot5" type="Control" parent="MainHUD/CenterBottom_Group/Inventory/SlotContainer" unique_id=975393142]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
-[node name="Slot6" type="Control" parent="Inventory/SlotContainer" unique_id=1075762163]
+[node name="Slot6" type="Control" parent="MainHUD/CenterBottom_Group/Inventory/SlotContainer" unique_id=1075762163]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
-[node name="Slot7" type="Control" parent="Inventory/SlotContainer" unique_id=1358306908]
+[node name="Slot7" type="Control" parent="MainHUD/CenterBottom_Group/Inventory/SlotContainer" unique_id=1358306908]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 mouse_filter = 1
 script = ExtResource("2_ghj5q")
+
+[node name="TopRight_Group" type="MarginContainer" parent="MainHUD" unique_id=1113232487]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 80.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="Button" type="Button" parent="MainHUD/TopRight_Group" unique_id=853782247]
+layout_mode = 2
+mouse_filter = 2
+text = "설정"
