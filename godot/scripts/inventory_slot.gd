@@ -29,49 +29,59 @@ func _gui_input(event: InputEvent) -> void:
 			get_tree().current_scene.add_child(drag_preview)
 			_update_preview_position()
 			get_viewport().set_input_as_handled()
+	
+	elif is_right_dragging:
+		if event is InputEventMouseMotion:
+			_update_preview_position()
+			get_viewport().set_input_as_handled()
+			
+		elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and not event.pressed:
+			is_right_dragging = false
+			
+			if drag_preview:
+				drag_preview.queue_free()
+				drag_preview = null
+			
+			# 마우스를 놓은 곳이 어느 슬롯인지 확인
+			var target_slot_index = _get_target_slot_index()
+			
+			if target_slot_index != -1:
+				# 1️⃣ 인벤토리 내 다른 슬롯에 드롭했을 때 -> 스왑(Swap)
+				if target_slot_index != slot_index:
+					var temp = inventory_manager.items[target_slot_index]
+					inventory_manager.items[target_slot_index] = inventory_manager.items[slot_index]
+					inventory_manager.items[slot_index] = temp
+					
+					if inventory_manager.ui:
+						inventory_manager.ui.queue_redraw()
+			else:
+				# 2️⃣ 인벤토리 바깥(배경)에 드롭했을 때 -> 월드에 버리기(Drop)
+				var dropped_item_data = inventory_manager.items[slot_index]
+				inventory_manager.items[slot_index] = null
+				
+				if inventory_manager.ui:
+					inventory_manager.ui.queue_redraw()
+					
+				var new_item = ITEM_COIN_SCENE.instantiate()
+				new_item.item_res = dropped_item_data
+				new_item.global_position = get_tree().current_scene.get_global_mouse_position()
+				get_tree().current_scene.add_child(new_item)
+				
+				if new_item.has_method("on_dropped"):
+					new_item.on_dropped()
+					
+			get_viewport().set_input_as_handled()
 
 func _input(event: InputEvent) -> void:
+	# 마우스 이벤트가 아니면 즉시 반환 (키보드/기타 입력 통과)
+	if not (event is InputEventMouseButton or event is InputEventMouseMotion):
+		return
+	
 	if not is_right_dragging:
 		return
 		
 	if event is InputEventMouseMotion:
 		_update_preview_position()
-		
-	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and not event.pressed:
-		is_right_dragging = false
-		
-		if drag_preview:
-			drag_preview.queue_free()
-			drag_preview = null
-		
-		# 마우스를 놓은 곳이 어느 슬롯인지 확인
-		var target_slot_index = _get_target_slot_index()
-		
-		if target_slot_index != -1:
-			# 1️⃣ 인벤토리 내 다른 슬롯에 드롭했을 때 -> 스왑(Swap)
-			if target_slot_index != slot_index:
-				var temp = inventory_manager.items[target_slot_index]
-				inventory_manager.items[target_slot_index] = inventory_manager.items[slot_index]
-				inventory_manager.items[slot_index] = temp
-				
-				if inventory_manager.ui:
-					inventory_manager.ui.queue_redraw()
-		else:
-			# 2️⃣ 인벤토리 바깥(배경)에 드롭했을 때 -> 월드에 버리기(Drop)
-			var dropped_item_data = inventory_manager.items[slot_index]
-			inventory_manager.items[slot_index] = null
-			
-			if inventory_manager.ui:
-				inventory_manager.ui.queue_redraw()
-				
-			var new_item = ITEM_COIN_SCENE.instantiate()
-			new_item.item_res = dropped_item_data
-			new_item.global_position = get_tree().current_scene.get_global_mouse_position()
-			get_tree().current_scene.add_child(new_item)
-			
-			if new_item.has_method("on_dropped"):
-				new_item.on_dropped()
-				
 		get_viewport().set_input_as_handled()
 
 func _update_preview_position() -> void:

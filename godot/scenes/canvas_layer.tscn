@@ -10,11 +10,13 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 540.0
 offset_bottom = 64.0
+mouse_filter = 2
 
 [node name="InventoryUI" type="Control" parent="Inventory" unique_id=1321383720]
 anchors_preset = 0
 offset_right = 540.0
 offset_bottom = 64.0
+mouse_filter = 2
 script = ExtResource("1_c4rma")
 
 [node name="SlotContainer" type="GridContainer" parent="Inventory" unique_id=1788726707]
@@ -27,39 +29,47 @@ columns = 8
 [node name="Slot0" type="Control" parent="Inventory/SlotContainer" unique_id=1370988188]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
 [node name="Slot1" type="Control" parent="Inventory/SlotContainer" unique_id=188299316]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
 [node name="Slot2" type="Control" parent="Inventory/SlotContainer" unique_id=178623433]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
 [node name="Slot3" type="Control" parent="Inventory/SlotContainer" unique_id=1814321977]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
 [node name="Slot4" type="Control" parent="Inventory/SlotContainer" unique_id=1763980765]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
 [node name="Slot5" type="Control" parent="Inventory/SlotContainer" unique_id=975393142]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
 [node name="Slot6" type="Control" parent="Inventory/SlotContainer" unique_id=1075762163]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+mouse_filter = 1
 script = ExtResource("2_ghj5q")
 
 [node name="Slot7" type="Control" parent="Inventory/SlotContainer" unique_id=1358306908]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+mouse_filter = 1
 script = ExtResource("2_ghj5q")
