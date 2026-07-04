@@ -178,4 +178,3 @@ limit_top = -10000229
 limit_right = 1829
 limit_bottom = 9999771
 script = ExtResource("24_vxmhd")
-speed = 400.0
