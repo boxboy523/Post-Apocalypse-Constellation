@@ -4,8 +4,6 @@
 [ext_resource type="Script" uid="uid://lii2cft1ufay" path="res://scripts/inventory_ui.gd" id="1_c4rma"]
 [ext_resource type="Texture2D" uid="uid://cbajv2ufnbgi0" path="res://images/heart.png" id="1_kfwc7"]
 [ext_resource type="Script" uid="uid://cvoms4pioncnb" path="res://scripts/inventory_slot.gd" id="2_ghj5q"]
-[ext_resource type="Texture2D" uid="uid://bl5kk8wrmh21" path="res://images/units/천사.png" id="3_ek3oe"]
-[ext_resource type="Script" uid="uid://dmietufkyffmv" path="res://scripts/angel_cursor.gd" id="4_mg525"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=965002566]
 
@@ -130,9 +128,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 550.0
-offset_top = -150.0
+offset_top = -90.0
 offset_right = -550.0
-offset_bottom = -50.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
@@ -242,13 +240,3 @@ theme_override_constants/margin_right = 20
 layout_mode = 2
 mouse_filter = 2
 text = "설정"
-
-[node name="AngelCursor" type="TextureRect" parent="MainHUD" unique_id=569701858]
-z_index = 100
-layout_mode = 0
-offset_right = 494.0
-offset_bottom = 720.0
-scale = Vector2(0.08, 0.08)
-mouse_filter = 2
-texture = ExtResource("3_ek3oe")
-script = ExtResource("4_mg525")
