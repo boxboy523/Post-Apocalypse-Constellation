@@ -7,5 +7,6 @@ func _ready() -> void:
 
 func _on_player_entered(player) -> void:
 	player.run_from_enemy()
+	queue_free()
 
 	
