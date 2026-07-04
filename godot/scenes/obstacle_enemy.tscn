@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bjajumkpyxgwh"]
 
-[ext_resource type="Texture2D" uid="uid://0hhqyjiw7t6i" path="res://images/좀비.png" id="1_0msgn"]
+[ext_resource type="Texture2D" uid="uid://0hhqyjiw7t6i" path="res://images/units/좀비.png" id="1_0msgn"]
 [ext_resource type="Script" uid="uid://bmvfm0tncc7gi" path="res://scripts/obstacle_enemy.gd" id="1_xipry"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]

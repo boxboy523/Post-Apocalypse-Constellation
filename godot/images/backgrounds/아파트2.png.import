@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ditpsxa0iayf5"
-path="res://.godot/imported/구급상자.jpg-b14d629775b1c6a91efd285c546dc829.ctex"
+uid="uid://cy3nki1qp717q"
+path="res://.godot/imported/아파트2.png-0b719baeeb86d11c67ce76aebc2b0179.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/구급상자.jpg"
-dest_files=["res://.godot/imported/구급상자.jpg-b14d629775b1c6a91efd285c546dc829.ctex"]
+source_file="res://images/backgrounds/아파트2.png"
+dest_files=["res://.godot/imported/아파트2.png-0b719baeeb86d11c67ce76aebc2b0179.ctex"]
 
 [params]
 

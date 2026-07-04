@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxhcen17u4bhu"
-path="res://.godot/imported/깨진유리.jpg-7066226c8e79b444de1b1c7af4e5d79e.ctex"
+uid="uid://dgi6cwbb3ncdu"
+path="res://.godot/imported/전봇대.png-c504c82dc5115a997c94e1e29c14f928.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/깨진유리.jpg"
-dest_files=["res://.godot/imported/깨진유리.jpg-7066226c8e79b444de1b1c7af4e5d79e.ctex"]
+source_file="res://images/backgrounds/전봇대.png"
+dest_files=["res://.godot/imported/전봇대.png-c504c82dc5115a997c94e1e29c14f928.ctex"]
 
 [params]
 

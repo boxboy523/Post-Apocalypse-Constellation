@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btqitmv23qs1i"
-path="res://.godot/imported/소녀.png-a37517ff56d890e0b997a4cbd84cc5b7.ctex"
+uid="uid://dhohm4lqg1d0k"
+path="res://.godot/imported/자동차.png-11a38dba2b5acfc02710e09ce4ed1e7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/소녀.png"
-dest_files=["res://.godot/imported/소녀.png-a37517ff56d890e0b997a4cbd84cc5b7.ctex"]
+source_file="res://images/backgrounds/자동차.png"
+dest_files=["res://.godot/imported/자동차.png-11a38dba2b5acfc02710e09ce4ed1e7c.ctex"]
 
 [params]
 

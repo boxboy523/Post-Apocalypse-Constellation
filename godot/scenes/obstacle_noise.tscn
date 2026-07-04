@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dcyvtct0pnukp" path="res://scripts/obstacle_noise.gd" id="1_kxcwh"]
 [ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="2_e84i8"]
-[ext_resource type="Texture2D" uid="uid://bayfssq0gaiqg" path="res://images/can_cola.png" id="2_kxcwh"]
+[ext_resource type="Texture2D" uid="uid://bayfssq0gaiqg" path="res://images/items/can_cola.png" id="2_kxcwh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
 size = Vector2(25, 38)

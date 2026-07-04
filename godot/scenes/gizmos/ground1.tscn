@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bwcl3gt3hq10b"]
+
+[ext_resource type="Texture2D" uid="uid://bd3opbxro3qso" path="res://images/backgrounds/땅1.png" id="1_ckw0o"]
+
+[node name="Ground1" type="Sprite2D" unique_id=1416573282]
+texture = ExtResource("1_ckw0o")
+offset = Vector2(1, 0)
+
+[node name="Marker2DRight" type="Marker2D" parent="." unique_id=704613739]
+position = Vector2(155, 0)
+
+[node name="Marker2DLeft" type="Marker2D" parent="." unique_id=1732897981]
+position = Vector2(-155, 0)

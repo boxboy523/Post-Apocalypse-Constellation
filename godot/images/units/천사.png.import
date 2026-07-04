@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bogsn8vydllks"
-path="res://.godot/imported/sign.png-74e875ac19ecc0fb851bddbb7e729784.ctex"
+uid="uid://bl5kk8wrmh21"
+path="res://.godot/imported/천사.png-d47ea2d6b8eee875190361afc28e5ffc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sign.png"
-dest_files=["res://.godot/imported/sign.png-74e875ac19ecc0fb851bddbb7e729784.ctex"]
+source_file="res://images/units/천사.png"
+dest_files=["res://.godot/imported/천사.png-d47ea2d6b8eee875190361afc28e5ffc.ctex"]
 
 [params]
 
