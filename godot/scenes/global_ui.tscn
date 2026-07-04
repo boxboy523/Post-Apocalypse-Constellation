@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ddu46ykwntk3a"]
+
+[ext_resource type="Texture2D" uid="uid://bl5kk8wrmh21" path="res://images/units/천사.png" id="1_7j3t6"]
+[ext_resource type="Script" uid="uid://bsrajnfkhj8oo" path="res://scripts/fade.gd" id="1_y4ggm"]
+[ext_resource type="Script" uid="uid://dmietufkyffmv" path="res://scripts/angel_cursor.gd" id="2_y4ggm"]
+
+[node name="GlobalUI" type="CanvasLayer" unique_id=747862103]
+layer = 2
+
+[node name="Fade" type="ColorRect" parent="." unique_id=1041183213]
+z_index = 50
+offset_right = 1600.0
+offset_bottom = 900.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_y4ggm")
+
+[node name="AngelCursor" type="TextureRect" parent="." unique_id=808541746]
+z_index = 100
+offset_right = 494.0
+offset_bottom = 720.0
+scale = Vector2(0.08, 0.08)
+mouse_filter = 2
+texture = ExtResource("1_7j3t6")
+script = ExtResource("2_y4ggm")
+offset = Vector2(-23, -32)
