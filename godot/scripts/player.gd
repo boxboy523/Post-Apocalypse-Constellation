@@ -27,7 +27,7 @@ func follow(path: PathChoice) -> void:
 func _process(delta: float) -> void:
 	if not (current_path is PathChoice):
 		return
-	print(state)
+	#print(state)
 	match state:
 		PlayerState.ON_PATH: # 플레이어가 경로를 따라 이동 중
 			if self.progress_ratio < 1.0:
