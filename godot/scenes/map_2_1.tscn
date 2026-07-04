@@ -23,7 +23,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 563, 172, 0, 0, 0, 0, 750.901, 172, 0, 0, 0, 0, 938.8019, 172)
+"points": PackedVector2Array(0, 0, 0, 0, 464.42023, 172, 0, 0, 0, 0, 750.901, 172, 0, 0, 0, 0, 938.8019, 172)
 }
 point_count = 3
 
@@ -40,7 +40,6 @@ script = ExtResource("1_cvlml")
 [node name="PathUp" type="Path2D" parent="." unique_id=1440970172]
 z_index = 1
 position = Vector2(-187.42023, -437)
-scale = Vector2(0.8249027, 1)
 curve = SubResource("Curve2D_ya7al")
 script = ExtResource("2_yb4yj")
 desc = "윗길"
@@ -54,7 +53,6 @@ scale = Vector2(1.0074867, 1)
 curve = SubResource("Curve2D_yg4uq")
 script = ExtResource("2_yb4yj")
 next_paths = [NodePath("../PathUp")]
-is_primary = true
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="Sky" type="Sprite2D" parent="." unique_id=1747658456]
@@ -137,11 +135,12 @@ scale = Vector2(1.0515151, 0.97619045)
 texture = ExtResource("17_a7sk5")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=172366784]
-position = Vector2(372, 127)
-limit_left = -300
-limit_right = 2000
+position = Vector2(-34, -564)
+limit_left = -10000
+limit_right = 100000
 script = ExtResource("17_tl3kr")
-speed = 400.0
+min_x = 300.0
+max_x = 300.0
 
 [node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("18_qkvv0")]
 
@@ -150,11 +149,11 @@ offset_left = 423.0
 offset_top = -24.0
 offset_right = 525.0
 offset_bottom = -1.0
-talker = NodePath("")
+talker = NodePath("../../Player")
 offset = Vector2(-30, -75)
 metadata/_edit_use_anchors_ = true
 
-[node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("map", "bubble") instance=ExtResource("20_shvnv")]
-position = Vector2(339, 429)
-map = NodePath("")
+[node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("20_shvnv")]
+position = Vector2(-500, -260)
+current_path = NodePath("../PathChoice")
 bubble = NodePath("../CanvasLayer/SpeechBubble")
