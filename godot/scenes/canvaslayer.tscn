@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dwcysdoxq4gqe"]
+
+[ext_resource type="Script" uid="uid://cvoms4pioncnb" path="res://scripts/itemslot.gd" id="1_0lyy2"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_sv0qt"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=965002566]
+
+[node name="ItemSlot" type="TextureRect" parent="." unique_id=1646150696]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 0
+texture = SubResource("AnimatedTexture_sv0qt")
+script = ExtResource("1_0lyy2")
