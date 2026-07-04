@@ -43,24 +43,24 @@ talker = NodePath("../../Player")
 offset = Vector2(-30, -75)
 
 [node name="ObstacleHurt" parent="." unique_id=812544508 instance=ExtResource("6_tefeu")]
-position = Vector2(664, 481)
+position = Vector2(653, 423)
 
 [node name="ObstacleEnemy" parent="." unique_id=326172621 instance=ExtResource("7_o6xl0")]
-position = Vector2(452, 432)
+position = Vector2(445, 411)
 
 [node name="ObstacleGuide" parent="." unique_id=1575274116 instance=ExtResource("8_tipki")]
-position = Vector2(498, 437)
+position = Vector2(573, 427)
 path_up_path = NodePath("../MapBase")
 direction = "down"
 
 [node name="ObstacleNoise" parent="." unique_id=1217144772 instance=ExtResource("9_85g3d")]
-position = Vector2(753, 498)
+position = Vector2(874, 519)
 
 [node name="ObstacleHeal" parent="." unique_id=115392575 instance=ExtResource("10_choun")]
-position = Vector2(830, 495)
+position = Vector2(1016, 516)
 
 [node name="ObstacleFarm" parent="." unique_id=1906898441 instance=ExtResource("11_ya4ey")]
-position = Vector2(612, 457)
+position = Vector2(1163, 534)
 farm_type = "random"
 
 [node name="ObstacleFarm2" parent="." unique_id=1295423157 instance=ExtResource("11_ya4ey")]
@@ -73,3 +73,9 @@ limit_left = -300
 limit_right = 2000
 script = ExtResource("12_eb6dy")
 speed = 400.0
+
+[node name="ObstacleHurt2" parent="." unique_id=1309457532 instance=ExtResource("6_tefeu")]
+position = Vector2(698, 445)
+
+[node name="ObstacleHurt3" parent="." unique_id=732314263 instance=ExtResource("6_tefeu")]
+position = Vector2(785, 484)
