@@ -1,10 +1,23 @@
 extends Area2D
 
+@export var stop_time: float = 1.0
+
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 
 func _on_area_entered(area: Area2D) -> void:
-	var player = area.get_parent()
+	var player = area.get_parent().get_parent().get_parent()
+	if player == null:
+		return
 	if not player.is_in_group("player"):
 		return
-	print("충돌")
+		
+	var player_logic = area.get_parent()
+
+	player.stop_event(stop_time)
+
+	_on_player_entered(player_logic)
+
+func _on_player_entered(player) -> void:
+	pass
+	

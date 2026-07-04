@@ -307,7 +307,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Player" type="PathFollow2D" unique_id=1170953966]
+[node name="Player" type="PathFollow2D" unique_id=1170953966 groups=["player"]]
 rotates = false
 loop = false
 script = ExtResource("1_4flbx")
