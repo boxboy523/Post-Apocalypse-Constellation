@@ -208,7 +208,7 @@ scale = Vector2(1.0515151, 0.97619045)
 texture = ExtResource("17_a7sk5")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=172366784]
-position = Vector2(-34, -564)
+position = Vector2(-2172, -575)
 limit_left = -10000
 limit_right = 100000
 script = ExtResource("17_tl3kr")

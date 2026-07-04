@@ -24,7 +24,9 @@ const WEAPON_SUCCESS_CHANCE := {
 }
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	hp = max_hp
+	hp = GameState.hp
+	spare_hp = GameState.spare_hp
+	EventBus.health_changed.emit(hp + spare_hp)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
