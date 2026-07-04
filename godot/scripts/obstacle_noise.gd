@@ -25,4 +25,3 @@ func spawn_enemy() -> void:
 	get_parent().add_child(enemy)
 	enemy.global_position = spawn_pos
 	print("enemy 스폰")
-	

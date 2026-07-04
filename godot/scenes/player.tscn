@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://oj0oouh4mwtt"]
 
 [ext_resource type="Script" uid="uid://cp7v1qqq58odj" path="res://scripts/player.gd" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://dq2ekl4ug2hkq" path="res://scenes/lerf_follow.gd" id="2_dqkch"]
+[ext_resource type="Script" uid="uid://dq2ekl4ug2hkq" path="res://scripts/lerf_follow.gd" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://btqitmv23qs1i" path="res://images/소녀.png" id="2_g2els"]
-[ext_resource type="Script" uid="uid://bxkrc241m5rr8" path="res://scenes/player_logic.gd" id="2_qhqgy"]
+[ext_resource type="Script" uid="uid://bxkrc241m5rr8" path="res://scripts/player_logic.gd" id="2_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
 size = Vector2(32, 32)
