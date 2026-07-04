@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
 size = Vector2(32, 32)
 
-[node name="Player" type="PathFollow2D" unique_id=1170953966 groups=["Player"]]
+[node name="Player" type="PathFollow2D" unique_id=1170953966]
 rotates = false
 loop = false
 script = ExtResource("1_4flbx")
@@ -17,7 +17,7 @@ script = ExtResource("1_4flbx")
 top_level = true
 script = ExtResource("2_dqkch")
 
-[node name="PlayerLogic" type="Node2D" parent="LerfFollow" unique_id=1680381036]
+[node name="PlayerLogic" type="Node2D" parent="LerfFollow" unique_id=1680381036 groups=["player"]]
 script = ExtResource("2_qhqgy")
 
 [node name="Area2D" type="Area2D" parent="LerfFollow/PlayerLogic" unique_id=1968832790]
