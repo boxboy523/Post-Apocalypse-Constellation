@@ -219,11 +219,11 @@ scale = Vector2(0.9650218, 0.99117255)
 texture = ExtResource("20_s11mi")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=686784963]
-position = Vector2(-2, -575)
+position = Vector2(-808, -575)
 limit_left = -100000
 limit_right = 2000
 script = ExtResource("23_2qxq1")
-min_x = 350.0
+min_x = -1000.0
 max_x = 350.0
 
 [node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("24_tjit4")]

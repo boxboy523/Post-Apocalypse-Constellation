@@ -2,20 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dcyvtct0pnukp" path="res://scripts/obstacle_noise.gd" id="1_kxcwh"]
 [ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="2_e84i8"]
-[ext_resource type="Texture2D" uid="uid://bayfssq0gaiqg" path="res://images/items/can_cola.png" id="2_kxcwh"]
+[ext_resource type="Texture2D" uid="uid://f3b212rd3p04" path="res://images/items/깡통.png" id="3_e84i8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
-size = Vector2(25, 38)
+size = Vector2(59, 44)
 
 [node name="ObstacleNoise" type="Area2D" unique_id=812544508]
 script = ExtResource("1_kxcwh")
 enemy_scene = ExtResource("2_e84i8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081822613]
-position = Vector2(0.5, -1)
+position = Vector2(-1.5, -2)
 shape = SubResource("RectangleShape2D_4kf0v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1900618562]
-position = Vector2(1, 0)
-scale = Vector2(0.060052432, 0.060052432)
-texture = ExtResource("2_kxcwh")
+position = Vector2(135, -356)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_e84i8")

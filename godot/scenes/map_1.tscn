@@ -48,7 +48,7 @@ point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_yg4uq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -4486, -6, 0, 0, 0, 0, 190.97641, -6, 0, 0, 0, 0, 1435, -6)
+"points": PackedVector2Array(0, 0, 0, 0, -4300, -6, 0, 0, 0, 0, 190.97641, -6, 0, 0, 0, 0, 1435, -6)
 }
 point_count = 3
 
@@ -319,10 +319,6 @@ position = Vector2(380, -691)
 scale = Vector2(0.8836634, 0.8255659)
 texture = ExtResource("17_fgtu4")
 
-[node name="전봇대" type="Sprite2D" parent="." unique_id=2092725547]
-position = Vector2(-1707, -761)
-texture = ExtResource("26_i6s2n")
-
 [node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("25_kdbgm")]
 
 [node name="SpeechBubble" parent="CanvasLayer" unique_id=1994342399 node_paths=PackedStringArray("talker") instance=ExtResource("26_a35se")]
@@ -335,16 +331,16 @@ offset = Vector2(-30, -75)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("27_qoppm")]
-position = Vector2(-5086, -265)
+position = Vector2(-4639, -462)
 current_path = NodePath("../PathChoice")
 bubble = NodePath("../CanvasLayer/SpeechBubble")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1138135713]
-position = Vector2(-4332, -556)
+position = Vector2(-4200, -561)
 limit_left = -1000000
 limit_right = 1000000
 script = ExtResource("24_fgtu4")
-min_x = -4400.0
+min_x = -4300.0
 max_x = 410.0
 
 [node name="나무3" type="Sprite2D" parent="." unique_id=1183034059]
@@ -371,6 +367,10 @@ texture = ExtResource("14_td2nl")
 position = Vector2(-4683.0005, -637)
 scale = Vector2(0.65346533, 0.65346533)
 texture = ExtResource("17_fgtu4")
+
+[node name="전봇대" type="Sprite2D" parent="." unique_id=2092725547]
+position = Vector2(-1707, -761)
+texture = ExtResource("26_i6s2n")
 
 [node name="자동차" type="Sprite2D" parent="." unique_id=807389797]
 position = Vector2(-3660, -203)

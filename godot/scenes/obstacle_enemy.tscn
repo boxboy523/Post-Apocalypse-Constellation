@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://diy657w0qkudp" path="res://images/units/좀비/좀비 (10).png" id="12_tb8by"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
-size = Vector2(50, 175.5)
+size = Vector2(87, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k5pvu"]
 animations = [{
@@ -66,11 +66,10 @@ animations = [{
 script = ExtResource("1_xipry")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=401879642]
-position = Vector2(5, -18)
+position = Vector2(16.5, 1)
 shape = SubResource("RectangleShape2D_4kf0v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=268583696]
-position = Vector2(-8, -18)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_k5pvu")
 animation = &"standing"

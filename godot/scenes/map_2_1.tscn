@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://cxgktbk1cpxrs" path="res://images/backgrounds/나무2.png" id="24_642ed"]
 [ext_resource type="Texture2D" uid="uid://cb733fv30bu33" path="res://images/backgrounds/아파트1.png" id="25_gvu4s"]
 [ext_resource type="Texture2D" uid="uid://cb7k6gatjknfk" path="res://images/backgrounds/드럼통.png" id="26_47v3x"]
+[ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="27_1p4a6"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -179,11 +180,6 @@ texture = ExtResource("13_7y6sh")
 position = Vector2(613.9464, 0)
 texture = ExtResource("11_inskx")
 
-[node name="자동차" type="Sprite2D" parent="." unique_id=149334898]
-position = Vector2(-1134, -209.49998)
-scale = Vector2(1, 0.9170507)
-texture = ExtResource("9_vux23")
-
 [node name="전봇대" type="Sprite2D" parent="." unique_id=967837474]
 position = Vector2(349, -767)
 texture = ExtResource("12_tl3kr")
@@ -206,30 +202,6 @@ texture = ExtResource("16_shvnv")
 position = Vector2(-798.625, -479.6249)
 scale = Vector2(1.0515151, 0.97619045)
 texture = ExtResource("17_a7sk5")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=172366784]
-position = Vector2(-2172, -575)
-limit_left = -10000
-limit_right = 100000
-script = ExtResource("17_tl3kr")
-min_x = 300.0
-max_x = 300.0
-
-[node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("18_qkvv0")]
-
-[node name="SpeechBubble" parent="CanvasLayer" unique_id=1994342399 node_paths=PackedStringArray("talker") instance=ExtResource("19_grvg3")]
-offset_left = 423.0
-offset_top = -24.0
-offset_right = 525.0
-offset_bottom = -1.0
-talker = NodePath("../../Player")
-offset = Vector2(-30, -75)
-metadata/_edit_use_anchors_ = true
-
-[node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("20_shvnv")]
-position = Vector2(-500, -260)
-current_path = NodePath("../PathChoice")
-bubble = NodePath("../CanvasLayer/SpeechBubble")
 
 [node name="나무2" type="Sprite2D" parent="." unique_id=61612358]
 position = Vector2(-605, -682)
@@ -256,3 +228,47 @@ texture = ExtResource("26_47v3x")
 [node name="드럼통3" type="Sprite2D" parent="." unique_id=1886715945]
 position = Vector2(-1755, -559)
 texture = ExtResource("26_47v3x")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=172366784]
+position = Vector2(-2141, -564)
+limit_left = -10000
+limit_right = 100000
+script = ExtResource("17_tl3kr")
+min_x = -700.0
+max_x = 300.0
+
+[node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("18_qkvv0")]
+
+[node name="SpeechBubble" parent="CanvasLayer" unique_id=1994342399 node_paths=PackedStringArray("talker") instance=ExtResource("19_grvg3")]
+offset_left = 423.0
+offset_top = -24.0
+offset_right = 525.0
+offset_bottom = -1.0
+talker = NodePath("../../Player")
+offset = Vector2(-30, -75)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("20_shvnv")]
+position = Vector2(-500, -260)
+current_path = NodePath("../PathChoice")
+bubble = NodePath("../CanvasLayer/SpeechBubble")
+
+[node name="ObstacleEnemy" parent="." unique_id=326172621 instance=ExtResource("27_1p4a6")]
+position = Vector2(-2389, -296)
+
+[node name="ObstacleEnemy2" parent="." unique_id=536668431 instance=ExtResource("27_1p4a6")]
+position = Vector2(-1955, -296)
+
+[node name="ObstacleEnemy3" parent="." unique_id=1856165273 instance=ExtResource("27_1p4a6")]
+position = Vector2(-1738, -296)
+
+[node name="ObstacleEnemy4" parent="." unique_id=1238921845 instance=ExtResource("27_1p4a6")]
+position = Vector2(-746, -296)
+
+[node name="ObstacleEnemy5" parent="." unique_id=870914674 instance=ExtResource("27_1p4a6")]
+position = Vector2(-33, -296)
+
+[node name="자동차" type="Sprite2D" parent="." unique_id=149334898]
+position = Vector2(-1134, -209.49998)
+scale = Vector2(1, 0.9170507)
+texture = ExtResource("9_vux23")
