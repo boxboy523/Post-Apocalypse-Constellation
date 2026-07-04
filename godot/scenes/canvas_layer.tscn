@@ -14,13 +14,36 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="LeftBottomUp_Space" type="MarginContainer" parent="MainHUD" unique_id=794283399]
+layout_mode = 0
+offset_top = 410.0
+offset_right = 210.0
+offset_bottom = 505.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="LeftBottomUp_Group" type="VBoxContainer" parent="MainHUD/LeftBottomUp_Space" unique_id=1867870276]
+layout_mode = 2
+
+[node name="Warning_Panel" type="Panel" parent="MainHUD/LeftBottomUp_Space/LeftBottomUp_Group" unique_id=1704038277]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="MainHUD/LeftBottomUp_Space/LeftBottomUp_Group/Warning_Panel" unique_id=1995367881]
+layout_mode = 0
+offset_right = 190.0
+offset_bottom = 75.0
+text = "🚨경고🚨
+소녀가 위험에 처했습니다!
+좀비들이 몰려옵니다.."
+
 [node name="LeftBottom_Space" type="MarginContainer" parent="MainHUD" unique_id=2073317073]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 98.0
+offset_top = -120.0
+offset_right = 250.0
 grow_vertical = 0
 mouse_filter = 2
 theme_override_constants/margin_left = 20
@@ -30,25 +53,24 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Warning_Panel" type="Panel" parent="MainHUD/LeftBottom_Space/LeftBottom_Group" unique_id=1704038277]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Warning_Panel" unique_id=1995367881]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="Status_Panel" type="Panel" parent="MainHUD/LeftBottom_Space/LeftBottom_Group" unique_id=1219494248]
 layout_mode = 2
 mouse_filter = 2
 
 [node name="HeartContainer" type="HBoxContainer" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel" unique_id=2008311755]
-layout_mode = 0
-offset_top = -34.0
-offset_right = 98.0
-offset_bottom = -4.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_right = 255.0
+offset_bottom = 32.0
+grow_vertical = 0
 mouse_filter = 2
+
+[node name="Label" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=94942689]
+layout_mode = 2
+text = "불운의 소녀"
 
 [node name="Heart1" type="ColorRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=507832143]
 custom_minimum_size = Vector2(30, 30)
@@ -65,10 +87,25 @@ custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 2
 
+[node name="Heart4" type="ColorRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=1777617807]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Heart5" type="ColorRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=1577727694]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+mouse_filter = 2
+
 [node name="GirlStatus" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel" unique_id=670072182]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 40.0
+offset_right = 109.0
+offset_bottom = 63.0
+grow_vertical = 0
 text = "상태: 럭키비키!"
 
 [node name="CenterBottom_Space" type="MarginContainer" parent="MainHUD" unique_id=1796080561]
