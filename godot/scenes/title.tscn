@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cclqn0llv5xfo"]
+
+[ext_resource type="Script" uid="uid://d1li4s5x08iht" path="res://title.gd" id="1_wosw1"]
+[ext_resource type="Texture2D" uid="uid://cw1bdbs6xav8k" path="res://images/타이틀 배경.png" id="2_p6dhs"]
+
+[node name="Title" type="Node2D" unique_id=1710866650]
+
+[node name="Control" type="Control" parent="." unique_id=737293200]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wosw1")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control" unique_id=1359008061]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="Control" unique_id=2118842904]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "게임 시작
+"
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=379516313]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_p6dhs")

@@ -12,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://drsuyhmfv6wgc" path="res://images/backgrounds/중간뒷배경1.png" id="10_2ffe1"]
 [ext_resource type="Texture2D" uid="uid://ddf3yhl655bnd" path="res://images/backgrounds/중간뒷배경2.png" id="11_e118t"]
 [ext_resource type="Texture2D" uid="uid://dbxqrspq56epv" path="res://images/backgrounds/sky.png" id="11_grvg3"]
+[ext_resource type="Texture2D" uid="uid://bd3opbxro3qso" path="res://images/backgrounds/땅1.png" id="11_inskx"]
+[ext_resource type="Texture2D" uid="uid://byogtgplmdaan" path="res://images/backgrounds/땅2.png" id="12_1p4a6"]
 [ext_resource type="Texture2D" uid="uid://dgi6cwbb3ncdu" path="res://images/backgrounds/전봇대.png" id="12_tl3kr"]
+[ext_resource type="Texture2D" uid="uid://5kywqowagllo" path="res://images/backgrounds/땅3.png" id="13_7y6sh"]
 [ext_resource type="Texture2D" uid="uid://b16ku6i6fp7c6" path="res://images/backgrounds/나무1.png" id="15_grvg3"]
 [ext_resource type="Texture2D" uid="uid://ch3waydnavlt8" path="res://images/backgrounds/상가건물.png" id="16_shvnv"]
 [ext_resource type="Texture2D" uid="uid://b467oas3hbmx8" path="res://images/backgrounds/실외기.png" id="17_a7sk5"]
@@ -20,6 +23,10 @@
 [ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvas_layer.tscn" id="18_qkvv0"]
 [ext_resource type="PackedScene" uid="uid://b3k0nnxxx03ag" path="res://scenes/speech_bubble.tscn" id="19_grvg3"]
 [ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="20_shvnv"]
+[ext_resource type="Texture2D" uid="uid://cxgktbk1cpxrs" path="res://images/backgrounds/나무2.png" id="24_642ed"]
+[ext_resource type="Texture2D" uid="uid://cb733fv30bu33" path="res://images/backgrounds/아파트1.png" id="25_gvu4s"]
+[ext_resource type="Texture2D" uid="uid://cb7k6gatjknfk" path="res://images/backgrounds/드럼통.png" id="26_47v3x"]
+[ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="27_1p4a6"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -29,7 +36,7 @@ point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_yg4uq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 127.04883, -6, 0, 0, 0, 0, 280.897, -6, 0, 0, 0, 0, 896.2897, -6)
+"points": PackedVector2Array(0, 0, 0, 0, -2088.365, -6, 0, 0, 0, 0, 280.897, -6, 0, 0, 0, 0, 896.2897, -6)
 }
 point_count = 3
 
@@ -65,27 +72,6 @@ position = Vector2(277, -885)
 scale = Vector2(1.1302083, 0.86111104)
 texture = ExtResource("7_2ffe1")
 
-[node name="Ground1" parent="." unique_id=1416573282 instance=ExtResource("4_n4dv5")]
-position = Vector2(278.2422, -265)
-scale = Vector2(1.0078369, 1)
-
-[node name="Ground3" parent="Ground1" unique_id=853669557 instance=ExtResource("5_c7ijd")]
-position = Vector2(310, 0)
-
-[node name="Ground2" parent="Ground1" unique_id=1626958995 instance=ExtResource("6_vux23")]
-position = Vector2(-310, 0)
-
-[node name="Ground4" parent="Ground1" unique_id=784310952 instance=ExtResource("4_n4dv5")]
-position = Vector2(-620, 0)
-
-[node name="Ground5" parent="Ground1" unique_id=468139645 instance=ExtResource("5_c7ijd")]
-position = Vector2(-930, 0)
-
-[node name="자동차" type="Sprite2D" parent="." unique_id=149334898]
-position = Vector2(-188, -214)
-scale = Vector2(1, 0.9585253)
-texture = ExtResource("9_vux23")
-
 [node name="중간뒷배경1" type="Sprite2D" parent="." unique_id=328386204]
 position = Vector2(-664, -794.25)
 scale = Vector2(1, 0.99799997)
@@ -111,6 +97,89 @@ position = Vector2(644, -4.1332703)
 scale = Vector2(1, 1.0043266)
 texture = ExtResource("11_e118t")
 
+[node name="Sky" type="Sprite2D" parent="중간뒷배경1" unique_id=1861975272]
+position = Vector2(-1229, -169.67432)
+scale = Vector2(1.1302084, 1.0046296)
+texture = ExtResource("11_grvg3")
+
+[node name="FarBackground" type="Sprite2D" parent="중간뒷배경1" unique_id=1375902010]
+position = Vector2(-1229, -92.17432)
+scale = Vector2(1.1302083, 0.86111104)
+texture = ExtResource("7_2ffe1")
+
+[node name="중간뒷배경1" type="Sprite2D" parent="중간뒷배경1" unique_id=2033282257]
+position = Vector2(-1694, 64.37877)
+scale = Vector2(1, 0.99799997)
+texture = ExtResource("10_2ffe1")
+
+[node name="중간뒷배경2" type="Sprite2D" parent="중간뒷배경1/중간뒷배경1" unique_id=1152735961]
+position = Vector2(1346.0001, -20.791534)
+scale = Vector2(1.1893204, 1.0557783)
+texture = ExtResource("10_2ffe1")
+
+[node name="중간뒷배경3" type="Sprite2D" parent="중간뒷배경1/중간뒷배경1" unique_id=1030912151]
+position = Vector2(1070, 51.665833)
+scale = Vector2(1.1962025, 0.85651433)
+texture = ExtResource("11_e118t")
+
+[node name="중간뒷배경4" type="Sprite2D" parent="중간뒷배경1/중간뒷배경1" unique_id=1547839950]
+position = Vector2(241.99997, -51.102142)
+scale = Vector2(1.1456311, 1.1362727)
+texture = ExtResource("10_2ffe1")
+
+[node name="중간뒷배경5" type="Sprite2D" parent="중간뒷배경1/중간뒷배경1" unique_id=992975350]
+position = Vector2(644, -4.1332703)
+scale = Vector2(1, 1.0043266)
+texture = ExtResource("11_e118t")
+
+[node name="Ground1" parent="." unique_id=1416573282 instance=ExtResource("4_n4dv5")]
+position = Vector2(278.2422, -265)
+scale = Vector2(1.0078369, 1)
+
+[node name="Ground3" parent="Ground1" unique_id=853669557 instance=ExtResource("5_c7ijd")]
+position = Vector2(310, 0)
+
+[node name="Ground2" parent="Ground1" unique_id=1626958995 instance=ExtResource("6_vux23")]
+position = Vector2(-310, 0)
+
+[node name="Ground4" parent="Ground1" unique_id=784310952 instance=ExtResource("4_n4dv5")]
+position = Vector2(-620, 0)
+
+[node name="Ground5" parent="Ground1" unique_id=468139645 instance=ExtResource("5_c7ijd")]
+position = Vector2(-930, 0)
+
+[node name="땅1" type="Sprite2D" parent="Ground1" unique_id=1192709152]
+position = Vector2(-1231.5903, 0)
+texture = ExtResource("11_inskx")
+
+[node name="땅2" type="Sprite2D" parent="Ground1" unique_id=1413621726]
+position = Vector2(-1539.1797, 0)
+texture = ExtResource("11_inskx")
+
+[node name="땅3" type="Sprite2D" parent="Ground1" unique_id=950744465]
+position = Vector2(-1846.7692, 0)
+texture = ExtResource("12_1p4a6")
+
+[node name="땅4" type="Sprite2D" parent="Ground1" unique_id=1486132801]
+position = Vector2(-2154.3584, 0)
+texture = ExtResource("13_7y6sh")
+
+[node name="땅2" type="Sprite2D" parent="Ground1/땅4" unique_id=1257882396]
+position = Vector2(-301.8846, 3)
+texture = ExtResource("11_inskx")
+
+[node name="땅3" type="Sprite2D" parent="Ground1/땅4" unique_id=1107500199]
+position = Vector2(-609.4741, 3)
+texture = ExtResource("12_1p4a6")
+
+[node name="땅4" type="Sprite2D" parent="Ground1/땅4" unique_id=1974967820]
+position = Vector2(-917.06335, 3)
+texture = ExtResource("13_7y6sh")
+
+[node name="땅5" type="Sprite2D" parent="Ground1" unique_id=1277806610]
+position = Vector2(613.9464, 0)
+texture = ExtResource("11_inskx")
+
 [node name="전봇대" type="Sprite2D" parent="." unique_id=967837474]
 position = Vector2(349, -767)
 texture = ExtResource("12_tl3kr")
@@ -125,21 +194,47 @@ position = Vector2(475, -758)
 texture = ExtResource("15_grvg3")
 
 [node name="상가건물" type="Sprite2D" parent="." unique_id=1778733797]
-position = Vector2(-358.00003, -645.00006)
+position = Vector2(-1187.625, -659.625)
 scale = Vector2(0.8350053, 0.7310219)
 texture = ExtResource("16_shvnv")
 
 [node name="실외기" type="Sprite2D" parent="." unique_id=68329475]
-position = Vector2(31, -464.99997)
+position = Vector2(-798.625, -479.6249)
 scale = Vector2(1.0515151, 0.97619045)
 texture = ExtResource("17_a7sk5")
 
+[node name="나무2" type="Sprite2D" parent="." unique_id=61612358]
+position = Vector2(-605, -682)
+scale = Vector2(0.73558897, 0.73558897)
+texture = ExtResource("24_642ed")
+
+[node name="아파트1" type="Sprite2D" parent="." unique_id=205192311]
+position = Vector2(-2761, -823)
+scale = Vector2(0.8483146, 0.8483146)
+texture = ExtResource("25_gvu4s")
+
+[node name="전봇대2" type="Sprite2D" parent="." unique_id=251590514]
+position = Vector2(-2203, -761)
+texture = ExtResource("12_tl3kr")
+
+[node name="드럼통" type="Sprite2D" parent="." unique_id=880358545]
+position = Vector2(-1702, -609)
+texture = ExtResource("26_47v3x")
+
+[node name="드럼통2" type="Sprite2D" parent="." unique_id=2091796627]
+position = Vector2(-1817, -607)
+texture = ExtResource("26_47v3x")
+
+[node name="드럼통3" type="Sprite2D" parent="." unique_id=1886715945]
+position = Vector2(-1755, -559)
+texture = ExtResource("26_47v3x")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=172366784]
-position = Vector2(-34, -564)
+position = Vector2(-2141, -564)
 limit_left = -10000
 limit_right = 100000
 script = ExtResource("17_tl3kr")
-min_x = 300.0
+min_x = -700.0
 max_x = 300.0
 
 [node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("18_qkvv0")]
@@ -157,3 +252,23 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-500, -260)
 current_path = NodePath("../PathChoice")
 bubble = NodePath("../CanvasLayer/SpeechBubble")
+
+[node name="ObstacleEnemy" parent="." unique_id=326172621 instance=ExtResource("27_1p4a6")]
+position = Vector2(-2389, -296)
+
+[node name="ObstacleEnemy2" parent="." unique_id=536668431 instance=ExtResource("27_1p4a6")]
+position = Vector2(-1955, -296)
+
+[node name="ObstacleEnemy3" parent="." unique_id=1856165273 instance=ExtResource("27_1p4a6")]
+position = Vector2(-1738, -296)
+
+[node name="ObstacleEnemy4" parent="." unique_id=1238921845 instance=ExtResource("27_1p4a6")]
+position = Vector2(-746, -296)
+
+[node name="ObstacleEnemy5" parent="." unique_id=870914674 instance=ExtResource("27_1p4a6")]
+position = Vector2(-33, -296)
+
+[node name="자동차" type="Sprite2D" parent="." unique_id=149334898]
+position = Vector2(-1134, -209.49998)
+scale = Vector2(1, 0.9170507)
+texture = ExtResource("9_vux23")
