@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://wkajrelh8g8e"]
+
+[ext_resource type="Script" uid="uid://lii2cft1ufay" path="res://scripts/inventory_ui.gd" id="1_hj2ta"]
+[ext_resource type="Script" uid="uid://cvoms4pioncnb" path="res://scripts/inventory_slot.gd" id="2_ty45s"]
+
+[node name="Inventory" type="Control" unique_id=307048370]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 540.0
+offset_bottom = 64.0
+mouse_filter = 1
+
+[node name="InventoryUI" type="Control" parent="." unique_id=406229598]
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 256.0
+script = ExtResource("1_hj2ta")
+
+[node name="SlotContainer" type="GridContainer" parent="." unique_id=2040622586]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 64.0
+columns = 8
+
+[node name="Slot0" type="Control" parent="SlotContainer" unique_id=954029727]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("2_ty45s")
+
+[node name="Slot1" type="Control" parent="SlotContainer" unique_id=1360455490]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("2_ty45s")
+
+[node name="Slot2" type="Control" parent="SlotContainer" unique_id=1976399171]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("2_ty45s")
+
+[node name="Slot3" type="Control" parent="SlotContainer" unique_id=536165619]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("2_ty45s")
+
+[node name="Slot4" type="Control" parent="SlotContainer" unique_id=1058075467]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("2_ty45s")
+
+[node name="Slot5" type="Control" parent="SlotContainer" unique_id=870905221]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("2_ty45s")
+
+[node name="Slot6" type="Control" parent="SlotContainer" unique_id=31693958]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("2_ty45s")
+
+[node name="Slot7" type="Control" parent="SlotContainer" unique_id=1393900981]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("2_ty45s")

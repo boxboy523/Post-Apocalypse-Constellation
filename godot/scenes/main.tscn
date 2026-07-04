@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://db03it5f4c2al" path="res://scenes/map_base.tscn" id="2_sugp2"]
-[ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvas_layer.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://wkajrelh8g8e" path="res://scenes/inventory.tscn" id="2_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cw3ggho3tcjel" path="res://scenes/item_coin.tscn" id="4_jyhfs"]
 [ext_resource type="Resource" uid="uid://bfsght4a85mtr" path="res://items/item_coin.tres" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://chn8l3kh04bdy" path="res://scenes/obstacle_base.tscn" id="6_tefeu"]
@@ -12,19 +12,24 @@
 [node name="MapBase" parent="." unique_id=547791557 instance=ExtResource("2_sugp2")]
 position = Vector2(341, 437)
 
+[node name="Inventory" parent="MapBase" unique_id=307048370 instance=ExtResource("2_tefeu")]
+offset_left = -33.0
+offset_top = -136.0
+offset_right = 507.0
+offset_bottom = -72.0
+scale = Vector2(0.4, 0.4)
+
 [node name="Player" parent="." unique_id=1675211555 node_paths=PackedStringArray("map") instance=ExtResource("1_0wfyh")]
 position = Vector2(338, 436)
 map = NodePath("../MapBase")
 
 [node name="ItemCoin2" parent="." unique_id=492544432 instance=ExtResource("4_jyhfs")]
-position = Vector2(527, 367)
+position = Vector2(693, 494)
 item_res = ExtResource("4_tbgi4")
 
 [node name="ItemCoin" parent="." unique_id=1334348440 instance=ExtResource("4_jyhfs")]
-position = Vector2(412.00003, 357)
+position = Vector2(558, 504)
 item_res = ExtResource("4_tbgi4")
-
-[node name="CanvasLayer" parent="." unique_id=965425245 instance=ExtResource("3_sugp2")]
 
 [node name="ObstacleBase" parent="." unique_id=1719570084 instance=ExtResource("6_tefeu")]
 position = Vector2(433, 437)
