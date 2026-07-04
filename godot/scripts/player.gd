@@ -53,6 +53,8 @@ func _process(delta: float) -> void:
 					state = PlayerState.FINISHED
 		PlayerState.FINISHED:
 			if current_path.next_set:
+				EventBus.fade_out.emit(1.0)
+				await get_tree().create_timer(1.0).timeout
 				get_tree().change_scene_to_packed(current_path.next_set)
 				return
 			var next_path = current_path.get_random_path()
