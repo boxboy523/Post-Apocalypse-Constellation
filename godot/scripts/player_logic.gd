@@ -2,7 +2,11 @@ extends Node2D
 
 @export var max_hp: int = 3
 var hp: int = max_hp
-@export var spare_hp: int = 0
+@export var max_spare_hp: int = 2
+var spare_hp: int = 0
+
+var is_dead = false
+
 
 @export var isInjured: bool = false
 @onready var anim_sprite = $"../AnimatedSprite2D"
@@ -28,19 +32,35 @@ func _process(_delta: float) -> void:
 
 ### 체력 관련 ###
 func take_damage() -> void:
+	if is_dead:
+		return
 	if spare_hp > 0:
 		spare_hp -= 1
+		
 		print("추가hp소모")
 	else:
 		hp -= 1
 		print("대미지 받음. 현재 체력: ", hp, "/", max_hp)
+		if hp <= 0:
+			is_dead = true
+			print("사망")
+			anim_sprite.play("fall")
+			await anim_sprite.animation_finished
+			print("game over")
+			await get_tree().create_timer(1.0).timeout
+			get_tree().change_scene_to_file.call_deferred("res://scenes/game_over.tscn")
+			return
+	EventBus.health_changed.emit(hp + spare_hp)
 	if hp < max_hp:
 		isInjured = true
 		print("부상")
 	var last_anim = anim_sprite.animation
 	anim_sprite.play("trapped")
 	await anim_sprite.animation_finished
+	print("after await")
 	anim_sprite.play(last_anim)
+	return
+	
 func get_medkit() -> void:
 	if isInjured:
 		isInjured = false
@@ -49,8 +69,10 @@ func get_medkit() -> void:
 		hp += 1
 		print("체력 회복. 현재 체력: ", hp, "/", max_hp)
 	elif hp >= max_hp:
-		spare_hp += 1
-		print("추가 체력: ", spare_hp)
+		if spare_hp < max_spare_hp:
+			spare_hp += 1
+			print("추가 체력: ", spare_hp)
+	EventBus.health_changed.emit(hp + spare_hp)
 	
 	
 ### 도주 판정 ###
