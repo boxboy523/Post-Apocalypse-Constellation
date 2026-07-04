@@ -1,19 +1,18 @@
 [gd_scene format=3 uid="uid://cthy6631yq0qw"]
 
 [ext_resource type="Script" uid="uid://kmismit5ol7r" path="res://scripts/obstacle_hurt.gd" id="1_egm7n"]
-[ext_resource type="Texture2D" uid="uid://cxhcen17u4bhu" path="res://images/깨진유리.jpg" id="2_egm7n"]
+[ext_resource type="Texture2D" uid="uid://b8mqw2fwuo6e1" path="res://images/덫.jpg" id="2_egm7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6041l"]
-size = Vector2(36, 12)
+size = Vector2(22, 17)
 
 [node name="ObstacleHurt" type="Area2D" unique_id=812544508]
 script = ExtResource("1_egm7n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081822613]
-position = Vector2(0, -1)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_6041l")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1900618562]
-position = Vector2(0, -1)
-scale = Vector2(0.0049156025, 0.004915603)
+scale = Vector2(0.045043323, 0.045043334)
 texture = ExtResource("2_egm7n")
