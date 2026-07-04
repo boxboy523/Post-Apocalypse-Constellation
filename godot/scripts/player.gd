@@ -4,6 +4,7 @@ extends PathFollow2D
 @export var bubble: Control
 
 @onready var anim_sprite = $"LerfFollow/AnimatedSprite2D"
+@onready var logic = $"LerfFollow/PlayerLogic"
 
 var path_choices: Array[PathChoice]
 var current_path: PathChoice
@@ -34,6 +35,8 @@ func stop_event(time: float):
 	stop = true
 	anim_sprite.play('idle')
 	await get_tree().create_timer(time).timeout
+	if logic.is_dead:
+		return
 	stop = false
 	anim_sprite.play('walk')
 

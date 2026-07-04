@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dwcysdoxq4gqe"]
 
+[ext_resource type="Script" uid="uid://c4meyxd4n2dgo" path="res://scripts/heart.gd" id="1_4a2ha"]
 [ext_resource type="Script" uid="uid://lii2cft1ufay" path="res://scripts/inventory_ui.gd" id="1_c4rma"]
+[ext_resource type="Texture2D" uid="uid://cbajv2ufnbgi0" path="res://images/heart.png" id="1_kfwc7"]
 [ext_resource type="Script" uid="uid://cvoms4pioncnb" path="res://scripts/inventory_slot.gd" id="2_ghj5q"]
+[ext_resource type="Texture2D" uid="uid://bl5kk8wrmh21" path="res://images/units/천사.png" id="3_ek3oe"]
+[ext_resource type="Script" uid="uid://dmietufkyffmv" path="res://scripts/angel_cursor.gd" id="4_mg525"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=965002566]
 
@@ -67,35 +71,46 @@ offset_right = 255.0
 offset_bottom = 32.0
 grow_vertical = 0
 mouse_filter = 2
+script = ExtResource("1_4a2ha")
 
 [node name="Label" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=94942689]
 layout_mode = 2
 text = "불운의 소녀"
 
-[node name="Heart1" type="ColorRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=507832143]
+[node name="Heart1" type="TextureRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=2018327729]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 2
+texture = ExtResource("1_kfwc7")
+expand_mode = 1
 
-[node name="Heart2" type="ColorRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=1656681757]
+[node name="Heart2" type="TextureRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=2119427341]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 2
+texture = ExtResource("1_kfwc7")
+expand_mode = 1
 
-[node name="Heart3" type="ColorRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=809883310]
+[node name="Heart3" type="TextureRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=2053090793]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 2
+texture = ExtResource("1_kfwc7")
+expand_mode = 1
 
-[node name="Heart4" type="ColorRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=1777617807]
+[node name="Heart4" type="TextureRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=200671300]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 2
+texture = ExtResource("1_kfwc7")
+expand_mode = 1
 
-[node name="Heart5" type="ColorRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=1577727694]
+[node name="Heart5" type="TextureRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=1552917809]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 2
+texture = ExtResource("1_kfwc7")
+expand_mode = 1
 
 [node name="GirlStatus" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel" unique_id=670072182]
 layout_mode = 1
@@ -114,10 +129,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 450.0
-offset_top = -116.0
-offset_right = -650.0
-offset_bottom = -16.0
+offset_left = 550.0
+offset_top = -150.0
+offset_right = -550.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
@@ -141,8 +156,8 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -270.0
-offset_right = 270.0
+offset_left = -255.0
+offset_right = 285.0
 offset_bottom = 64.0
 grow_horizontal = 2
 mouse_filter = 2
@@ -227,3 +242,13 @@ theme_override_constants/margin_right = 20
 layout_mode = 2
 mouse_filter = 2
 text = "설정"
+
+[node name="AngelCursor" type="TextureRect" parent="MainHUD" unique_id=569701858]
+z_index = 100
+layout_mode = 0
+offset_right = 494.0
+offset_bottom = 720.0
+scale = Vector2(0.08, 0.08)
+mouse_filter = 2
+texture = ExtResource("3_ek3oe")
+script = ExtResource("4_mg525")

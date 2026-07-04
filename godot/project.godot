@@ -18,6 +18,7 @@ config/icon="res://images/icon.svg"
 [autoload]
 
 inventory_manager="*uid://dutvlp2h6srjh"
+EventBus="*uid://bcllsg48me76s"
 
 [display]
 
