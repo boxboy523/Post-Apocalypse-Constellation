@@ -8,9 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://bwcl3gt3hq10b" path="res://scenes/gizmos/ground1.tscn" id="6_3yd4j"]
 [ext_resource type="PackedScene" uid="uid://bbu1dt70fxiev" path="res://scenes/gizmos/ground2.tscn" id="7_b0gq6"]
 [ext_resource type="PackedScene" uid="uid://bej7oimsvo0nh" path="res://scenes/gizmos/ground3.tscn" id="8_prcp2"]
+[ext_resource type="Texture2D" uid="uid://bd3opbxro3qso" path="res://images/backgrounds/땅1.png" id="9_chtov"]
 [ext_resource type="Texture2D" uid="uid://cb733fv30bu33" path="res://images/backgrounds/아파트1.png" id="9_le2ek"]
+[ext_resource type="Texture2D" uid="uid://byogtgplmdaan" path="res://images/backgrounds/땅2.png" id="10_qlylb"]
 [ext_resource type="Texture2D" uid="uid://dhohm4lqg1d0k" path="res://images/backgrounds/자동차.png" id="10_ux2rj"]
 [ext_resource type="Texture2D" uid="uid://dgi6cwbb3ncdu" path="res://images/backgrounds/전봇대.png" id="11_3yd4j"]
+[ext_resource type="Texture2D" uid="uid://5kywqowagllo" path="res://images/backgrounds/땅3.png" id="11_ynub2"]
 [ext_resource type="Texture2D" uid="uid://ccmb3qex8jawm" path="res://images/backgrounds/벽.png" id="12_3yd4j"]
 [ext_resource type="Texture2D" uid="uid://cpmfimls62ox2" path="res://images/backgrounds/벽위의풀.png" id="13_b0gq6"]
 [ext_resource type="Texture2D" uid="uid://b16ku6i6fp7c6" path="res://images/backgrounds/나무1.png" id="14_prcp2"]
@@ -20,6 +23,9 @@
 [ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvas_layer.tscn" id="18_s26u4"]
 [ext_resource type="PackedScene" uid="uid://b3k0nnxxx03ag" path="res://scenes/speech_bubble.tscn" id="19_fldpl"]
 [ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="20_eckh6"]
+[ext_resource type="Texture2D" uid="uid://bbdy8epd6gm13" path="res://images/backgrounds/편의점.png" id="24_hosv6"]
+[ext_resource type="Texture2D" uid="uid://cy3nki1qp717q" path="res://images/backgrounds/아파트2.png" id="25_jnyxj"]
+[ext_resource type="Texture2D" uid="uid://c2dprkjeqjvc6" path="res://images/backgrounds/부러진신호등.png" id="26_uisyo"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -29,7 +35,7 @@ point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_yg4uq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -648.14746, -265, 0, 0, 0, 0, -340.45114, -265, 0, 0, 0, 0, 121.093414, -265)
+"points": PackedVector2Array(0, 0, 0, 0, -1817.3937, -265, 0, 0, 0, 0, -340.45114, -265, 0, 0, 0, 0, 121.093414, -265)
 }
 point_count = 3
 
@@ -56,13 +62,13 @@ next_paths = [NodePath("../PathUp")]
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="Sky" type="Sprite2D" parent="." unique_id=441868166]
-position = Vector2(277.00006, -962.5)
-scale = Vector2(1.1302084, 1.0046296)
+position = Vector2(-652.9999, -962.5)
+scale = Vector2(1.453125, 1.0046296)
 texture = ExtResource("4_le2ek")
 
 [node name="FarBackground" type="Sprite2D" parent="." unique_id=1433343032]
-position = Vector2(277, -885)
-scale = Vector2(1.1302083, 0.86111104)
+position = Vector2(-653, -885)
+scale = Vector2(1.4531249, 0.86111104)
 texture = ExtResource("5_ux2rj")
 
 [node name="Ground1" parent="." unique_id=1416573282 instance=ExtResource("6_3yd4j")]
@@ -79,6 +85,22 @@ position = Vector2(-620, 0)
 
 [node name="Ground5" parent="Ground1" unique_id=1247608009 instance=ExtResource("7_b0gq6")]
 position = Vector2(-930, 0)
+
+[node name="땅1" type="Sprite2D" parent="Ground1" unique_id=106529009]
+position = Vector2(-1240, 0)
+texture = ExtResource("9_chtov")
+
+[node name="땅2" type="Sprite2D" parent="Ground1" unique_id=229129217]
+position = Vector2(-1550, 0)
+texture = ExtResource("10_qlylb")
+
+[node name="땅3" type="Sprite2D" parent="Ground1" unique_id=1264758990]
+position = Vector2(-1860, 0)
+texture = ExtResource("11_ynub2")
+
+[node name="땅4" type="Sprite2D" parent="Ground1" unique_id=904896694]
+position = Vector2(-2170, 0)
+texture = ExtResource("9_chtov")
 
 [node name="아파트1" type="Sprite2D" parent="." unique_id=613231951]
 position = Vector2(-318, -916)
@@ -145,3 +167,26 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-653, -265)
 current_path = NodePath("../PathChoice")
 bubble = NodePath("../CanvasLayer/SpeechBubble")
+
+[node name="편의점" type="Sprite2D" parent="." unique_id=1963456084]
+position = Vector2(-1118, -608)
+texture = ExtResource("24_hosv6")
+
+[node name="아파트3" type="Sprite2D" parent="." unique_id=1238695656]
+position = Vector2(-1806.5, -906)
+scale = Vector2(0.9283708, 1)
+texture = ExtResource("25_jnyxj")
+
+[node name="벽2" type="Sprite2D" parent="." unique_id=592501153]
+position = Vector2(-1475.75, -530)
+scale = Vector2(0.9812834, 1.1827958)
+texture = ExtResource("12_3yd4j")
+
+[node name="벽위의풀2" type="Sprite2D" parent="." unique_id=929529340]
+position = Vector2(-1526, -581)
+scale = Vector2(0.8815789, 0.8738095)
+texture = ExtResource("13_b0gq6")
+
+[node name="부러진신호등" type="Sprite2D" parent="." unique_id=2015257580]
+position = Vector2(-1575, -278)
+texture = ExtResource("26_uisyo")

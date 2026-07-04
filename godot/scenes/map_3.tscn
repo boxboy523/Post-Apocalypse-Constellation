@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvas_layer.tscn" id="24_tjit4"]
 [ext_resource type="PackedScene" uid="uid://b3k0nnxxx03ag" path="res://scenes/speech_bubble.tscn" id="25_bkxnn"]
 [ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="26_6dpta"]
+[ext_resource type="Texture2D" uid="uid://cxgktbk1cpxrs" path="res://images/backgrounds/나무2.png" id="27_tjit4"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -47,7 +48,7 @@ point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_yg4uq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -124, -265, 0, 0, 0, 0, 177.07774, -265, 0, 0, 0, 0, 1023, -265)
+"points": PackedVector2Array(0, 0, 0, 0, -961, -265, 0, 0, 0, 0, 177.07774, -265, 0, 0, 0, 0, 1023, -265)
 }
 point_count = 3
 
@@ -142,6 +143,15 @@ position = Vector2(-620, 0)
 [node name="Ground5" parent="Ground1" unique_id=1247608009 instance=ExtResource("5_an2rc")]
 position = Vector2(-930, 0)
 
+[node name="Ground2" parent="Ground1/Ground5" unique_id=2144208793 instance=ExtResource("6_jl3j3")]
+position = Vector2(-305.5, 3)
+
+[node name="Ground4" parent="Ground1/Ground5" unique_id=1941167977 instance=ExtResource("4_xn387")]
+position = Vector2(-615.5, 3)
+
+[node name="Ground5" parent="Ground1/Ground5" unique_id=1796687636 instance=ExtResource("5_an2rc")]
+position = Vector2(-925.5, 3)
+
 [node name="Ground7" parent="Ground1" unique_id=832434033 instance=ExtResource("4_xn387")]
 position = Vector2(620, 0)
 
@@ -235,3 +245,53 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-622, -265)
 current_path = NodePath("../PathChoice")
 bubble = NodePath("../CanvasLayer/SpeechBubble")
+
+[node name="Sky2" type="Sprite2D" parent="." unique_id=764942390]
+position = Vector2(-1892.9998, -962.5)
+scale = Vector2(1.1302084, 1.0046296)
+texture = ExtResource("7_0jfrf")
+
+[node name="FarBackground2" type="Sprite2D" parent="." unique_id=393769091]
+position = Vector2(-1892.9998, -885)
+scale = Vector2(1.1302083, 0.86111104)
+texture = ExtResource("8_briq8")
+
+[node name="중간뒷배경2" type="Sprite2D" parent="." unique_id=1357776832]
+position = Vector2(-2105, -729)
+scale = Vector2(1, 0.824)
+texture = ExtResource("6_krloe")
+
+[node name="중간뒷배경2" type="Sprite2D" parent="중간뒷배경2" unique_id=1989757466]
+position = Vector2(-363, -69.47815)
+scale = Vector2(1, 1.1774256)
+texture = ExtResource("7_s11mi")
+
+[node name="중간뒷배경3" type="Sprite2D" parent="중간뒷배경2" unique_id=1582090867]
+position = Vector2(-602, -163.22818)
+scale = Vector2(1, 1.4352753)
+texture = ExtResource("6_krloe")
+
+[node name="중간뒷배경4" type="Sprite2D" parent="중간뒷배경2" unique_id=334823360]
+position = Vector2(1151, -20.024261)
+scale = Vector2(1, 1.0533981)
+texture = ExtResource("6_krloe")
+
+[node name="중간뒷배경5" type="Sprite2D" parent="중간뒷배경2" unique_id=1133428679]
+position = Vector2(918, -89.35071)
+scale = Vector2(1, 1.2300683)
+texture = ExtResource("7_s11mi")
+
+[node name="전봇대" type="Sprite2D" parent="중간뒷배경2" unique_id=433841272]
+position = Vector2(-245, -53.39804)
+scale = Vector2(1, 1.2135923)
+texture = ExtResource("8_08glf")
+
+[node name="요구르트카트2" type="Sprite2D" parent="." unique_id=1379293400]
+position = Vector2(-1118, -482)
+scale = Vector2(0.76666665, 0.76666665)
+texture = ExtResource("14_e0xmi")
+
+[node name="나무2" type="Sprite2D" parent="." unique_id=824159085]
+position = Vector2(-1180, -668)
+scale = Vector2(0.7330827, 0.7330828)
+texture = ExtResource("27_tjit4")
