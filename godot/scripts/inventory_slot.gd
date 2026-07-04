@@ -1,7 +1,5 @@
 extends Control
 
-const ITEM_COIN_SCENE = preload("res://scenes/item_coin.tscn")
-
 var slot_index: int:
 	get: return get_index()
 
@@ -59,14 +57,29 @@ func _gui_input(event: InputEvent) -> void:
 				if inventory_manager.ui:
 					inventory_manager.ui.queue_redraw()
 					
-				var new_item = ITEM_COIN_SCENE.instantiate()
-				new_item.item_res = dropped_item_data
-				new_item.global_position = get_tree().current_scene.get_global_mouse_position()
-				get_tree().current_scene.add_child(new_item)
-				
-				if new_item.has_method("on_dropped"):
-					new_item.on_dropped()
-
+				# 🌟 데이터가 있고, 저장된 씬 경로 주소가 비어있지 않다면
+				if dropped_item_data and dropped_item_data.item_scene_path != "":
+					# 주소를 기반으로 씬 파일을 안전하게 불러옵니다 (순환 참조 방지)
+					var item_scene = load(dropped_item_data.item_scene_path)
+					
+					if item_scene:
+						var new_item = item_scene.instantiate()
+						new_item.item_res = dropped_item_data
+						
+						# 월드에 먼저 추가한 뒤 위치를 잡아줍니다
+						get_tree().current_scene.add_child(new_item)
+						new_item.global_position = new_item.get_global_mouse_position()
+						
+						# 🌟 이 두 줄을 바로 밑에 추가해 보세요!
+						print("✅ 아이템 소환 성공! 이름: ", dropped_item_data.item_name)
+						print("📍 아이템 소환된 위치: ", new_item.global_position)
+						
+						if new_item.has_method("on_dropped"):
+							new_item.on_dropped()
+					else:
+						print("⚠️ 에러: 씬 파일을 로드하지 못했습니다: ", dropped_item_data.item_scene_path)
+				else:
+					print("⚠️ 에러: 리소스에 item_scene_path가 비어있습니다!")					
 # 3. 드래그 중일 때 화면 어디서든 마우스 따라가기
 func _input(event: InputEvent) -> void:
 	if is_left_dragging and event is InputEventMouseMotion:

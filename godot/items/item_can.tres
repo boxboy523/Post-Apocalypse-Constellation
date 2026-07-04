@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemRes" format=3 uid="uid://dhcfjt5i523xy"]
+
+[ext_resource type="Script" uid="uid://dald4k4kxuywi" path="res://scripts/item_res.gd" id="1_hqln1"]
+[ext_resource type="Texture2D" uid="uid://bayfssq0gaiqg" path="res://images/items/can_cola.png" id="1_s8fr2"]
+
+[resource]
+script = ExtResource("1_hqln1")
+item_name = "Can"
+description = "this is Cola Can"
+icon = ExtResource("1_s8fr2")
+item_scene_path = "uid://b5prsy5lykhyt"
+metadata/_custom_type_script = "uid://dald4k4kxuywi"

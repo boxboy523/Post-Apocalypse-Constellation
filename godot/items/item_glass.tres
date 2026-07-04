@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemRes" format=3 uid="uid://udhm43nbyf87"]
+
+[ext_resource type="Texture2D" uid="uid://cxhcen17u4bhu" path="res://images/items/깨진유리.jpg" id="1_bpi8j"]
+[ext_resource type="Script" uid="uid://dald4k4kxuywi" path="res://scripts/item_res.gd" id="1_ejux5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cysow"]
+atlas = ExtResource("1_bpi8j")
+region = Rect2(659.62634, 364.94238, 6091.437, 1799.7427)
+
+[resource]
+script = ExtResource("1_ejux5")
+item_name = "Glass"
+description = "유리조"
+icon = SubResource("AtlasTexture_cysow")
+item_scene_path = "uid://bt81btymolac1"
+metadata/_custom_type_script = "uid://dald4k4kxuywi"

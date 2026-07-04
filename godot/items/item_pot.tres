@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemRes" format=3 uid="uid://ccpws7ckp6e1g"]
+
+[ext_resource type="Texture2D" uid="uid://qq8s5158feno" path="res://images/items/화분.png" id="1_a56eo"]
+[ext_resource type="Script" uid="uid://dald4k4kxuywi" path="res://scripts/item_res.gd" id="1_rtngb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxd04"]
+atlas = ExtResource("1_a56eo")
+region = Rect2(750.947, 588.927, 151.22998, 240.18872)
+
+[resource]
+script = ExtResource("1_rtngb")
+item_name = "Pot"
+description = "화분 "
+icon = SubResource("AtlasTexture_bxd04")
+item_scene_path = "uid://pdu8rrkl0f7b"
+metadata/_custom_type_script = "uid://dald4k4kxuywi"

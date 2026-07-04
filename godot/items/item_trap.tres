@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemRes" format=3 uid="uid://cdev7xdb0nghx"]
+
+[ext_resource type="Script" uid="uid://dald4k4kxuywi" path="res://scripts/item_res.gd" id="1_e0u2d"]
+[ext_resource type="Texture2D" uid="uid://b8mqw2fwuo6e1" path="res://images/덫.jpg" id="1_mos43"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bpi8j"]
+atlas = ExtResource("1_mos43")
+region = Rect2(92.09802, 51.78476, 372.59515, 291.5284)
+
+[resource]
+script = ExtResource("1_e0u2d")
+item_name = "Trap"
+description = "덫 "
+icon = SubResource("AtlasTexture_bpi8j")
+item_scene_path = "uid://dxvkbxgs6gsx2"
+metadata/_custom_type_script = "uid://dald4k4kxuywi"

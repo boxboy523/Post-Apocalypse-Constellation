@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemRes" format=3 uid="uid://c10p4t3rumhd"]
+
+[ext_resource type="Texture2D" uid="uid://n5422ikwywrx" path="res://images/items/위쪽화살표.png" id="1_bxd04"]
+[ext_resource type="Script" uid="uid://dald4k4kxuywi" path="res://scripts/item_res.gd" id="2_s3l75"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
+atlas = ExtResource("1_bxd04")
+region = Rect2(866.5934, 379.87387, 142.33423, 146.78201)
+
+[resource]
+script = ExtResource("2_s3l75")
+item_name = "SignUp"
+description = "표지판 "
+icon = SubResource("AtlasTexture_tipki")
+item_scene_path = "uid://djo1huegkloh6"
+metadata/_custom_type_script = "uid://dald4k4kxuywi"

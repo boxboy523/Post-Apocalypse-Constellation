@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dwpg8veoi1u7f"]
+
+[ext_resource type="Script" uid="uid://brv1nfxqqa58m" path="res://scripts/item_signdown.gd" id="1_3x4pp"]
+[ext_resource type="Resource" uid="uid://b3lt0rohyuvb" path="res://items/item_signdown.tres" id="2_3x4pp"]
+[ext_resource type="Texture2D" uid="uid://gc43xrnltwkg" path="res://images/backgrounds/지하화살표.png" id="3_3x4pp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpc8c"]
+size = Vector2(62, 64)
+
+[node name="ItemSignDown" type="Area2D" unique_id=528071890]
+script = ExtResource("1_3x4pp")
+item_res = ExtResource("2_3x4pp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1728992052]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_3x4pp")
+region_enabled = true
+region_rect = Rect2(885.0913, 399, 101.72693, 104.00006)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1543931661]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_vpc8c")

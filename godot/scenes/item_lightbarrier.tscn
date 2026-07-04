@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://1ssexcqdihg3"]
+
+[ext_resource type="Script" uid="uid://cukh0of64ljdu" path="res://scripts/item_lightbarrier.gd" id="1_irh61"]
+[ext_resource type="Texture2D" uid="uid://cpajydafv4h0b" path="res://images/items/빛의 장막.png" id="1_oy6r6"]
+[ext_resource type="Resource" uid="uid://brj4tkr4qdxnl" path="res://items/item_lightbarrier.tres" id="2_3lvh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdlej"]
+size = Vector2(108, 187)
+
+[node name="ItemLightBarrier" type="Area2D" unique_id=1584252908]
+script = ExtResource("1_irh61")
+item_res = ExtResource("2_3lvh4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1357598353]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_oy6r6")
+region_enabled = true
+region_rect = Rect2(23.502808, 680.46387, 465.01172, 351.7915)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1842982353]
+position = Vector2(-1, -60.5)
+shape = SubResource("RectangleShape2D_sdlej")

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dxvkbxgs6gsx2"]
+
+[ext_resource type="Texture2D" uid="uid://b8mqw2fwuo6e1" path="res://images/덫.jpg" id="1_2cjxp"]
+[ext_resource type="Script" uid="uid://c7fqqa1wucqi5" path="res://scripts/item_trap.gd" id="1_swsh1"]
+[ext_resource type="Resource" uid="uid://cdev7xdb0nghx" path="res://items/item_trap.tres" id="2_rnpub"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swsh1"]
+size = Vector2(134, 127)
+
+[node name="ItemTrap" type="Area2D" unique_id=1102542396]
+script = ExtResource("1_swsh1")
+item_res = ExtResource("2_rnpub")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1557322373]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_2cjxp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2010171004]
+position = Vector2(-3, -0.5)
+shape = SubResource("RectangleShape2D_swsh1")

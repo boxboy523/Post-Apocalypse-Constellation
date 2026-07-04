@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b5prsy5lykhyt"]
+
+[ext_resource type="Script" uid="uid://de77vdhtuw4v6" path="res://scripts/item_can.gd" id="1_5t13a"]
+[ext_resource type="Texture2D" uid="uid://bayfssq0gaiqg" path="res://images/items/can_cola.png" id="2_scejv"]
+[ext_resource type="Resource" uid="uid://dhcfjt5i523xy" path="res://items/item_can.tres" id="2_uxhgr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scejv"]
+size = Vector2(262, 460)
+
+[node name="ItemCan" type="Area2D" unique_id=1275209978]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_5t13a")
+item_res = ExtResource("2_uxhgr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=914402857]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_scejv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1975655246]
+position = Vector2(-1, -4)
+shape = SubResource("RectangleShape2D_scejv")
