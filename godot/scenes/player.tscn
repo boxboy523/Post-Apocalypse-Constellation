@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cp7v1qqq58odj" path="res://scripts/player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://btqitmv23qs1i" path="res://images/소녀.png" id="2_g2els"]
+[ext_resource type="Script" uid="uid://bxkrc241m5rr8" path="res://scenes/player_logic.gd" id="2_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
 size = Vector2(32, 32)
@@ -17,7 +18,10 @@ texture = ExtResource("2_g2els")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1313566457]
 position_smoothing_enabled = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1968832790]
+[node name="PlayerLogic" type="Node2D" parent="." unique_id=1680381036]
+script = ExtResource("2_qhqgy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2076691829]
+[node name="Area2D" type="Area2D" parent="PlayerLogic" unique_id=1968832790]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerLogic/Area2D" unique_id=2076691829]
 shape = SubResource("RectangleShape2D_4kf0v")
