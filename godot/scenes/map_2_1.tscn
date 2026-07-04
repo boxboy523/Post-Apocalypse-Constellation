@@ -269,6 +269,7 @@ position = Vector2(-746, -296)
 position = Vector2(-33, -296)
 
 [node name="자동차" type="Sprite2D" parent="." unique_id=149334898]
+z_index = 1
 position = Vector2(-1134, -209.49998)
 scale = Vector2(1, 0.9170507)
 texture = ExtResource("9_vux23")
