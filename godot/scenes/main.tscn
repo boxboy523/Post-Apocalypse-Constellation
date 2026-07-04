@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bxydsb3ub7npf"]
 
 [ext_resource type="PackedScene" uid="uid://cdiy8ery1c25l" path="res://scenes/map_1.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://pdu8rrkl0f7b" path="res://scenes/item_pot.tscn" id="4_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b5prsy5lykhyt" path="res://scenes/item_can.tscn" id="5_a8y0u"]
 
 [node name="Main" type="Node2D" unique_id=1160899106]
@@ -9,4 +10,7 @@
 position = Vector2(-86, 1081)
 
 [node name="ItemCan" parent="." unique_id=1275209978 instance=ExtResource("5_a8y0u")]
-position = Vector2(-53, 776)
+position = Vector2(314, 751)
+
+[node name="ItemPot" parent="." unique_id=1984528209 instance=ExtResource("4_tbgi4")]
+position = Vector2(-367, 215)
