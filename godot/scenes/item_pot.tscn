@@ -9,6 +9,7 @@ size = Vector2(62, 113)
 
 [node name="ItemPot" type="Area2D" unique_id=1984528209]
 script = ExtResource("1_0rlp3")
+fall_distance = 800.0
 item_res = ExtResource("2_4f7o0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=769145386]
