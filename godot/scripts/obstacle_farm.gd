@@ -15,11 +15,11 @@ var weapon_reward: String = "knife"
 
 var used: bool = false
 
-func _on_area_entered(area: Area2D) -> void:
-	var player = area.get_parent()
+func _ready() -> void:
+	stop_time = 1.0
+	super._ready()
 
-	if not player.is_in_group("player"):
-		return
+func _on_player_entered(player) -> void:
 
 	if used:
 		return

@@ -7,10 +7,11 @@ var new_path_down_weight: float
 @export_enum("up", "down", "default")
 var direction: String = "default"
 
-func _on_area_entered(area: Area2D) -> void:
-	var player = area.get_parent()
-	if not player.is_in_group("player"):
-		return
+func _ready() -> void:
+	stop_time = 1.0
+	super._ready()
+
+func _on_player_entered(player) -> void:
 	
 	var main := get_tree().current_scene
 	var path_up := main.get_node_or_null("MapBase/PathUp") as PathChoice
