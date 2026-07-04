@@ -29,25 +29,25 @@
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 840.3227, -163.00003, 0, 0, 0, 0, 937.21063, -444.81818, 0, 0, 0, 0, 1389.3545, -1196.3333)
+"points": PackedVector2Array(0, 0, 0, 0, 806.6019, -53.79001, 0, 0, 0, 0, 1116.6019, -208.79001, 0, 0, 0, 0, 1519.6019, -425.79)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_s11mi"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 928, -265, 0, 0, 0, 0, 525, -265)
+"points": PackedVector2Array(0, 0, 0, 0, 1207, -265, 0, 0, 0, 0, 525, -265)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_tysbb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 862, 171, 0, 0, 0, 0, 1017, 233, 0, 0, 0, 0, 1265, 326)
+"points": PackedVector2Array(0, 0, 0, 0, 862, 171, 0, 0, 0, 0, 1017, 233, 0, 0, 0, 0, 1451, 450)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_yg4uq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, -265, 0, 0, 0, 0, 177.07774, -265, 0, 0, 0, 0, 389.571, -265)
+"points": PackedVector2Array(0, 0, 0, 0, -124, -265, 0, 0, 0, 0, 177.07774, -265, 0, 0, 0, 0, 1023, -265)
 }
 point_count = 3
 
@@ -58,7 +58,6 @@ script = ExtResource("1_0a7yh")
 [node name="PathUp" type="Path2D" parent="." unique_id=1440970172]
 z_index = 1
 position = Vector2(-281.60193, -211.20999)
-scale = Vector2(0.9598716, 0.33)
 curve = SubResource("Curve2D_ya7al")
 script = ExtResource("2_fwffn")
 desc = "윗길"
@@ -83,11 +82,9 @@ metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 [node name="PathChoice" type="Path2D" parent="." unique_id=1893640462 node_paths=PackedStringArray("next_paths")]
 z_index = 1
 position = Vector2(-498, 0)
-scale = Vector2(2.6259654, 1)
 curve = SubResource("Curve2D_yg4uq")
 script = ExtResource("2_fwffn")
 next_paths = [NodePath("../PathUp"), NodePath("../PathDown"), NodePath("../PathMiddle")]
-is_primary = true
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="Sky" type="Sprite2D" parent="." unique_id=441868166]
@@ -148,6 +145,9 @@ position = Vector2(-930, 0)
 [node name="Ground7" parent="Ground1" unique_id=832434033 instance=ExtResource("4_xn387")]
 position = Vector2(620, 0)
 
+[node name="Ground7" parent="Ground1/Ground7" unique_id=1054213305 instance=ExtResource("4_xn387")]
+position = Vector2(279, 0)
+
 [node name="아파트1" type="Sprite2D" parent="." unique_id=420132240]
 position = Vector2(461.50006, -938.56885)
 scale = Vector2(1.0379213, 1.0379212)
@@ -182,6 +182,7 @@ position = Vector2(513, -605)
 texture = ExtResource("18_bkxnn")
 
 [node name="자동차" type="Sprite2D" parent="." unique_id=199955438]
+z_index = 1
 position = Vector2(-327, -215.75)
 scale = Vector2(1, 0.9746544)
 texture = ExtResource("19_6dpta")
@@ -212,11 +213,12 @@ scale = Vector2(0.9650218, 0.99117255)
 texture = ExtResource("20_s11mi")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=686784963]
-position = Vector2(372, 127)
-limit_left = -300
+position = Vector2(-2, -575)
+limit_left = -100000
 limit_right = 2000
 script = ExtResource("23_2qxq1")
-speed = 400.0
+min_x = 350.0
+max_x = 350.0
 
 [node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("24_tjit4")]
 
@@ -225,11 +227,11 @@ offset_left = 423.0
 offset_top = -24.0
 offset_right = 525.0
 offset_bottom = -1.0
-talker = NodePath("")
+talker = NodePath("../../Player")
 offset = Vector2(-30, -75)
 metadata/_edit_use_anchors_ = true
 
-[node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("map", "bubble") instance=ExtResource("26_6dpta")]
-position = Vector2(339, 429)
-map = NodePath("")
+[node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("26_6dpta")]
+position = Vector2(-622, -265)
+current_path = NodePath("../PathChoice")
 bubble = NodePath("../CanvasLayer/SpeechBubble")

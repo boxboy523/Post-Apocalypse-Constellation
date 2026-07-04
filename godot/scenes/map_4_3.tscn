@@ -53,7 +53,6 @@ scale = Vector2(1.0074867, 1)
 curve = SubResource("Curve2D_yg4uq")
 script = ExtResource("2_u3v6w")
 next_paths = [NodePath("../PathUp")]
-is_primary = true
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="Sky" type="Sprite2D" parent="." unique_id=441868166]
@@ -136,11 +135,10 @@ scale = Vector2(0.80377644, 0.8399618)
 texture = ExtResource("12_dlqed")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1148185742]
-position = Vector2(372, 127)
-limit_left = -300
-limit_right = 2000
+position = Vector2(-33, -575)
 script = ExtResource("16_b11o5")
-speed = 400.0
+min_x = 300.0
+max_x = 3000.0
 
 [node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("17_km5uj")]
 
@@ -153,7 +151,7 @@ talker = NodePath("../../Player")
 offset = Vector2(-30, -75)
 metadata/_edit_use_anchors_ = true
 
-[node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("map", "bubble") instance=ExtResource("19_8xri4")]
+[node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("19_8xri4")]
 position = Vector2(339, 429)
-map = NodePath("")
+current_path = NodePath("../PathChoice")
 bubble = NodePath("../CanvasLayer/SpeechBubble")
