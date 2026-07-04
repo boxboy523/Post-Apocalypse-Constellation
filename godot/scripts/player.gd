@@ -1,4 +1,4 @@
-extends Node2D
+extends PathFollow2D
 
 @export var map: ChoiceMap
 
@@ -11,7 +11,7 @@ enum PlayerState {ON_PATH, READY, END, FINISHED}
 var state = PlayerState.READY
 
 func _ready() -> void:
-	call_deferred("follow", map.get_paths()[0])	
+	call_deferred("follow", map.get_paths()[0])
 
 func follow(path: PathChoice) -> void:
 	if path.next_set and not path.map: # 다음 맵 생성
@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 			pass
 		PlayerState.END:
 			pass
-		
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	#if state == PlayerState.FINISHED:
@@ -56,3 +56,5 @@ func _unhandled_input(event: InputEvent) -> void:
 		#state = PlayerState.TO_PATH
 	if event.is_action_pressed("start_path") and state == PlayerState.READY: # 이동 시작
 		state = PlayerState.ON_PATH
+	elif event.is_action_pressed("start_path"):
+		print("스페이스바 눌렸지만 상태가 READY가 아님. 현재 상태: ", state)
