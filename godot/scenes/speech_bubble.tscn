@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://b3k0nnxxx03ag"]
+
+[ext_resource type="Script" uid="uid://c0t8043ank485" path="res://scenes/speech_bubble.gd" id="1_a8ruc"]
+[ext_resource type="FontFile" uid="uid://bho0rppjjvsyf" path="res://fonts/GalmuriMono7.ttf" id="2_x4eeu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j542"]
+bg_color = Color(0.74463296, 0.6500619, 0.5357634, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="SpeechBubble" type="PanelContainer" unique_id=1994342399]
+offset_right = 1.0
+offset_bottom = 23.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4j542")
+script = ExtResource("1_a8ruc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=531651042]
+custom_minimum_size = Vector2(100, 10)
+custom_maximum_size = Vector2(500, 300)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_x4eeu")
+theme_override_font_sizes/normal_font_size = 20
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

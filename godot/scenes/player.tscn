@@ -25,10 +25,8 @@ script = ExtResource("2_qhqgy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LerfFollow/PlayerLogic/Area2D" unique_id=2076691829]
 shape = SubResource("RectangleShape2D_4kf0v")
 
-[node name="Camera2D" type="Camera2D" parent="LerfFollow" unique_id=1313566457]
-position_smoothing_enabled = true
-
 [node name="Sprite2D" type="Sprite2D" parent="LerfFollow" unique_id=1367374429]
 position = Vector2(0, -11)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_g2els")
+script = SubResource("GDScript_dqkch")
