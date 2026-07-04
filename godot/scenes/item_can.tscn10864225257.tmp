@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b5prsy5lykhyt"]
 
 [ext_resource type="Script" uid="uid://de77vdhtuw4v6" path="res://scripts/item_can.gd" id="1_5t13a"]
-[ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="2_dd3wl"]
 [ext_resource type="Texture2D" uid="uid://bayfssq0gaiqg" path="res://images/items/can_cola.png" id="2_scejv"]
 [ext_resource type="Resource" uid="uid://dhcfjt5i523xy" path="res://items/item_can.tres" id="2_uxhgr"]
 
@@ -11,8 +10,8 @@ size = Vector2(262, 460)
 [node name="ItemCan" type="Area2D" unique_id=1275209978]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_5t13a")
-enemy_scene = ExtResource("2_dd3wl")
 item_res = ExtResource("2_uxhgr")
+move_cost = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=914402857]
 scale = Vector2(0.5, 0.5)
