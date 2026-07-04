@@ -48,7 +48,7 @@ point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_yg4uq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -4300, -6, 0, 0, 0, 0, 190.97641, -6, 0, 0, 0, 0, 1435, -6)
+"points": PackedVector2Array(0, 0, 0, 0, -4486, -6, 0, 0, 0, 0, 190.97641, -6, 0, 0, 0, 0, 1435, -6)
 }
 point_count = 3
 
@@ -335,16 +335,16 @@ offset = Vector2(-30, -75)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("27_qoppm")]
-position = Vector2(-582, -263)
+position = Vector2(-5086, -265)
 current_path = NodePath("../PathChoice")
 bubble = NodePath("../CanvasLayer/SpeechBubble")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1138135713]
-position = Vector2(-7, -561)
+position = Vector2(-4332, -556)
 limit_left = -1000000
 limit_right = 1000000
 script = ExtResource("24_fgtu4")
-min_x = -90.0
+min_x = -4400.0
 max_x = 410.0
 
 [node name="나무3" type="Sprite2D" parent="." unique_id=1183034059]
