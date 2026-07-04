@@ -1,11 +1,14 @@
 extends Control
 
+@export_file("*.tscn")
+var game_scene_path: String
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$Button.pressed.connect(_on_start_button_pressed)
 
+func _on_start_button_pressed() -> void:
+	if game_scene_path == "":
+		print("게임 씬 경로가 설정되지 않음")
+		return
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	get_tree().change_scene_to_file(game_scene_path)
