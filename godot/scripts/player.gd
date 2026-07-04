@@ -6,7 +6,8 @@ var path_choices: Array[PathChoice]
 var current_path: PathChoice
 const SPEED = 200.0
 var idx = 0
-enum PlayerState {ON_PATH, TO_PATH, READY, FINISHED, END}
+# READY -> ON_PATH -> READY ... -> END
+enum PlayerState {ON_PATH, READY, END, FINISHED}
 var state = PlayerState.READY
 
 func _ready() -> void:
@@ -24,7 +25,7 @@ func follow(path: PathChoice) -> void:
 	$"LerfFollow/Camera2D".reset_smoothing()
 
 func _process(delta: float) -> void:
-	if not (get_parent() is PathChoice):
+	if not (current_path is PathChoice):
 		return
 	print(state)
 	match state:
@@ -36,14 +37,10 @@ func _process(delta: float) -> void:
 					state = PlayerState.END
 				else:
 					state = PlayerState.FINISHED
-		PlayerState.TO_PATH: # 플레이어가 경로의 시작점으로 이동 중
-			position = position.move_toward(current_path.curve.get_point_position(0), SPEED * delta)
-			if position == current_path.curve.get_point_position(0):
-				state = PlayerState.READY
 		PlayerState.FINISHED:
 			var next_path = current_path.get_random_path()
 			follow(next_path)
-			state = PlayerState.TO_PATH	
+			state = PlayerState.READY
 		PlayerState.READY:
 			pass
 		PlayerState.END:
