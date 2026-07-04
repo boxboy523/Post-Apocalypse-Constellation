@@ -4,9 +4,308 @@
 [ext_resource type="Script" uid="uid://dq2ekl4ug2hkq" path="res://scripts/lerf_follow.gd" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://btqitmv23qs1i" path="res://images/units/소녀.png" id="2_g2els"]
 [ext_resource type="Script" uid="uid://bxkrc241m5rr8" path="res://scripts/player_logic.gd" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://ch8j0j4nt0c7k" path="res://images/main_character/bat_attack/방망이1.png" id="5_fuw3a"]
+[ext_resource type="Texture2D" uid="uid://ub7lfh040dbc" path="res://images/main_character/bat_attack/방망이2.png" id="6_8txt3"]
+[ext_resource type="Texture2D" uid="uid://c2jyqnoekdte7" path="res://images/main_character/bat_attack/방망이3.png" id="7_2w11d"]
+[ext_resource type="Texture2D" uid="uid://ck4c0glewyf87" path="res://images/main_character/bat_attack/방망이4.png" id="8_770dr"]
+[ext_resource type="Texture2D" uid="uid://cmc40vubw2dt2" path="res://images/main_character/bat_attack/방망이5.png" id="9_8f1cb"]
+[ext_resource type="Texture2D" uid="uid://jgptqybiv7jl" path="res://images/main_character/bat_attack/방망이6.png" id="10_vdulj"]
+[ext_resource type="Texture2D" uid="uid://sxxbjwa0umpt" path="res://images/main_character/bat_attack/방망이7.png" id="11_vau08"]
+[ext_resource type="Texture2D" uid="uid://dx7av11p3jhx1" path="res://images/main_character/bat_attack/방망이8.png" id="12_qsb7e"]
+[ext_resource type="Texture2D" uid="uid://cq2q5gyftpaxl" path="res://images/main_character/bat_attack/방망이9.png" id="13_qjsmb"]
+[ext_resource type="Texture2D" uid="uid://b3nuqnuvubxae" path="res://images/main_character/crowbar_attack/빠루1.png" id="14_mwp2n"]
+[ext_resource type="Texture2D" uid="uid://dia1tqi5fgfca" path="res://images/main_character/crowbar_attack/빠루2.png" id="15_0yhus"]
+[ext_resource type="Texture2D" uid="uid://bb3yian3vwh5s" path="res://images/main_character/crowbar_attack/빠루3.png" id="16_jlll7"]
+[ext_resource type="Texture2D" uid="uid://ddivxgq5u8rbf" path="res://images/main_character/crowbar_attack/빠루4.png" id="17_qk6i7"]
+[ext_resource type="Texture2D" uid="uid://bemyejm1xed4u" path="res://images/main_character/crowbar_attack/빠루5.png" id="18_6c3st"]
+[ext_resource type="Texture2D" uid="uid://dwprg0e7crkkt" path="res://images/main_character/crowbar_attack/빠루6.png" id="19_1da1t"]
+[ext_resource type="Texture2D" uid="uid://drse3fca3rw26" path="res://images/main_character/crowbar_attack/빠루7.png" id="20_p21yu"]
+[ext_resource type="Texture2D" uid="uid://ck7hifknfamq4" path="res://images/main_character/crowbar_attack/빠루8.png" id="21_irpag"]
+[ext_resource type="Texture2D" uid="uid://dnrg2deodieov" path="res://images/main_character/crowbar_attack/빠루9.png" id="22_bpsgo"]
+[ext_resource type="Texture2D" uid="uid://bkprvgo8ooedi" path="res://images/main_character/fall/쓰러짐1.png" id="23_jx8is"]
+[ext_resource type="Texture2D" uid="uid://cy740n1uh3jcq" path="res://images/main_character/fall/쓰러짐2.png" id="24_vx63k"]
+[ext_resource type="Texture2D" uid="uid://bmh12ywr8es3b" path="res://images/main_character/fall/쓰러짐3.png" id="25_lw0jh"]
+[ext_resource type="Texture2D" uid="uid://8jrv8hwch6o" path="res://images/main_character/fall/쓰러짐4.png" id="26_ry8ed"]
+[ext_resource type="Texture2D" uid="uid://bnty2m2dqd6wx" path="res://images/main_character/fall/쓰러짐5.png" id="27_au8ao"]
+[ext_resource type="Texture2D" uid="uid://c0usiv7jpq3eu" path="res://images/main_character/fall/쓰러짐6.png" id="28_w5j5w"]
+[ext_resource type="Texture2D" uid="uid://brqbtjr06amrg" path="res://images/main_character/fall/쓰러짐7.png" id="29_cbf1i"]
+[ext_resource type="Texture2D" uid="uid://bk8hf4asgebjj" path="res://images/main_character/fall/쓰러짐8.png" id="30_4vfid"]
+[ext_resource type="Texture2D" uid="uid://c1r2so2agegvy" path="res://images/main_character/fall/쓰러짐9.png" id="31_ljgr3"]
+[ext_resource type="Texture2D" uid="uid://buiyidlwchq66" path="res://images/main_character/fall/쓰러짐10.png" id="32_fr8ja"]
+[ext_resource type="Texture2D" uid="uid://cafj4nbrbqld4" path="res://images/main_character/fall/쓰러짐11.png" id="33_gvmy4"]
+[ext_resource type="Texture2D" uid="uid://d4md5vu07c0se" path="res://images/main_character/fall/쓰러짐12.png" id="34_fcu33"]
+[ext_resource type="Texture2D" uid="uid://2dhm261xrcg1" path="res://images/main_character/fall/쓰러짐13.png" id="35_qmsq4"]
+[ext_resource type="Texture2D" uid="uid://bkb3xwy3pjfa" path="res://images/main_character/knife_attack/칼 (1).png" id="36_5vs2b"]
+[ext_resource type="Texture2D" uid="uid://ccm836dnhjqnu" path="res://images/main_character/knife_attack/칼 (2).png" id="37_a7i4v"]
+[ext_resource type="Texture2D" uid="uid://dwokrhfjh8wx1" path="res://images/main_character/knife_attack/칼 (3).png" id="38_b5l0c"]
+[ext_resource type="Texture2D" uid="uid://cisj4ytk8evei" path="res://images/main_character/knife_attack/칼 (4).png" id="39_2a33p"]
+[ext_resource type="Texture2D" uid="uid://bddfn6q5gj6gm" path="res://images/main_character/knife_attack/칼 (5).png" id="40_reqs7"]
+[ext_resource type="Texture2D" uid="uid://ddh4fdl765kra" path="res://images/main_character/knife_attack/칼 (6).png" id="41_2yjfb"]
+[ext_resource type="Texture2D" uid="uid://c807i0glqltb2" path="res://images/main_character/knife_attack/칼 (7).png" id="42_dnnjp"]
+[ext_resource type="Texture2D" uid="uid://bnod08sy0cybe" path="res://images/main_character/knife_attack/칼 (8).png" id="43_wqna8"]
+[ext_resource type="Texture2D" uid="uid://c3sr0veqd71wp" path="res://images/main_character/knife_attack/칼 (9).png" id="44_l7gmo"]
+[ext_resource type="Texture2D" uid="uid://rlh8fbxaoqkr" path="res://images/main_character/looting/파밍 (1).png" id="45_kft7l"]
+[ext_resource type="Texture2D" uid="uid://7j3tpal64eth" path="res://images/main_character/looting/파밍 (2).png" id="46_2s4os"]
+[ext_resource type="Texture2D" uid="uid://0xxgmsda8g18" path="res://images/main_character/looting/파밍 (3).png" id="47_2em0j"]
+[ext_resource type="Texture2D" uid="uid://dih4vdu3c0afu" path="res://images/main_character/looting/파밍 (4).png" id="48_qe2k6"]
+[ext_resource type="Texture2D" uid="uid://dgarnqgwq17ny" path="res://images/main_character/looting/파밍 (5).png" id="49_edwuo"]
+[ext_resource type="Texture2D" uid="uid://co0bexii135ql" path="res://images/main_character/looting/파밍 (6).png" id="50_5eiju"]
+[ext_resource type="Texture2D" uid="uid://oymr0yerqts6" path="res://images/main_character/looting/파밍 (7).png" id="51_uukdq"]
+[ext_resource type="Texture2D" uid="uid://b3umkvor1oerl" path="res://images/main_character/looting/파밍 (8).png" id="52_3k3j0"]
+[ext_resource type="Texture2D" uid="uid://kwe770qy7rfo" path="res://images/main_character/looting/파밍 (9).png" id="53_0bpox"]
+[ext_resource type="Texture2D" uid="uid://d1m1tyvjalhnm" path="res://images/main_character/trapped/함정1.png" id="54_5c21n"]
+[ext_resource type="Texture2D" uid="uid://v4vatg0akqmu" path="res://images/main_character/trapped/함정2.png" id="55_e8m1u"]
+[ext_resource type="Texture2D" uid="uid://dgsi2q1n2vvj5" path="res://images/main_character/trapped/함정3.png" id="56_77pet"]
+[ext_resource type="Texture2D" uid="uid://bcoxncs0aqy08" path="res://images/main_character/walk/걷기1.png" id="57_tlhxf"]
+[ext_resource type="Texture2D" uid="uid://qrmfgefvsch5" path="res://images/main_character/walk/걷기2.png" id="58_hrkfm"]
+[ext_resource type="Texture2D" uid="uid://45wwype5gyq6" path="res://images/main_character/walk/걷기3.png" id="59_oxcmq"]
+[ext_resource type="Texture2D" uid="uid://caewnd1vy3d1o" path="res://images/main_character/walk/걷기4.png" id="60_wylla"]
+[ext_resource type="Texture2D" uid="uid://f1gp21xuxyhb" path="res://images/main_character/walk/걷기5.png" id="61_a3eqm"]
+[ext_resource type="Texture2D" uid="uid://ctqqarwkyakmg" path="res://images/main_character/walk/걷기6.png" id="62_plx2b"]
+[ext_resource type="Texture2D" uid="uid://djxg2eba42xgs" path="res://images/main_character/walk/걷기7.png" id="63_3capk"]
+[ext_resource type="Texture2D" uid="uid://c02wvxfmtlgfv" path="res://images/main_character/walk/걷기8.png" id="64_kg5hq"]
+[ext_resource type="Texture2D" uid="uid://d0fvw3m6rgcfy" path="res://images/main_character/walk/걷기9.png" id="65_kp0if"]
+[ext_resource type="Texture2D" uid="uid://c0r6whi6387pg" path="res://images/main_character/walk/걷기10.png" id="66_2xkbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kf0v"]
-size = Vector2(32, 32)
+size = Vector2(38, 85)
+
+[sub_resource type="GDScript" id="GDScript_dqkch"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k5pvu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fuw3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8txt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2w11d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_770dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8f1cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vdulj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vau08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qsb7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qjsmb")
+}],
+"loop": 0,
+"name": &"bat_attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_mwp2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0yhus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jlll7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_qk6i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_6c3st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_1da1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_p21yu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_irpag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_bpsgo")
+}],
+"loop": 1,
+"name": &"crowbar_attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_jx8is")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vx63k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_lw0jh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ry8ed")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_au8ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_w5j5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_cbf1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_4vfid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ljgr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_fr8ja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_gvmy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_fcu33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_qmsq4")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_5vs2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_a7i4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_b5l0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_2a33p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_reqs7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_2yjfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_dnnjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_wqna8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_l7gmo")
+}],
+"loop": 0,
+"name": &"knife_attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_kft7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_2s4os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_2em0j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_qe2k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_edwuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_5eiju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_uukdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_3k3j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_0bpox")
+}],
+"loop": 1,
+"name": &"looting",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_5c21n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_e8m1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_77pet")
+}],
+"loop": 0,
+"name": &"trapped",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_tlhxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_hrkfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_oxcmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_wylla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_a3eqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_plx2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_3capk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_kg5hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_kp0if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_2xkbm")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 12.0
+}]
 
 [node name="Player" type="PathFollow2D" unique_id=1170953966 groups=["player"]]
 rotates = false
@@ -23,10 +322,20 @@ script = ExtResource("2_qhqgy")
 [node name="Area2D" type="Area2D" parent="LerfFollow/PlayerLogic" unique_id=1968832790]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LerfFollow/PlayerLogic/Area2D" unique_id=2076691829]
+position = Vector2(-5, -14.5)
 shape = SubResource("RectangleShape2D_4kf0v")
 
 [node name="Sprite2D" type="Sprite2D" parent="LerfFollow" unique_id=1367374429]
+visible = false
 position = Vector2(0, -11)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_g2els")
 script = SubResource("GDScript_dqkch")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LerfFollow" unique_id=2001467306]
+position = Vector2(12, -11)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_k5pvu")
+animation = &"bat_attack"
+frame = 8
+frame_progress = 1.0
