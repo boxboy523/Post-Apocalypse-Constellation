@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvas_layer.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cw3ggho3tcjel" path="res://scenes/item_coin.tscn" id="4_jyhfs"]
 [ext_resource type="Resource" uid="uid://bfsght4a85mtr" path="res://items/item_coin.tres" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://chn8l3kh04bdy" path="res://scenes/obstacle_base.tscn" id="6_tefeu"]
 
 [node name="Main" type="Node2D" unique_id=1160899106]
 
@@ -24,3 +25,6 @@ position = Vector2(412.00003, 357)
 item_res = ExtResource("4_tbgi4")
 
 [node name="CanvasLayer" parent="." unique_id=965425245 instance=ExtResource("3_sugp2")]
+
+[node name="ObstacleBase" parent="." unique_id=1719570084 instance=ExtResource("6_tefeu")]
+position = Vector2(433, 437)
