@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://57nxd88ew6wa" path="res://scripts/choice_map.gd" id="1_0a7yh"]
 [ext_resource type="Script" uid="uid://bsg5drt3fprvl" path="res://scripts/path_choice.gd" id="2_fwffn"]
-[ext_resource type="PackedScene" uid="uid://d4mhcllvsytp5" path="res://scenes/map_base2.tscn" id="3_iqnx3"]
+[ext_resource type="PackedScene" uid="uid://7rx15gqyqb7p" path="res://scenes/map_4_1.tscn" id="3_08glf"]
+[ext_resource type="PackedScene" uid="uid://tfkmki26pu3q" path="res://scenes/map_4_2.tscn" id="4_rdlff"]
 [ext_resource type="PackedScene" uid="uid://bwcl3gt3hq10b" path="res://scenes/gizmos/ground1.tscn" id="4_xn387"]
 [ext_resource type="PackedScene" uid="uid://bbu1dt70fxiev" path="res://scenes/gizmos/ground2.tscn" id="5_an2rc"]
+[ext_resource type="PackedScene" uid="uid://bfe8xsn2utioj" path="res://scenes/map_4_3.tscn" id="5_fpiba"]
 [ext_resource type="PackedScene" uid="uid://bej7oimsvo0nh" path="res://scenes/gizmos/ground3.tscn" id="6_jl3j3"]
 [ext_resource type="Texture2D" uid="uid://drsuyhmfv6wgc" path="res://images/backgrounds/중간뒷배경1.png" id="6_krloe"]
 [ext_resource type="Texture2D" uid="uid://dbxqrspq56epv" path="res://images/backgrounds/sky.png" id="7_0jfrf"]
@@ -23,19 +25,25 @@
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 608, 637, 0, 0, 0, 0, 831, 337, 0, 0, 0, 0, 1231, 337)
+"points": PackedVector2Array(0, 0, 0, 0, 840.3227, -163.00003, 0, 0, 0, 0, 937.21063, -444.81818, 0, 0, 0, 0, 1389.3545, -1196.3333)
 }
 point_count = 3
 
+[sub_resource type="Curve2D" id="Curve2D_s11mi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 928, -265, 0, 0, 0, 0, 525, -265)
+}
+point_count = 2
+
 [sub_resource type="Curve2D" id="Curve2D_tysbb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 647, 436, 0, 0, 0, 0, 837, 536, 0, 0, 0, 0, 1237, 536)
+"points": PackedVector2Array(0, 0, 0, 0, 862, 171, 0, 0, 0, 0, 1017, 233, 0, 0, 0, 0, 1265, 326)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_yg4uq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 307.69635, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, -265, 0, 0, 0, 0, 177.07774, -265, 0, 0, 0, 0, 389.571, -265)
 }
 point_count = 3
 
@@ -50,7 +58,13 @@ scale = Vector2(0.9598716, 0.33)
 curve = SubResource("Curve2D_ya7al")
 script = ExtResource("2_fwffn")
 desc = "윗길"
-next_set = ExtResource("3_iqnx3")
+next_set = ExtResource("3_08glf")
+metadata/_custom_type_script = "uid://bsg5drt3fprvl"
+
+[node name="PathMiddle" type="Path2D" parent="." unique_id=944525676]
+curve = SubResource("Curve2D_s11mi")
+script = ExtResource("2_fwffn")
+next_set = ExtResource("4_rdlff")
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="PathDown" type="Path2D" parent="." unique_id=430652331]
@@ -59,15 +73,16 @@ position = Vector2(-337, -436)
 curve = SubResource("Curve2D_tysbb")
 script = ExtResource("2_fwffn")
 desc = "아랫길"
-next_set = ExtResource("3_iqnx3")
+next_set = ExtResource("5_fpiba")
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="PathChoice" type="Path2D" parent="." unique_id=1893640462 node_paths=PackedStringArray("next_paths")]
 z_index = 1
-scale = Vector2(1.0074867, 1)
+position = Vector2(-498, 0)
+scale = Vector2(2.6259654, 1)
 curve = SubResource("Curve2D_yg4uq")
 script = ExtResource("2_fwffn")
-next_paths = [NodePath("../PathUp"), NodePath("../PathDown")]
+next_paths = [NodePath("../PathUp"), NodePath("../PathDown"), NodePath("../PathMiddle")]
 is_primary = true
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 

@@ -19,19 +19,13 @@
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 608, 637, 0, 0, 0, 0, 831, 337, 0, 0, 0, 0, 1231, 337)
-}
-point_count = 3
-
-[sub_resource type="Curve2D" id="Curve2D_tysbb"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 647, 436, 0, 0, 0, 0, 837, 536, 0, 0, 0, 0, 1237, 536)
+"points": PackedVector2Array(0, 0, 0, 0, 420.4749, -163.00003, 0, 0, 0, 0, 581.95483, -163.00003, 0, 0, 0, 0, 904.9147, -163.00003)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_yg4uq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 307.69635, 0)
+"points": PackedVector2Array(0, 0, 0, 0, -648.14746, -265, 0, 0, 0, 0, -340.45114, -265, 0, 0, 0, 0, 121.093414, -265)
 }
 point_count = 3
 
@@ -49,21 +43,12 @@ desc = "윗길"
 next_set = ExtResource("3_hgafl")
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
-[node name="PathDown" type="Path2D" parent="." unique_id=430652331]
-z_index = 1
-position = Vector2(-337, -436)
-curve = SubResource("Curve2D_tysbb")
-script = ExtResource("2_pu7uo")
-desc = "아랫길"
-next_set = ExtResource("3_hgafl")
-metadata/_custom_type_script = "uid://bsg5drt3fprvl"
-
 [node name="PathChoice" type="Path2D" parent="." unique_id=1893640462 node_paths=PackedStringArray("next_paths")]
 z_index = 1
 scale = Vector2(1.0074867, 1)
 curve = SubResource("Curve2D_yg4uq")
 script = ExtResource("2_pu7uo")
-next_paths = [NodePath("../PathUp"), NodePath("../PathDown")]
+next_paths = [NodePath("../PathUp")]
 is_primary = true
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 

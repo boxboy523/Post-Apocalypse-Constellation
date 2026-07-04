@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://57nxd88ew6wa" path="res://scripts/choice_map.gd" id="1_cvlml"]
 [ext_resource type="Script" uid="uid://bsg5drt3fprvl" path="res://scripts/path_choice.gd" id="2_yb4yj"]
-[ext_resource type="PackedScene" uid="uid://d4mhcllvsytp5" path="res://scenes/map_base2.tscn" id="3_edm24"]
+[ext_resource type="PackedScene" uid="uid://b6f2qvm2256hq" path="res://scenes/map_3.tscn" id="3_c7ijd"]
 [ext_resource type="PackedScene" uid="uid://bwcl3gt3hq10b" path="res://scenes/gizmos/ground1.tscn" id="4_n4dv5"]
 [ext_resource type="PackedScene" uid="uid://bbu1dt70fxiev" path="res://scenes/gizmos/ground2.tscn" id="5_c7ijd"]
 [ext_resource type="PackedScene" uid="uid://bej7oimsvo0nh" path="res://scenes/gizmos/ground3.tscn" id="6_vux23"]
@@ -13,26 +13,19 @@
 [ext_resource type="Texture2D" uid="uid://ddf3yhl655bnd" path="res://images/backgrounds/중간뒷배경2.png" id="11_e118t"]
 [ext_resource type="Texture2D" uid="uid://dbxqrspq56epv" path="res://images/backgrounds/sky.png" id="11_grvg3"]
 [ext_resource type="Texture2D" uid="uid://dgi6cwbb3ncdu" path="res://images/backgrounds/전봇대.png" id="12_tl3kr"]
-[ext_resource type="Texture2D" uid="uid://b5ssgp53whtj1" path="res://images/backgrounds/내려가는계단.png" id="14_qkvv0"]
 [ext_resource type="Texture2D" uid="uid://b16ku6i6fp7c6" path="res://images/backgrounds/나무1.png" id="15_grvg3"]
 [ext_resource type="Texture2D" uid="uid://ch3waydnavlt8" path="res://images/backgrounds/상가건물.png" id="16_shvnv"]
 [ext_resource type="Texture2D" uid="uid://b467oas3hbmx8" path="res://images/backgrounds/실외기.png" id="17_a7sk5"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 641, 437, 0, 0, 0, 0, 831, 337, 0, 0, 0, 0, 1231, 337)
-}
-point_count = 3
-
-[sub_resource type="Curve2D" id="Curve2D_tysbb"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 647, 436, 0, 0, 0, 0, 837, 536, 0, 0, 0, 0, 1237, 536)
+"points": PackedVector2Array(0, 0, 0, 0, 563, 172, 0, 0, 0, 0, 750.901, 172, 0, 0, 0, 0, 938.8019, 172)
 }
 point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_yg4uq"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 307.69635, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 127.04883, -6, 0, 0, 0, 0, 280.897, -6, 0, 0, 0, 0, 896.2897, -6)
 }
 point_count = 3
 
@@ -42,28 +35,21 @@ script = ExtResource("1_cvlml")
 
 [node name="PathUp" type="Path2D" parent="." unique_id=1440970172]
 z_index = 1
-position = Vector2(-331, -437)
+position = Vector2(-187.42023, -437)
+scale = Vector2(0.8249027, 1)
 curve = SubResource("Curve2D_ya7al")
 script = ExtResource("2_yb4yj")
 desc = "윗길"
-next_set = ExtResource("3_edm24")
-metadata/_custom_type_script = "uid://bsg5drt3fprvl"
-
-[node name="PathDown" type="Path2D" parent="." unique_id=430652331]
-z_index = 1
-position = Vector2(-337, -436)
-curve = SubResource("Curve2D_tysbb")
-script = ExtResource("2_yb4yj")
-desc = "아랫길"
-next_set = ExtResource("3_edm24")
+next_set = ExtResource("3_c7ijd")
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="PathChoice" type="Path2D" parent="." unique_id=1893640462 node_paths=PackedStringArray("next_paths")]
 z_index = 1
+position = Vector2(-626, -259)
 scale = Vector2(1.0074867, 1)
 curve = SubResource("Curve2D_yg4uq")
 script = ExtResource("2_yb4yj")
-next_paths = [NodePath("../PathUp"), NodePath("../PathDown")]
+next_paths = [NodePath("../PathUp")]
 is_primary = true
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
@@ -78,7 +64,8 @@ scale = Vector2(1.1302083, 0.86111104)
 texture = ExtResource("7_2ffe1")
 
 [node name="Ground1" parent="." unique_id=1416573282 instance=ExtResource("4_n4dv5")]
-position = Vector2(277, -265)
+position = Vector2(278.2422, -265)
+scale = Vector2(1.0078369, 1)
 
 [node name="Ground3" parent="Ground1" unique_id=853669557 instance=ExtResource("5_c7ijd")]
 position = Vector2(310, 0)
@@ -130,10 +117,6 @@ texture = ExtResource("12_tl3kr")
 position = Vector2(605.75, -575)
 scale = Vector2(2.2807488, 1.6666666)
 texture = ExtResource("9_tl3kr")
-
-[node name="내려가는계단" type="Sprite2D" parent="." unique_id=36126255]
-position = Vector2(505, -248)
-texture = ExtResource("14_qkvv0")
 
 [node name="나무1" type="Sprite2D" parent="." unique_id=231763398]
 position = Vector2(475, -758)
