@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://b6f2qvm2256hq"]
 
 [ext_resource type="Script" uid="uid://57nxd88ew6wa" path="res://scripts/choice_map.gd" id="1_0a7yh"]
+[ext_resource type="Script" uid="uid://jte80kckft58" path="res://scenes/area_safe.gd" id="2_422d7"]
 [ext_resource type="Script" uid="uid://bsg5drt3fprvl" path="res://scripts/path_choice.gd" id="2_fwffn"]
+[ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="2_u6yh3"]
 [ext_resource type="PackedScene" uid="uid://7rx15gqyqb7p" path="res://scenes/map_4_1.tscn" id="3_08glf"]
 [ext_resource type="PackedScene" uid="uid://tfkmki26pu3q" path="res://scenes/map_4_2.tscn" id="4_rdlff"]
 [ext_resource type="PackedScene" uid="uid://bwcl3gt3hq10b" path="res://scenes/gizmos/ground1.tscn" id="4_xn387"]
@@ -28,6 +30,10 @@
 [ext_resource type="PackedScene" uid="uid://u4k4gkvyyr56" path="res://scenes/obstacle_guide.tscn" id="27_bkxnn"]
 [ext_resource type="Texture2D" uid="uid://cxgktbk1cpxrs" path="res://images/backgrounds/나무2.png" id="27_tjit4"]
 [ext_resource type="PackedScene" uid="uid://tc6s2lmo1p3n" path="res://scenes/crash_ground.tscn" id="28_bkxnn"]
+[ext_resource type="Script" uid="uid://c5emylup5jvsx" path="res://scenes/area_warn.gd" id="30_u6yh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jad0x"]
+size = Vector2(868, 542.5)
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -53,9 +59,23 @@ _data = {
 }
 point_count = 3
 
-[node name="Map3" type="Node2D" unique_id=342723024 groups=["player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pm843"]
+size = Vector2(870, 535)
+
+[node name="Map3" type="Node2D" unique_id=342723024]
 position = Vector2(343, 420)
 script = ExtResource("1_0a7yh")
+num_enemy = 3
+monster_scene = ExtResource("2_u6yh3")
+
+[node name="AreaSafe" type="Area2D" parent="." unique_id=190107134]
+position = Vector2(1120, -1263)
+script = ExtResource("2_422d7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSafe" unique_id=863659546]
+z_index = 1
+position = Vector2(-192, 641.5)
+shape = SubResource("RectangleShape2D_jad0x")
 
 [node name="PathUp" type="Path2D" parent="." unique_id=1440970172]
 z_index = 1
@@ -303,3 +323,13 @@ path_middle = NodePath("../PathMiddle")
 
 [node name="CrashGround" parent="." unique_id=1598088047 instance=ExtResource("28_bkxnn")]
 position = Vector2(10, -177)
+
+[node name="AreaWarn" type="Area2D" parent="." unique_id=264537339]
+position = Vector2(1120, -1263)
+script = ExtResource("2_422d7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaWarn" unique_id=714355282]
+z_index = 1
+position = Vector2(-192, 1215)
+shape = SubResource("RectangleShape2D_pm843")
+script = ExtResource("30_u6yh3")

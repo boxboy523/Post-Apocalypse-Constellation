@@ -56,8 +56,6 @@ func take_damage() -> void:
 			await get_tree().create_timer(1.0).timeout
 			get_tree().change_scene_to_file.call_deferred("res://scenes/end_bad.tscn")
 			return
-		else:
-			player
 	EventBus.health_changed.emit(hp + spare_hp)
 	if hp < max_hp:
 		isInjured = true
@@ -71,7 +69,6 @@ func take_damage() -> void:
 	var last_anim = anim_sprite.animation
 	anim_sprite.play("trapped")
 	await anim_sprite.animation_finished
-	print("after await")
 	anim_sprite.play(last_anim)
 	return
 

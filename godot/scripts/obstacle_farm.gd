@@ -25,7 +25,7 @@ func _on_player_entered(player) -> void:
 		return
 
 	used = true
-
+	player.anim_sprite.play("looting")
 	if randf() < 0.5 :
 		EventBus.say.emit("이게 아직도 남아있다니! 럭키비키잖아!")
 
