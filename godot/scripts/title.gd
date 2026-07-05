@@ -1,7 +1,7 @@
 extends Control
 
 @export_file("*.tscn")
-var game_scene_path: String = "res://scenes/main.tscn"
+var game_scene_path: String = "res://scenes/intro.tscn"
 
 func _ready() -> void:
 	$StartButton.pressed.connect(_on_start_button_pressed)
