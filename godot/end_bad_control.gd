@@ -1,7 +1,7 @@
 extends Control
 
 @export_file("*.tscn")
-var next_scene_path: String = "res://scenes/title.tscn"
+var next_scene_path: String = "res://scenes/game_over.tscn"
 
 @export var typing_speed: float = 35.0
 

@@ -54,7 +54,7 @@ func take_damage() -> void:
 			EventBus.play_bgm.emit("failure")
 			EventBus.fade_out.emit(1.0)
 			await get_tree().create_timer(1.0).timeout
-			get_tree().change_scene_to_file.call_deferred("res://scenes/game_over.tscn")
+			get_tree().change_scene_to_file.call_deferred("res://scenes/end_bad.tscn")
 			return
 		else:
 			player
