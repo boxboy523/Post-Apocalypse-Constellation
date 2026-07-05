@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b56k2a1dk2kj2"]
+
+[ext_resource type="Script" uid="uid://bb5ogfgqdvpll" path="res://scripts/item_sign.gd" id="1_5xglm"]
+[ext_resource type="Texture2D" uid="uid://cgsh8m7y6ktfo" path="res://images/backgrounds/평지화살표.png" id="1_h0dq2"]
+[ext_resource type="Resource" uid="uid://blp88rsyevio0" path="res://items/item_signmiddle.tres" id="2_6uusl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xglm"]
+atlas = ExtResource("1_h0dq2")
+region = Rect2(876.6001, 389.40005, 115.28003, 120.56003)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xglm"]
+size = Vector2(62, 64)
+
+[node name="ItemSignmiddle" type="Area2D" unique_id=1151077109]
+script = ExtResource("1_5xglm")
+sign_direction = "middle"
+item_res = ExtResource("2_6uusl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1800110827]
+scale = Vector2(0.6, 0.6)
+texture = SubResource("AtlasTexture_5xglm")
+region_enabled = true
+region_rect = Rect2(885.0913, 399, 101.72693, 104.00006)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125032336]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_5xglm")

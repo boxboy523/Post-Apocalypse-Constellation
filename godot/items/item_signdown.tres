@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://gc43xrnltwkg" path="res://images/backgrounds/지하화살표.png" id="1_ndy8r"]
 [ext_resource type="Script" uid="uid://dald4k4kxuywi" path="res://scripts/item_res.gd" id="1_qi2v0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndy8r"]
 atlas = ExtResource("1_ndy8r")
 region = Rect2(865.04034, 375.3797, 137.88611, 151.22998)
 
@@ -11,6 +11,6 @@ region = Rect2(865.04034, 375.3797, 137.88611, 151.22998)
 script = ExtResource("1_qi2v0")
 item_name = "SignDown"
 description = "표지판 "
-icon = SubResource("AtlasTexture_tipki")
+icon = SubResource("AtlasTexture_ndy8r")
 item_scene_path = "uid://dwpg8veoi1u7f"
 metadata/_custom_type_script = "uid://dald4k4kxuywi"

@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bbdy8epd6gm13" path="res://images/backgrounds/편의점.png" id="24_hosv6"]
 [ext_resource type="Texture2D" uid="uid://cy3nki1qp717q" path="res://images/backgrounds/아파트2.png" id="25_jnyxj"]
 [ext_resource type="Texture2D" uid="uid://c2dprkjeqjvc6" path="res://images/backgrounds/부러진신호등.png" id="26_uisyo"]
+[ext_resource type="PackedScene" uid="uid://tc6s2lmo1p3n" path="res://scenes/crash_ground.tscn" id="27_qlylb"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -160,7 +161,6 @@ offset_top = -31.0
 offset_right = 540.0
 offset_bottom = -8.0
 talker = NodePath("../../Player")
-offset = Vector2(-30, -75)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("20_eckh6")]
@@ -190,3 +190,6 @@ texture = ExtResource("13_b0gq6")
 [node name="부러진신호등" type="Sprite2D" parent="." unique_id=2015257580]
 position = Vector2(-1575, -278)
 texture = ExtResource("26_uisyo")
+
+[node name="CrashGround" parent="." unique_id=1598088047 instance=ExtResource("27_qlylb")]
+position = Vector2(19, -193)

@@ -1,4 +1,14 @@
 extends ItemBase
 class_name ItemTrap
-# 깡통 역시 마찬가지로 빈 스크립트로 둡니다.
-# 나중에 캐릭터가 이 근처를 지나갈 때(Area2D 충돌) 소음 유발 로직을 여기에 추가하면 됩니다.
+# 덫: 닿으면 플레이어가 아파집니다.
+
+func _ready() -> void:
+	area_entered.connect(_on_area_entered)
+
+func _on_area_entered(area: Area2D) -> void:
+	# 플레이어 논리를 찾아 데미지를 줍니다.
+	var player_logic = area.get_parent()
+	if player_logic and player_logic.is_in_group("player"):
+		player_logic.take_damage()
+		# 덫은 한 번 발동하면 사라집니다.
+		queue_free()

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://djo1huegkloh6"]
 
-[ext_resource type="Script" uid="uid://bb5ogfgqdvpll" path="res://scripts/item_signup.gd" id="1_fdko6"]
+[ext_resource type="Script" uid="uid://bb5ogfgqdvpll" path="res://scripts/item_sign.gd" id="1_fdko6"]
 [ext_resource type="Resource" uid="uid://c10p4t3rumhd" path="res://items/item_signup.tres" id="2_cbhhh"]
 [ext_resource type="Texture2D" uid="uid://k8ci3t6u3gj" path="res://images/backgrounds/위쪽화살표.png" id="3_fdko6"]
 

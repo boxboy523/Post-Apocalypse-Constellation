@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://b3k0nnxxx03ag" path="res://scenes/speech_bubble.tscn" id="18_cfrgq"]
 [ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="19_mc3pq"]
 [ext_resource type="Texture2D" uid="uid://dgi6cwbb3ncdu" path="res://images/backgrounds/전봇대.png" id="23_v2ee3"]
+[ext_resource type="PackedScene" uid="uid://tc6s2lmo1p3n" path="res://scenes/crash_ground.tscn" id="24_2d3ln"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -153,7 +154,6 @@ offset_top = -24.0
 offset_right = 525.0
 offset_bottom = -1.0
 talker = NodePath("../../Player")
-offset = Vector2(-30, -75)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("19_mc3pq")]
@@ -181,3 +181,6 @@ texture = ExtResource("14_vr3ls")
 [node name="실외기3" type="Sprite2D" parent="." unique_id=1365492446]
 position = Vector2(-1763, -741)
 texture = ExtResource("14_vr3ls")
+
+[node name="CrashGround" parent="." unique_id=1598088047 instance=ExtResource("24_2d3ln")]
+position = Vector2(17, -177)
