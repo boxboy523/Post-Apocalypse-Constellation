@@ -72,6 +72,7 @@ var full_text_length: int = 0
 
 
 func _ready() -> void:
+	EventBus.play_bgm.emit("title")
 	transition_fade.color = Color.BLACK
 	transition_fade.modulate.a = 1.0
 

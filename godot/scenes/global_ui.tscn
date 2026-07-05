@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="3_j9t2m"]
 [ext_resource type="AudioStreamMP3" path="res://sounds/bgm_gameplay.mp3" id="4_2n6uj"]
 [ext_resource type="AudioStreamMP3" path="res://sounds/bgm_failure.mp3" id="5_f0c1x"]
+[ext_resource type="AudioStreamMP3" path="res://sounds/bgm_title.mp3" id="6_t7y8u"]
 
 [node name="GlobalUI" type="CanvasLayer" unique_id=747862103]
 layer = 2
@@ -26,6 +27,14 @@ bus = "Master"
 volume_db = 0.0
 pitch_scale = 1.0
 loop = false
+
+[node name="BGMTitle" type="AudioStreamPlayer" parent="." unique_id=1172639484]
+stream = ExtResource("6_t7y8u")
+autoplay = false
+bus = "Master"
+volume_db = 0.0
+pitch_scale = 1.0
+loop = true
 
 [node name="Fade" type="ColorRect" parent="." unique_id=1041183213]
 z_index = 50

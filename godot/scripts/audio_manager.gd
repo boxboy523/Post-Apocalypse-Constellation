@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var bgm_gameplay: AudioStreamPlayer = $BGMGameplay
 @onready var bgm_failure: AudioStreamPlayer = $BGMFailure
+@onready var bgm_title: AudioStreamPlayer = $BGMTitle
 
 var current_scene_file: String = ""
 var current_mode: String = ""
@@ -16,7 +17,8 @@ func _start_bgm() -> void:
 		print("AudioManager: bgm_gameplay stream is null")
 	if bgm_failure.stream == null:
 		print("AudioManager: bgm_failure stream is null")
-	bgm_gameplay.play()
+	if bgm_title.stream == null:
+		print("AudioManager: bgm_title stream is null")
 	print("AudioManager: deferred start bgm")
 	_update_scene_bgm()
 
@@ -27,6 +29,8 @@ func _on_play_bgm(mode: String) -> void:
 	match mode:
 		"failure":
 			_play_failure_bgm()
+		"title":
+			_play_title_bgm()
 		_:
 			_play_gameplay_bgm()
 
@@ -42,6 +46,8 @@ func _update_scene_bgm() -> void:
 	match scene_file.get_file():
 		"game_over.tscn":
 			_play_failure_bgm()
+		"title.tscn", "intro.tscn":
+			_play_title_bgm()
 		_:
 			_play_gameplay_bgm()
 
@@ -62,6 +68,7 @@ func _play_gameplay_bgm() -> void:
 		return
 	current_mode = "gameplay"
 	bgm_failure.stop()
+	bgm_title.stop()
 	bgm_gameplay.play()
 
 func _play_failure_bgm() -> void:
@@ -69,7 +76,16 @@ func _play_failure_bgm() -> void:
 		return
 	current_mode = "failure"
 	bgm_gameplay.stop()
+	bgm_title.stop()
 	bgm_failure.play()
+
+func _play_title_bgm() -> void:
+	if current_mode == "title":
+		return
+	current_mode = "title"
+	bgm_gameplay.stop()
+	bgm_failure.stop()
+	bgm_title.play()
 
 func _stop_all_bgm() -> void:
 	if current_mode == "":
@@ -77,3 +93,4 @@ func _stop_all_bgm() -> void:
 	current_mode = ""
 	bgm_gameplay.stop()
 	bgm_failure.stop()
+	bgm_title.stop()
