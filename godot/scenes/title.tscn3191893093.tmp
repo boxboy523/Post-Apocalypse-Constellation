@@ -49,7 +49,7 @@ offset_bottom = 651.0
 theme_override_fonts/font = ExtResource("5_b3w7a")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_guv5c")
-text = "게임 시작 "
+text = "게임 시작"
 
 [node name="ExitButton" type="Button" parent="Control" unique_id=2002859054]
 layout_mode = 1
@@ -61,7 +61,7 @@ offset_bottom = 736.0
 theme_override_fonts/font = ExtResource("5_b3w7a")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_guv5c")
-text = "게임 종료 "
+text = "게임 종료"
 
 [node name="CreditButton" type="Button" parent="Control" unique_id=940885998]
 layout_mode = 1
@@ -73,7 +73,7 @@ offset_bottom = 810.0
 theme_override_fonts/font = ExtResource("5_b3w7a")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_guv5c")
-text = "크레딧 "
+text = "크레딧"
 
 [node name="별" type="Sprite2D" parent="Control" unique_id=1256634256]
 position = Vector2(144, 624)
