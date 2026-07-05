@@ -10,6 +10,7 @@ var is_dead = false
 
 @export var isInjured: bool = false
 @onready var anim_sprite = $"../AnimatedSprite2D"
+var player
 
 var noise_stack: int = 0
 
@@ -27,6 +28,7 @@ func _ready() -> void:
 	hp = GameState.hp
 	spare_hp = GameState.spare_hp
 	EventBus.health_changed.emit(hp + spare_hp)
+	player = get_parent().get_parent()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -53,7 +55,10 @@ func take_damage() -> void:
 			await get_tree().create_timer(1.0).timeout
 			get_tree().change_scene_to_file.call_deferred("res://scenes/game_over.tscn")
 			return
+		else:
+			player
 	EventBus.health_changed.emit(hp + spare_hp)
+	player.say("아야야… 인생…")
 	if hp < max_hp:
 		isInjured = true
 		print("부상")
@@ -90,6 +95,15 @@ func run_from_enemy(enemy_damage: int = 1):
 
 	if success:
 		print("도주 성공")
+		if weapon != "none":
+			if weapon == "knife":
+				anim_sprite.play("knife_attack")
+			if weapon == "bat":
+				anim_sprite.play("bat_attack")
+			if weapon == "crowbar":
+				anim_sprite.play("knife_attack")
+			await anim_sprite.animation_finished	
+		player.say("헉 헉… 살았다. 오늘 운은 다 쓴 거 아냐?")
 	else:
 		print("도주 실패")
 		take_damage()

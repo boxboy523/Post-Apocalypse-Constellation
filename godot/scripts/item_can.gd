@@ -52,6 +52,7 @@ func spawn_enemy() -> void:
 		return
 
 	var spawn_pos := global_position
+	spawn_pos.x += 300
 	var enemy = enemy_scene.instantiate()
 	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = spawn_pos

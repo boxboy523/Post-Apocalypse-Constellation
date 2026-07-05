@@ -20,6 +20,8 @@ func _ready() -> void:
 	$LerfFollow.global_position = global_position
 	follow.call_deferred(current_path)
 	anim_sprite.play('idle')
+	say("오늘은 운이 좋았으면 좋겠다...")
+	EventBus.say.connect(say)
 
 func follow(path: PathChoice) -> void:
 	var pos = global_position
@@ -88,4 +90,3 @@ func say(content: String):
 	bubble.fade_in()
 	await get_tree().create_timer(1.5).timeout
 	bubble.fade_out()
-	

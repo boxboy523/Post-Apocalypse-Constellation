@@ -51,6 +51,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="LeftBottom_Space" type="MarginContainer" parent="MainHUD" unique_id=2073317073]
+z_index = 1
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
