@@ -11,7 +11,7 @@ region = Rect2(876.6001, 389.40005, 115.28003, 120.56003)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xglm"]
 size = Vector2(62, 64)
 
-[node name="ItemSignmiddle" type="Area2D" unique_id=1971804557]
+[node name="ItemSignmiddle" type="Area2D" unique_id=1151077109]
 script = ExtResource("1_5xglm")
 sign_direction = "middle"
 item_res = ExtResource("2_6uusl")
