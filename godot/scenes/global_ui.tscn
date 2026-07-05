@@ -3,9 +3,29 @@
 [ext_resource type="Texture2D" uid="uid://bl5kk8wrmh21" path="res://images/units/천사.png" id="1_7j3t6"]
 [ext_resource type="Script" uid="uid://bsrajnfkhj8oo" path="res://scripts/fade.gd" id="1_y4ggm"]
 [ext_resource type="Script" uid="uid://dmietufkyffmv" path="res://scripts/angel_cursor.gd" id="2_y4ggm"]
+[ext_resource type="Script" path="res://scripts/audio_manager.gd" id="3_j9t2m"]
+[ext_resource type="AudioStreamMP3" path="res://sounds/bgm_gameplay.mp3" id="4_2n6uj"]
+[ext_resource type="AudioStreamMP3" path="res://sounds/bgm_failure.mp3" id="5_f0c1x"]
 
 [node name="GlobalUI" type="CanvasLayer" unique_id=747862103]
 layer = 2
+script = ExtResource("3_j9t2m")
+
+[node name="BGMGameplay" type="AudioStreamPlayer" parent="." unique_id=1172639482]
+stream = ExtResource("4_2n6uj")
+autoplay = false
+bus = "Master"
+volume_db = 0.0
+pitch_scale = 1.0
+loop = true
+
+[node name="BGMFailure" type="AudioStreamPlayer" parent="." unique_id=1172639483]
+stream = ExtResource("5_f0c1x")
+autoplay = false
+bus = "Master"
+volume_db = 0.0
+pitch_scale = 1.0
+loop = false
 
 [node name="Fade" type="ColorRect" parent="." unique_id=1041183213]
 z_index = 50
