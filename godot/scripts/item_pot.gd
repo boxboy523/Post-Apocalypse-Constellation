@@ -39,31 +39,34 @@ func start_falling() -> void:
 	float_tween.tween_callback(_trigger_break)
 
 func _on_area_entered(area: Area2D) -> void:
-	print("💥 [충돌 감지] 화분에 닿은 노드: ", area.name, " / 소속 그룹: ", area.get_groups())
-	if not is_falling:
-		return
+	if not is_falling: return
 		
+	# 1. 플레이어 감지 (플레이어는 깨진 파편 없이 즉시 삭제되므로 이것만 따로 처리)
 	var player = area.get_parent().get_parent().get_parent()
 	if player != null and player.is_in_group("player"):
-		var player_logic = area.get_parent()
-		_trigger_hurt(player, player_logic)
+		_trigger_hurt(player, area.get_parent())
 		return
 		
-	# 🌟 그룹 이름을 "crashground"로 변경했습니다.
-	if area.is_in_group("crashground") or (area.owner and area.owner.is_in_group("crashground")):
+	# 2. 좀비 감지 시 사망 함수 미리 실행 (여기선 return 안 하고 아래로 통과!)
+	if area.is_in_group("zombie") or area.has_method("die"):
+		area.die()
+	elif area.get_parent() and (area.get_parent().is_in_group("zombie") or area.get_parent().has_method("die")):
+		area.get_parent().die()
+
+	# 3. 🌟 [하나로 모은 깨짐 조건] 바닥이거나, 경로거나, 좀비였다면 무조건 쨍그랑!
+	if area.is_in_group("crashground") or area.is_in_group("path") or area.is_in_group("zombie"):
 		_trigger_break()
+
 
 func _on_body_entered(body: Node2D) -> void:
-	if not is_falling:
-		return
+	if not is_falling: return
 		
-	# 🌟 혹시 StaticBody2D로 바닥을 만들었을 경우를 대비한 방어 코드도 변경합니다.
-	if body.is_in_group("crashground") or body is TileMap:
-		_trigger_break()
+	# 1. 물리 바디 좀비 감지 시 사망 함수 미리 실행
+	if body.is_in_group("zombie") or body.has_method("die"):
+		body.die()
 		
-
-	# 🌟 3. Path(경로/바닥) 감지 처리 (TileMap이나 StaticBody2D 형태의 바닥일 때)
-	if body.is_in_group("path") or body is TileMap:
+	# 2. 🌟 [하나로 모은 깨짐 조건] 바닥, 타일맵, 경로, 좀비 중 하나라도 해당하면 쨍그랑!
+	if body.is_in_group("crashground") or body.is_in_group("path") or body is TileMap or body.is_in_group("zombie"):
 		_trigger_break()
 
 func _trigger_hurt(player, player_logic) -> void:
@@ -125,3 +128,16 @@ func _trigger_break() -> void:
 	fade_tween.tween_interval(1.0)
 	fade_tween.tween_property(self, "modulate:a", 0.0, 0.5)
 	fade_tween.tween_callback(queue_free)
+
+func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
+	# ItemBase의 기본 드래그 로직을 먼저 실행시킵니다.
+	super._input_event(viewport, event, shape_idx) 
+	
+	# 마우스 왼쪽 버튼을 누르는 순간(화분을 다시 잡았을 때)
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if is_falling:
+			is_falling = false
+			# 떨어지던 도중이었으므로, 기존 낙하 트윈을 강제로 종료합니다.
+			if float_tween:
+				float_tween.kill()
+			print("🏺 떨어지던 화분을 마우스로 다시 낚아챘습니다!")
