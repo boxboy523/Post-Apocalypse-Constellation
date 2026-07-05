@@ -45,7 +45,7 @@ var full_text_length: int = 0
 func _ready() -> void:
 	transition_fade.color = Color.BLACK
 	transition_fade.modulate.a = 1.0
-
+	EventBus.fade_in.emit()
 	show_scene(0)
 	await fade_from_black()
 
@@ -170,3 +170,4 @@ func fade_from_black() -> void:
 	var tween := create_tween()
 	tween.tween_property(transition_fade, "modulate:a", 0.0, fade_time)
 	await tween.finished
+	transition_fade.modulate.a = 0.0

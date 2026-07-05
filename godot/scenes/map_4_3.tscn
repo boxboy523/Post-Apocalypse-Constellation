@@ -40,6 +40,7 @@ point_count = 3
 [node name="Map4-3" type="Node2D" unique_id=342723024 groups=["player"]]
 position = Vector2(343, 420)
 script = ExtResource("1_gb14l")
+monster_scene = ExtResource("3_hpscl")
 
 [node name="PathUp" type="Path2D" parent="." unique_id=1440970172]
 z_index = 1
