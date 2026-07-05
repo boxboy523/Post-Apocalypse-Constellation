@@ -86,5 +86,6 @@ func spawn_randobj(paths: Array[PathChoice], count: int) -> void:
 					pos.y += 500
 				add_child(object)
 				object.global_position = pos
+				object.z_index = 1
 				break
 			acc += lengths[i]

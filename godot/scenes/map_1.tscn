@@ -59,7 +59,7 @@ point_count = 3
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5pvu"]
 size = Vector2(660, 514)
 
-[node name="Map1" type="Node2D" unique_id=342723024 groups=["player"]]
+[node name="Map1" type="Node2D" unique_id=342723024]
 position = Vector2(343, 420)
 script = ExtResource("1_08vx1")
 num_enemy = 1

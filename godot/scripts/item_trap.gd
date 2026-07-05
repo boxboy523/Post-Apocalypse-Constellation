@@ -10,5 +10,7 @@ func _on_area_entered(area: Area2D) -> void:
 	var player_logic = area.get_parent()
 	if player_logic and player_logic.is_in_group("player"):
 		player_logic.take_damage()
+		if player_logic and not player_logic.is_dead:
+			player_logic.get_parent().get_parent().stop_event(2.0)
 		# 덫은 한 번 발동하면 사라집니다.
 		queue_free()

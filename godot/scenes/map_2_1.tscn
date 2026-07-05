@@ -40,7 +40,7 @@ _data = {
 }
 point_count = 3
 
-[node name="Map2_1" type="Node2D" unique_id=342723024 groups=["player"]]
+[node name="Map2_1" type="Node2D" unique_id=342723024]
 position = Vector2(343, 420)
 script = ExtResource("1_cvlml")
 num_enemy = 6
