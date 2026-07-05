@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://b3k0nnxxx03ag" path="res://scenes/speech_bubble.tscn" id="18_2a4n2"]
 [ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="19_8xri4"]
 [ext_resource type="Texture2D" uid="uid://dhohm4lqg1d0k" path="res://images/backgrounds/자동차.png" id="23_hfmye"]
+[ext_resource type="PackedScene" uid="uid://tc6s2lmo1p3n" path="res://scenes/crash_ground.tscn" id="24_hpscl"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -201,3 +202,6 @@ texture = ExtResource("16_2a4n2")
 position = Vector2(-1383, -725)
 scale = Vector2(0.8030303, 0.78571427)
 texture = ExtResource("16_2a4n2")
+
+[node name="CrashGround" parent="." unique_id=1598088047 instance=ExtResource("24_hpscl")]
+position = Vector2(-6, -166)

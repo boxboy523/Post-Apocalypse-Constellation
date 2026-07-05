@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemRes" format=3 uid="uid://blp88rsyevio0"]
+
+[ext_resource type="Texture2D" uid="uid://cgsh8m7y6ktfo" path="res://images/backgrounds/평지화살표.png" id="1_jwjcg"]
+[ext_resource type="Script" uid="uid://dald4k4kxuywi" path="res://scripts/item_res.gd" id="1_k033g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xglm"]
+atlas = ExtResource("1_jwjcg")
+region = Rect2(884.22314, 397.37192, 100.04932, 103.80167)
+
+[resource]
+script = ExtResource("1_k033g")
+item_name = "SignMiddle"
+description = "표지판 "
+icon = SubResource("AtlasTexture_5xglm")
+item_scene_path = "uid://b56k2a1dk2kj2"
+metadata/_custom_type_script = "uid://dald4k4kxuywi"
