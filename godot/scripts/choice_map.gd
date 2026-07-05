@@ -4,7 +4,7 @@ extends Node2D
 @export var num_enemy: int = 0
 @export var num_objects: int = 5
 @export var monster_scene: PackedScene
-@export var spawn_offset: float = 0
+@export var spawn_offset: float = 300
 
 var object_list: Array[PackedScene] = [
 	preload("res://scenes/item_can.tscn"),
@@ -78,7 +78,12 @@ func spawn_randobj(paths: Array[PathChoice], count: int) -> void:
 			if acc + lengths[i] >= dist:
 				var local_dist := dist - acc + spawn_offset
 				var pos: Vector2 = paths[i].to_global(paths[i].curve.sample_baked(local_dist))
-				var object = object_list.pick_random().instantiate()
+				var idx = randi_range(0, object_list.size() - 1)
+				if idx > 3 and idx <= 6:
+					idx = randi_range(0, object_list.size() - 1) # reroll for reduce sign rate
+				var object = object_list[idx].instantiate()
+				if idx == 3: #pot
+					pos.y += 500
 				add_child(object)
 				object.global_position = pos
 				break

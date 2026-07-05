@@ -130,7 +130,6 @@ offset_top = -24.0
 offset_right = 525.0
 offset_bottom = -1.0
 talker = NodePath("../../Player")
-offset = Vector2(-30, -75)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("17_6yyhc")]

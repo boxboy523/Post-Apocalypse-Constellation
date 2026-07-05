@@ -24,6 +24,7 @@ offset_right = 1.0
 offset_bottom = 23.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4j542")
 script = ExtResource("1_a8ruc")
+offset = Vector2(-50, -100)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=531651042]
 custom_minimum_size = Vector2(100, 10)
