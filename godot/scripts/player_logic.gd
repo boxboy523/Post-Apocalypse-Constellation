@@ -62,7 +62,10 @@ func take_damage() -> void:
 	if hp < max_hp:
 		isInjured = true
 		print("부상")
-		EventBus.change_status.emit("부상")
+		if hp > 1:
+			EventBus.change_status.emit("아픔")
+		else:
+			EventBus.change_status.emit("두려움")
 	var last_anim = anim_sprite.animation
 	anim_sprite.play("trapped")
 	await anim_sprite.animation_finished
