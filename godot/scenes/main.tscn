@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cdiy8ery1c25l" path="res://scenes/map_1.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://pdu8rrkl0f7b" path="res://scenes/item_pot.tscn" id="4_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://djo1huegkloh6" path="res://scenes/item_signup.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b5prsy5lykhyt" path="res://scenes/item_can.tscn" id="5_a8y0u"]
+[ext_resource type="PackedScene" uid="uid://dwpg8veoi1u7f" path="res://scenes/item_signdown.tscn" id="5_o6xl0"]
 
 [node name="Main" type="Node2D" unique_id=1160899106]
 
@@ -14,3 +16,9 @@ position = Vector2(-4221, 781)
 
 [node name="ItemPot" parent="." unique_id=1984528209 instance=ExtResource("4_tbgi4")]
 position = Vector2(-4511, 452)
+
+[node name="ItemSignUp" parent="." unique_id=528071890 instance=ExtResource("4_tefeu")]
+position = Vector2(-4094, 740)
+
+[node name="ItemSignDown" parent="." unique_id=436266759 instance=ExtResource("5_o6xl0")]
+position = Vector2(-4008, 790)
