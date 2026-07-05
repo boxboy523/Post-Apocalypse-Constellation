@@ -3,7 +3,7 @@ extends Node2D
 
 @export var num_enemy: int = 0
 @export var monster_scene: PackedScene
-@export var spawn_offset: float = 100.0
+@export var spawn_offset: float = 0
 
 func _ready() -> void:
 	EventBus.fade_in.emit(1.0)
