@@ -6,12 +6,6 @@ extends Path2D
 @export var next_paths: Array[PathChoice] = []
 var next_probs: Array[float] = []
 
-func _init() -> void:
-	var line = Line2D.new()
-	line.points = curve.get_baked_points()
-	line.width = 2.0
-	line.default_color = Color(0.0, 1.0, 0.0, 1.0)
-	add_child(line)
 
 func get_paths() -> Array[PathChoice]:
 	if next_set:
