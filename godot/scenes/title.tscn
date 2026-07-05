@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cclqn0llv5xfo"]
 
-[ext_resource type="Script" uid="uid://d1li4s5x08iht" path="res://title.gd" id="1_wosw1"]
+[ext_resource type="Script" uid="uid://d1li4s5x08iht" path="res://scripts/title.gd" id="1_wosw1"]
 [ext_resource type="Texture2D" uid="uid://cw1bdbs6xav8k" path="res://images/title/타이틀 배경.png" id="2_p6dhs"]
 [ext_resource type="Texture2D" uid="uid://bac37ed2uwpya" path="res://images/title/제목.png" id="3_pyl7j"]
 [ext_resource type="Texture2D" uid="uid://cd2w6g5wh56hr" path="res://images/title/별.png" id="4_b3w7a"]
