@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://f86dtsntcv55"]
 
 [ext_resource type="Script" uid="uid://drcjh6ibb4h3m" path="res://scripts/obstacle_heal.gd" id="1_oa6qx"]
-[ext_resource type="Texture2D" uid="uid://ditpsxa0iayf5" path="res://images/items/구급상자.jpg" id="2_oa6qx"]
+[ext_resource type="Texture2D" uid="uid://dndy5hvwbrcq1" path="res://images/응급처치키트.png" id="2_oa6qx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tipki"]
 size = Vector2(36, 32)

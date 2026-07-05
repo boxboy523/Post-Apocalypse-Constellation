@@ -13,6 +13,7 @@ func _ready() -> void:
 	first_pos = global_position
 	new_target.call_deferred()
 	super._ready()
+	stop_time = 2.0
 
 func stop_event(time: float):
 	stop = true

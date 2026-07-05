@@ -42,7 +42,6 @@ func _trigger_noise(player_logic) -> void:
 		
 		if player_logic.has_method("noise_triggered") and player_logic.noise_triggered(1):
 			spawn_enemy.call_deferred()
-			EventBus.change_status.emit("오늘 운이 나쁘다고 여기는 중")
 			queue_free() # 깡통 파괴
 	else:
 		print("에러: player_logic 노드에 add_noise_stack 메서드가 없습니다. 스크립트 위치를 확인하세요.")
@@ -55,7 +54,14 @@ func spawn_enemy() -> void:
 	var spawn_pos := global_position
 	spawn_pos.x += 300
 	var enemy = enemy_scene.instantiate()
+	EventBus.alart.emit(
+"🚨경고🚨
+좀비가 나타났습니다!
+소녀가 위험합니다!"
+	)
+	EventBus.change_status.emit("오늘 운이 나쁘다고 여기는 중")
 	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = spawn_pos
 	enemy.first_pos = spawn_pos
+	enemy.tree_exited.connect(EventBus.reset_alart)
 	print("enemy 스폰 완료")

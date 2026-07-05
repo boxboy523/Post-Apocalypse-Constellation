@@ -2,7 +2,7 @@ class_name ChoiceMap
 extends Node2D
 
 @export var num_enemy: int = 0
-@export var num_objects: int = 5
+@export var num_objects: int = 10
 @export var monster_scene: PackedScene
 @export var spawn_offset: float = 300
 
