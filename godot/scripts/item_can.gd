@@ -55,4 +55,5 @@ func spawn_enemy() -> void:
 	var enemy = enemy_scene.instantiate()
 	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = spawn_pos
+	enemy.first_pos = spawn_pos
 	print("enemy 스폰 완료")

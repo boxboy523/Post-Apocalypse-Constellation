@@ -57,17 +57,19 @@ func take_damage() -> void:
 	if hp < max_hp:
 		isInjured = true
 		print("부상")
+		EventBus.change_status.emit("부상")
 	var last_anim = anim_sprite.animation
 	anim_sprite.play("trapped")
 	await anim_sprite.animation_finished
 	print("after await")
 	anim_sprite.play(last_anim)
 	return
-	
+
 func get_medkit() -> void:
 	if isInjured:
 		isInjured = false
 		print("부상 치료")
+		EventBus.change_status.emit("러키비키!")
 	if hp < max_hp:
 		hp += 1
 		print("체력 회복. 현재 체력: ", hp, "/", max_hp)

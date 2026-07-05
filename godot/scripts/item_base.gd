@@ -2,7 +2,7 @@ extends Area2D
 class_name ItemBase
 
 @export var item_res: ItemRes
-@export var move_cost: int = 10 
+@export var move_cost: float = 10 
 
 var is_left_dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
@@ -18,6 +18,8 @@ func _ready() -> void:
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if GameState.action_point < move_cost:
+			return
 		is_left_dragging = true
 		start_drag_position = global_position 
 		drag_offset = global_position - get_global_mouse_position()
@@ -83,7 +85,8 @@ func _pickup_to_specific_slot(s_index: int) -> void:
 	else:
 		global_position = start_drag_position
 		_on_dropped_in_world()
-func _consume_cost() -> void: pass
+func _consume_cost() -> void:
+	GameState.action_point -= move_cost
 
 # 기본적으로 월드에 떨어지면 경로를 찾아 둥둥 뜹니다.
 func _on_dropped_in_world() -> void:
@@ -91,6 +94,7 @@ func _on_dropped_in_world() -> void:
 
 # 🌟 [오리지널 로직 복구] 가장 가까운 Path2D 선을 찾아 Y축 높이를 맞추는 함수
 func start_floating() -> void:
+	print("start floating")
 	is_cleared = true
 	
 	if float_tween: float_tween.kill()

@@ -2,8 +2,27 @@
 
 [ext_resource type="Script" uid="uid://c4meyxd4n2dgo" path="res://scripts/heart.gd" id="1_4a2ha"]
 [ext_resource type="Script" uid="uid://lii2cft1ufay" path="res://scripts/inventory_ui.gd" id="1_c4rma"]
+[ext_resource type="Texture2D" uid="uid://n1qla4acv3o8" path="res://images/status_ui.png" id="1_jtalx"]
 [ext_resource type="Texture2D" uid="uid://cbajv2ufnbgi0" path="res://images/heart.png" id="1_kfwc7"]
+[ext_resource type="Script" uid="uid://dlxcvnpt8am2x" path="res://scenes/girl_status.gd" id="2_6gso4"]
 [ext_resource type="Script" uid="uid://cvoms4pioncnb" path="res://scripts/inventory_slot.gd" id="2_ghj5q"]
+[ext_resource type="Texture2D" uid="uid://dfko1dlydrkkr" path="res://images/heart_ui.png" id="2_wskm7"]
+[ext_resource type="Script" uid="uid://c5ilycwtme6f8" path="res://scenes/progress_bar.gd" id="3_kfwc7"]
+[ext_resource type="Texture2D" uid="uid://br8g5es4arc54" path="res://images/mintheart.png" id="5_6gso4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0284"]
+texture = ExtResource("1_jtalx")
+expand_margin_left = 10.0
+expand_margin_top = 20.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k5pvu"]
+texture = ExtResource("2_wskm7")
+expand_margin_left = 10.0
+expand_margin_top = 20.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=965002566]
 
@@ -31,21 +50,15 @@ layout_mode = 2
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="MainHUD/LeftBottomUp_Space/LeftBottomUp_Group/Warning_Panel" unique_id=1995367881]
-layout_mode = 0
-offset_right = 190.0
-offset_bottom = 75.0
-text = "🚨경고🚨
-소녀가 위험에 처했습니다!
-좀비들이 몰려옵니다.."
-
 [node name="LeftBottom_Space" type="MarginContainer" parent="MainHUD" unique_id=2073317073]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -120.0
-offset_right = 250.0
+offset_left = 30.0
+offset_top = -269.0
+offset_right = 239.0
+offset_bottom = -30.0
 grow_vertical = 0
 mouse_filter = 2
 theme_override_constants/margin_left = 20
@@ -54,26 +67,43 @@ theme_override_constants/margin_bottom = 20
 [node name="LeftBottom_Group" type="VBoxContainer" parent="MainHUD/LeftBottom_Space" unique_id=487424231]
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/separation = 30
 
-[node name="Status_Panel" type="Panel" parent="MainHUD/LeftBottom_Space/LeftBottom_Group" unique_id=1219494248]
+[node name="PanelContainer" type="PanelContainer" parent="MainHUD/LeftBottom_Space/LeftBottom_Group" unique_id=129874590]
 layout_mode = 2
-mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d0284")
 
-[node name="HeartContainer" type="HBoxContainer" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel" unique_id=2008311755]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = 2.0
-offset_right = 255.0
-offset_bottom = 32.0
-grow_vertical = 0
-mouse_filter = 2
-script = ExtResource("1_4a2ha")
+[node name="VBoxContainer" type="VBoxContainer" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/PanelContainer" unique_id=1368921806]
+layout_mode = 2
 
-[node name="Label" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=94942689]
+[node name="Label2" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/PanelContainer/VBoxContainer" unique_id=1995367881]
+layout_mode = 2
+text = "🚨경고🚨
+소녀가 위험에 처했습니다!
+좀비들이 몰려옵니다.."
+
+[node name="Label" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/PanelContainer/VBoxContainer" unique_id=94942689]
 layout_mode = 2
 text = "불운의 소녀"
+
+[node name="GirlStatus" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/PanelContainer/VBoxContainer" unique_id=670072182]
+layout_mode = 2
+text = "상태: 럭키비키!"
+script = ExtResource("2_6gso4")
+
+[node name="Control" type="Control" parent="MainHUD/LeftBottom_Space/LeftBottom_Group" unique_id=627886646]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Status_Panel" type="PanelContainer" parent="MainHUD/LeftBottom_Space/LeftBottom_Group" unique_id=1523754385]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_k5pvu")
+
+[node name="HeartContainer" type="HBoxContainer" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel" unique_id=2008311755]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("1_4a2ha")
 
 [node name="Heart1" type="TextureRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=2018327729]
 custom_minimum_size = Vector2(30, 30)
@@ -100,26 +130,15 @@ expand_mode = 1
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("1_kfwc7")
+texture = ExtResource("5_6gso4")
 expand_mode = 1
 
 [node name="Heart5" type="TextureRect" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel/HeartContainer" unique_id=1552917809]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 mouse_filter = 2
-texture = ExtResource("1_kfwc7")
+texture = ExtResource("5_6gso4")
 expand_mode = 1
-
-[node name="GirlStatus" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/Status_Panel" unique_id=670072182]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = 40.0
-offset_right = 109.0
-offset_bottom = 63.0
-grow_vertical = 0
-text = "상태: 럭키비키!"
 
 [node name="CenterBottom_Space" type="MarginContainer" parent="MainHUD" unique_id=1796080561]
 layout_mode = 1
@@ -144,6 +163,7 @@ mouse_filter = 2
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 mouse_filter = 2
+script = ExtResource("3_kfwc7")
 
 [node name="Inventory" type="Control" parent="MainHUD/CenterBottom_Space/CenterBottom_Group" unique_id=84840714]
 layout_mode = 2

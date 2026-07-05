@@ -10,9 +10,8 @@ var target: Vector2
 var stop = false
 
 func _ready() -> void:
-	stop_time = 1.0
 	first_pos = global_position
-	new_target()
+	new_target.call_deferred()
 	super._ready()
 
 func stop_event(time: float):
