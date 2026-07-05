@@ -39,7 +39,7 @@ var full_text_length: int = 0
 func _ready() -> void:
 	transition_fade.color = Color.BLACK
 	transition_fade.modulate.a = 1.0
-
+	EventBus.fade_in.emit()
 	show_scene(0)
 	await fade_from_black()
 
