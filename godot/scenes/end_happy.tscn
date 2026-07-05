@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://m385gsoi4ro8"]
+
+[ext_resource type="Script" uid="uid://c57beonsne8j6" path="res://end_happy_control.gd" id="1_tykqq"]
+
+[node name="EndHappy" type="Control" unique_id=1493419272]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tykqq")
+
+[node name="ClickHint" type="Label" parent="." unique_id=531284449]
+layout_mode = 0
+offset_left = 1433.0
+offset_top = 850.0
+offset_right = 2264.0
+offset_bottom = 1000.0
+text = "클릭하여 계속"
+
+[node name="Background" type="ColorRect" parent="." unique_id=1062712682]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Illustration" type="TextureRect" parent="." unique_id=212864180]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="TextBox" type="PanelContainer" parent="." unique_id=67891446]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -752.0
+offset_top = -221.0
+offset_right = 757.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBox" unique_id=828785416]
+layout_mode = 2
+
+[node name="DialogueText" type="RichTextLabel" parent="TextBox/MarginContainer" unique_id=1833589374]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 26
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TransitionFade" type="ColorRect" parent="." unique_id=881005849]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

@@ -63,6 +63,10 @@ func take_damage() -> void:
 		print("부상")
 		EventBus.change_status.emit("부상")
 		EventBus.say.emit("아야야… 인생…")
+		if hp > 1:
+			EventBus.change_status.emit("아픔")
+		else:
+			EventBus.change_status.emit("두려움")
 	var last_anim = anim_sprite.animation
 	anim_sprite.play("trapped")
 	await anim_sprite.animation_finished
