@@ -32,6 +32,7 @@ func follow(path: PathChoice) -> void:
 	path_choices = current_path.get_paths()
 
 func stop_event(time: float):
+	print("stopevent: ", time)
 	stop = true
 	anim_sprite.play('idle')
 	await get_tree().create_timer(time).timeout

@@ -2,7 +2,7 @@ class_name ChoiceMap
 extends Node2D
 
 @export var num_enemy: int = 0
-@export var num_objects: int = 5
+@export var num_objects: int = 10
 @export var monster_scene: PackedScene
 @export var spawn_offset: float = 300
 
@@ -86,5 +86,6 @@ func spawn_randobj(paths: Array[PathChoice], count: int) -> void:
 					pos.y += 500
 				add_child(object)
 				object.global_position = pos
+				object.z_index = 1
 				break
 			acc += lengths[i]

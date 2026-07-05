@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cdiy8ery1c25l"]
 
 [ext_resource type="Script" uid="uid://57nxd88ew6wa" path="res://scripts/choice_map.gd" id="1_08vx1"]
+[ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="2_0rj4q"]
 [ext_resource type="Script" uid="uid://bsg5drt3fprvl" path="res://scripts/path_choice.gd" id="2_v17nm"]
 [ext_resource type="PackedScene" uid="uid://u6afdfgitw1s" path="res://scenes/map_2_1.tscn" id="3_ihhym"]
 [ext_resource type="PackedScene" uid="uid://bwcl3gt3hq10b" path="res://scenes/gizmos/ground1.tscn" id="4_m3f5x"]
@@ -34,6 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://dhohm4lqg1d0k" path="res://images/backgrounds/자동차.png" id="33_uqgso"]
 [ext_resource type="PackedScene" uid="uid://u4k4gkvyyr56" path="res://scenes/obstacle_guide.tscn" id="34_qww0w"]
 [ext_resource type="PackedScene" uid="uid://tc6s2lmo1p3n" path="res://scenes/crash_ground.tscn" id="34_uqgso"]
+[ext_resource type="Script" uid="uid://jte80kckft58" path="res://scenes/area_safe.gd" id="35_pm843"]
+[ext_resource type="Script" uid="uid://c5emylup5jvsx" path="res://scenes/area_warn.gd" id="35_uqgso"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -53,9 +56,14 @@ _data = {
 }
 point_count = 3
 
-[node name="Map1" type="Node2D" unique_id=342723024 groups=["player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5pvu"]
+size = Vector2(660, 514)
+
+[node name="Map1" type="Node2D" unique_id=342723024]
 position = Vector2(343, 420)
 script = ExtResource("1_08vx1")
+num_enemy = 1
+monster_scene = ExtResource("2_0rj4q")
 
 [node name="PathUp" type="Path2D" parent="." unique_id=1440970172]
 z_index = 1
@@ -385,3 +393,19 @@ path_down = NodePath("../PathDown")
 
 [node name="CrashGround" parent="." unique_id=1598088047 instance=ExtResource("34_uqgso")]
 position = Vector2(-1682, -169)
+
+[node name="AreaSafe" type="Area2D" parent="." unique_id=1401873228]
+position = Vector2(2914, -1654)
+script = ExtResource("35_pm843")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSafe" unique_id=2095700676]
+position = Vector2(-1778, 1634)
+shape = SubResource("RectangleShape2D_k5pvu")
+
+[node name="AreaWarn" type="Area2D" parent="." unique_id=927252362]
+position = Vector2(1457, -827)
+script = ExtResource("35_uqgso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaWarn" unique_id=604682479]
+position = Vector2(-317, 243)
+shape = SubResource("RectangleShape2D_k5pvu")

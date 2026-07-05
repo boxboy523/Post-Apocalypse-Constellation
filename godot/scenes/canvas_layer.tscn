@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://lii2cft1ufay" path="res://scripts/inventory_ui.gd" id="1_c4rma"]
 [ext_resource type="Texture2D" uid="uid://n1qla4acv3o8" path="res://images/status_ui.png" id="1_jtalx"]
 [ext_resource type="Texture2D" uid="uid://cbajv2ufnbgi0" path="res://images/heart.png" id="1_kfwc7"]
+[ext_resource type="Script" uid="uid://c2ubu2w3jik3f" path="res://scenes/label_alart.gd" id="2_0gp8r"]
 [ext_resource type="Script" uid="uid://dlxcvnpt8am2x" path="res://scenes/girl_status.gd" id="2_6gso4"]
 [ext_resource type="Script" uid="uid://cvoms4pioncnb" path="res://scripts/inventory_slot.gd" id="2_ghj5q"]
 [ext_resource type="Texture2D" uid="uid://dfko1dlydrkkr" path="res://images/heart_ui.png" id="2_wskm7"]
@@ -77,11 +78,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_d0284")
 [node name="VBoxContainer" type="VBoxContainer" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/PanelContainer" unique_id=1368921806]
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/PanelContainer/VBoxContainer" unique_id=1995367881]
+[node name="LabelAlart" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/PanelContainer/VBoxContainer" unique_id=1995367881]
 layout_mode = 2
-text = "🚨경고🚨
-소녀가 위험에 처했습니다!
-좀비들이 몰려옵니다.."
+text = "지금은 안전합니다...
+아마도?
+"
+script = ExtResource("2_0gp8r")
 
 [node name="Label" type="Label" parent="MainHUD/LeftBottom_Space/LeftBottom_Group/PanelContainer/VBoxContainer" unique_id=94942689]
 layout_mode = 2

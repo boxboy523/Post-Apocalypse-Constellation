@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfe8xsn2utioj"]
 
 [ext_resource type="Script" uid="uid://57nxd88ew6wa" path="res://scripts/choice_map.gd" id="1_gb14l"]
+[ext_resource type="PackedScene" uid="uid://dlhqw8v0t7aw7" path="res://scenes/obstacle_scabbinzer.tscn" id="2_3ilpf"]
 [ext_resource type="Script" uid="uid://bsg5drt3fprvl" path="res://scripts/path_choice.gd" id="2_u3v6w"]
 [ext_resource type="PackedScene" uid="uid://m385gsoi4ro8" path="res://scenes/end_happy.tscn" id="3_hpscl"]
 [ext_resource type="Texture2D" uid="uid://dbxqrspq56epv" path="res://images/backgrounds/sky.png" id="4_k78dx"]
@@ -37,10 +38,12 @@ _data = {
 }
 point_count = 3
 
-[node name="Map4-3" type="Node2D" unique_id=342723024 groups=["player"]]
+[node name="Map4-3" type="Node2D" unique_id=342723024]
 position = Vector2(343, 420)
 script = ExtResource("1_gb14l")
-monster_scene = ExtResource("3_hpscl")
+num_enemy = 10
+num_objects = 4
+monster_scene = ExtResource("2_3ilpf")
 
 [node name="PathUp" type="Path2D" parent="." unique_id=1440970172]
 z_index = 1
