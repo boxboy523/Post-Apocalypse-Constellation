@@ -34,5 +34,7 @@ func apply_sign_direction(sign_dir: String) -> void:
 	path_down.prob_weight = new_path_down_weight
 	if path_middle != null:
 		path_middle.prob_weight = new_path_middle_weight
+	# 표지판을 설치하면 플레이어가 인식할 수 있도록 짧은 혼잣말을 남깁니다.
+	EventBus.say.emit("…왠지 저쪽으로 가면 운이 좋을 것 같아")
 		
 	print("🎯 표지판 장착 완료! 적용 방향: ", sign_dir)

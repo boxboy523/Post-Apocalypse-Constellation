@@ -1,4 +1,7 @@
 extends ItemBase
 class_name ItemLightBarrier
-# 지금은 코드를 추가할 필요가 없습니다! 
-# ItemBase를 상속받았기 때문에 자동으로 드래그 앤 드롭과 둥둥 뜨기가 적용됩니다.
+# 빛의 장막: 배치(사용) 시 짧은 대사를 출력합니다.
+func _on_dropped_in_world() -> void:
+	EventBus.say.emit("방금 뭐였지? 좀 이상한데?")
+	# 기본 동작: 아이템을 월드에 둥둥 띄우기
+	start_floating()
