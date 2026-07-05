@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw1bdbs6xav8k"
-path="res://.godot/imported/타이틀 배경.png-d5ca1b9b08664c07c13e9af8795d4f45.ctex"
+uid="uid://50woxrjj6uxe"
+path="res://.godot/imported/3번컷씬.png-aedf070f62d6fbf25c0a65b5ee9a3488.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/타이틀 배경.png"
-dest_files=["res://.godot/imported/타이틀 배경.png-d5ca1b9b08664c07c13e9af8795d4f45.ctex"]
+source_file="res://images/items/3번컷씬.png"
+dest_files=["res://.godot/imported/3번컷씬.png-aedf070f62d6fbf25c0a65b5ee9a3488.ctex"]
 
 [params]
 

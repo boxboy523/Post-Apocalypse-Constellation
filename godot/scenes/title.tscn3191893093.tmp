@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://cclqn0llv5xfo"]
 
-[ext_resource type="Script" uid="uid://d1li4s5x08iht" path="res://scripts/title.gd" id="1_wosw1"]
+[ext_resource type="Script" uid="uid://d1li4s5x08iht" path="res://title.gd" id="1_wosw1"]
 [ext_resource type="Texture2D" uid="uid://cw1bdbs6xav8k" path="res://images/title/타이틀 배경.png" id="2_p6dhs"]
 [ext_resource type="Texture2D" uid="uid://bac37ed2uwpya" path="res://images/title/제목.png" id="3_pyl7j"]
 [ext_resource type="Texture2D" uid="uid://cd2w6g5wh56hr" path="res://images/title/별.png" id="4_b3w7a"]
 [ext_resource type="FontFile" uid="uid://b2xxwjfwtnmou" path="res://images/title/HeirofLightRegular.ttf" id="5_b3w7a"]
-
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_guv5c"]
 
@@ -50,7 +49,7 @@ offset_bottom = 651.0
 theme_override_fonts/font = ExtResource("5_b3w7a")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_guv5c")
-text = "게임 시작 "
+text = "게임 시작"
 
 [node name="ExitButton" type="Button" parent="Control" unique_id=2002859054]
 layout_mode = 1
@@ -62,7 +61,7 @@ offset_bottom = 736.0
 theme_override_fonts/font = ExtResource("5_b3w7a")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_guv5c")
-text = "게임 종료 "
+text = "게임 종료"
 
 [node name="CreditButton" type="Button" parent="Control" unique_id=940885998]
 layout_mode = 1
@@ -74,7 +73,7 @@ offset_bottom = 810.0
 theme_override_fonts/font = ExtResource("5_b3w7a")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_guv5c")
-text = "크레딧 "
+text = "크레딧"
 
 [node name="별" type="Sprite2D" parent="Control" unique_id=1256634256]
 position = Vector2(144, 624)
