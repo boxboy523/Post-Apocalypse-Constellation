@@ -58,11 +58,15 @@ func take_damage() -> void:
 		else:
 			player
 	EventBus.health_changed.emit(hp + spare_hp)
-	player.say("아야야… 인생…")
 	if hp < max_hp:
 		isInjured = true
 		print("부상")
 		EventBus.change_status.emit("부상")
+		EventBus.say.emit("아야야… 인생…")
+		if hp > 1:
+			EventBus.change_status.emit("아픔")
+		else:
+			EventBus.change_status.emit("두려움")
 	var last_anim = anim_sprite.animation
 	anim_sprite.play("trapped")
 	await anim_sprite.animation_finished
@@ -95,6 +99,7 @@ func run_from_enemy(enemy_damage: int = 1):
 
 	if success:
 		print("도주 성공")
+		EventBus.say.emit("헉 헉… 살았다. 오늘 운은 다 쓴 거 아냐?")
 		if weapon != "none":
 			if weapon == "knife":
 				anim_sprite.play("knife_attack")
@@ -103,7 +108,6 @@ func run_from_enemy(enemy_damage: int = 1):
 			if weapon == "crowbar":
 				anim_sprite.play("knife_attack")
 			await anim_sprite.animation_finished	
-		player.say("헉 헉… 살았다. 오늘 운은 다 쓴 거 아냐?")
 	else:
 		print("도주 실패")
 		take_damage()

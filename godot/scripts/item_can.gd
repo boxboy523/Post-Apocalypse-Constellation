@@ -42,6 +42,7 @@ func _trigger_noise(player_logic) -> void:
 		
 		if player_logic.has_method("noise_triggered") and player_logic.noise_triggered(1):
 			spawn_enemy.call_deferred()
+			EventBus.change_status.emit("오늘 운이 나쁘다고 여기는 중")
 			queue_free() # 깡통 파괴
 	else:
 		print("에러: player_logic 노드에 add_noise_stack 메서드가 없습니다. 스크립트 위치를 확인하세요.")

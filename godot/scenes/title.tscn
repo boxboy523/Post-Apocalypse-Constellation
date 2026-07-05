@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cd2w6g5wh56hr" path="res://images/title/별.png" id="4_b3w7a"]
 [ext_resource type="FontFile" uid="uid://b2xxwjfwtnmou" path="res://images/title/HeirofLightRegular.ttf" id="5_b3w7a"]
 
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_guv5c"]
 
 [node name="Title" type="Node2D" unique_id=499917110]

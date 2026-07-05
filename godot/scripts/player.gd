@@ -20,8 +20,8 @@ func _ready() -> void:
 	$LerfFollow.global_position = global_position
 	follow.call_deferred(current_path)
 	anim_sprite.play('idle')
-	say("오늘은 운이 좋았으면 좋겠다...")
 	EventBus.say.connect(say)
+	EventBus.say.emit("오늘은 운이 좋았으면 좋겠다…")
 
 func follow(path: PathChoice) -> void:
 	var pos = global_position
@@ -56,6 +56,8 @@ func _process(delta: float) -> void:
 					state = PlayerState.FINISHED
 		PlayerState.FINISHED:
 			if current_path.next_set:
+				# 목표지점 도달 대사
+				EventBus.say.emit("웬일로 운빨이 좋은 하루였어. 매일 오늘 같으면 좋겠다!")
 				EventBus.fade_out.emit(1.0)
 				await get_tree().create_timer(1.0).timeout
 				get_tree().change_scene_to_packed(current_path.next_set)
@@ -80,6 +82,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("start_path") and state == PlayerState.READY and not stop: # 이동 시작
 		state = PlayerState.ON_PATH
 		anim_sprite.play('walk')
+		# 플레이어 조작 성공시 랜덤 대사
+		var lines = ["어라, 오늘 왜 길이 편하지?", "이상하다? 평소엔 뭐가 밟혔는데…", "이런 날도 다 있구나…"]
+		EventBus.say.emit(lines[randi() % lines.size()])
 	elif event.is_action_pressed("start_path"):
 		print("스페이스바 눌렸지만 상태가 READY가 아님. 현재 상태: ", state)
 		
