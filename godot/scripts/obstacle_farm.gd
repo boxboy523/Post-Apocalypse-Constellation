@@ -26,6 +26,9 @@ func _on_player_entered(player) -> void:
 
 	used = true
 
+	if randf() < 0.5 :
+		EventBus.say.emit("이게 아직도 남아있다니! 럭키비키잖아!")
+
 	match farm_type:
 		"weapon":
 			give_weapon(player)

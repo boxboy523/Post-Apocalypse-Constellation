@@ -10,9 +10,8 @@ var target: Vector2
 var stop = false
 
 func _ready() -> void:
-	stop_time = 1.0
 	first_pos = global_position
-	new_target()
+	new_target.call_deferred()
 	super._ready()
 
 func stop_event(time: float):
@@ -43,4 +42,15 @@ func _on_player_entered(player) -> void:
 	player.run_from_enemy()
 	queue_free()
 
+# 🌟 [새로 추가된 사망 함수] 화분에 맞으면 화분이 이 함수를 호출합니다!
+func die() -> void:
+	stop = true # 일단 즉시 이동을 멈춥니다.
+	set_process(false) # _process 실행을 아예 꺼버립니다.
+	print("🧟 좀비: 화분에 맞아 처치되었습니다.")
 	
+	# 만약 좀비 씬의 AnimatedSprite2D에 "die" 애니메이션이 있다면 재생합니다.
+	if anim_sprite.sprite_frames.has_animation("die"):
+		anim_sprite.play("die")
+		await anim_sprite.animation_finished
+		
+	queue_free() 

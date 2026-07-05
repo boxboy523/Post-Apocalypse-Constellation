@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://cb733fv30bu33" path="res://images/backgrounds/아파트1.png" id="12_q4vrv"]
 [ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="13_g2jlr"]
 [ext_resource type="PackedScene" uid="uid://cw3ggho3tcjel" path="res://scenes/item_coin.tscn" id="14_wq6ni"]
-[ext_resource type="Resource" uid="uid://bfsght4a85mtr" path="res://items/item_coin.tres" id="15_bxby3"]
 [ext_resource type="PackedScene" uid="uid://dwcysdoxq4gqe" path="res://scenes/canvas_layer.tscn" id="16_ua132"]
 [ext_resource type="PackedScene" uid="uid://b3k0nnxxx03ag" path="res://scenes/speech_bubble.tscn" id="17_0shdw"]
 [ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="19_658wo"]
@@ -42,6 +41,12 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 307.69635, 0)
 }
 point_count = 3
+
+[sub_resource type="Resource" id="Resource_yp1lf"]
+metadata/__load_path__ = "res://items/item_coin.tres"
+
+[sub_resource type="Resource" id="Resource_g2jlr"]
+metadata/__load_path__ = "res://items/item_coin.tres"
 
 [node name="MapBase" type="Node2D" unique_id=342723024]
 script = ExtResource("1_v6wkn")
@@ -132,11 +137,11 @@ bubble = NodePath("../CanvasLayer/SpeechBubble")
 
 [node name="ItemCoin2" parent="." unique_id=492544432 instance=ExtResource("14_wq6ni")]
 position = Vector2(195, -65)
-item_res = ExtResource("15_bxby3")
+item_res = SubResource("Resource_yp1lf")
 
 [node name="ItemCoin" parent="." unique_id=1392405137 instance=ExtResource("14_wq6ni")]
 position = Vector2(80.00003, -75)
-item_res = ExtResource("15_bxby3")
+item_res = SubResource("Resource_g2jlr")
 
 [node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("16_ua132")]
 
@@ -154,8 +159,6 @@ position = Vector2(113, -21)
 
 [node name="ObstacleGuide" parent="." unique_id=1938780022 instance=ExtResource("20_fk3n2")]
 position = Vector2(241, -5)
-path_up_path = NodePath("../MapBase")
-direction = "down"
 
 [node name="ObstacleNoise" parent="." unique_id=1006132324 instance=ExtResource("21_ger18")]
 position = Vector2(542, 87)

@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://oj0oouh4mwtt" path="res://scenes/player.tscn" id="26_6dpta"]
 [ext_resource type="PackedScene" uid="uid://u4k4gkvyyr56" path="res://scenes/obstacle_guide.tscn" id="27_bkxnn"]
 [ext_resource type="Texture2D" uid="uid://cxgktbk1cpxrs" path="res://images/backgrounds/나무2.png" id="27_tjit4"]
+[ext_resource type="PackedScene" uid="uid://tc6s2lmo1p3n" path="res://scenes/crash_ground.tscn" id="28_bkxnn"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -36,7 +37,7 @@ point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_s11mi"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1207, -265, 0, 0, 0, 0, 525, -265)
+"points": PackedVector2Array(0, 0, 0, 0, 525, -265, 0, 0, 0, 0, 1331, -265)
 }
 point_count = 2
 
@@ -66,6 +67,7 @@ next_set = ExtResource("3_08glf")
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 
 [node name="PathMiddle" type="Path2D" parent="." unique_id=944525676]
+z_index = 1
 curve = SubResource("Curve2D_s11mi")
 script = ExtResource("2_fwffn")
 next_set = ExtResource("4_rdlff")
@@ -235,7 +237,6 @@ offset_top = -24.0
 offset_right = 525.0
 offset_bottom = -1.0
 talker = NodePath("../../Player")
-offset = Vector2(-30, -75)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("26_6dpta")]
@@ -294,5 +295,11 @@ position = Vector2(-1180, -668)
 scale = Vector2(0.7330827, 0.7330828)
 texture = ExtResource("27_tjit4")
 
-[node name="ObstacleGuide" parent="." unique_id=812544508 instance=ExtResource("27_bkxnn")]
+[node name="ObstacleGuide" parent="." unique_id=812544508 node_paths=PackedStringArray("path_up", "path_down", "path_middle") instance=ExtResource("27_bkxnn")]
 position = Vector2(463, -389)
+path_up = NodePath("../PathUp")
+path_down = NodePath("../PathDown")
+path_middle = NodePath("../PathMiddle")
+
+[node name="CrashGround" parent="." unique_id=1598088047 instance=ExtResource("28_bkxnn")]
+position = Vector2(10, -177)

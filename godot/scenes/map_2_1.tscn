@@ -43,6 +43,8 @@ point_count = 3
 [node name="Map2_1" type="Node2D" unique_id=342723024 groups=["player"]]
 position = Vector2(343, 420)
 script = ExtResource("1_cvlml")
+num_enemy = 5
+monster_scene = ExtResource("27_1p4a6")
 
 [node name="PathUp" type="Path2D" parent="." unique_id=1440970172]
 z_index = 1
@@ -165,7 +167,7 @@ position = Vector2(-2154.3584, 0)
 texture = ExtResource("13_7y6sh")
 
 [node name="땅2" type="Sprite2D" parent="Ground1/땅4" unique_id=1257882396]
-position = Vector2(-301.8846, 3)
+position = Vector2(-301.88464, 0)
 texture = ExtResource("11_inskx")
 
 [node name="땅3" type="Sprite2D" parent="Ground1/땅4" unique_id=1107500199]
@@ -234,7 +236,7 @@ position = Vector2(-2141, -564)
 limit_left = -10000
 limit_right = 100000
 script = ExtResource("17_tl3kr")
-min_x = -700.0
+min_x = -1800.0
 max_x = 300.0
 
 [node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("18_qkvv0")]
@@ -245,28 +247,12 @@ offset_top = -24.0
 offset_right = 525.0
 offset_bottom = -1.0
 talker = NodePath("../../Player")
-offset = Vector2(-30, -75)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("20_shvnv")]
 position = Vector2(-500, -260)
 current_path = NodePath("../PathChoice")
 bubble = NodePath("../CanvasLayer/SpeechBubble")
-
-[node name="ObstacleEnemy" parent="." unique_id=326172621 instance=ExtResource("27_1p4a6")]
-position = Vector2(-2389, -296)
-
-[node name="ObstacleEnemy2" parent="." unique_id=536668431 instance=ExtResource("27_1p4a6")]
-position = Vector2(-1955, -296)
-
-[node name="ObstacleEnemy3" parent="." unique_id=1856165273 instance=ExtResource("27_1p4a6")]
-position = Vector2(-1738, -296)
-
-[node name="ObstacleEnemy4" parent="." unique_id=1238921845 instance=ExtResource("27_1p4a6")]
-position = Vector2(-746, -296)
-
-[node name="ObstacleEnemy5" parent="." unique_id=870914674 instance=ExtResource("27_1p4a6")]
-position = Vector2(-33, -296)
 
 [node name="자동차" type="Sprite2D" parent="." unique_id=149334898]
 z_index = 1

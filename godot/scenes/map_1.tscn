@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://cb733fv30bu33" path="res://images/backgrounds/아파트1.png" id="32_qww0w"]
 [ext_resource type="Texture2D" uid="uid://dhohm4lqg1d0k" path="res://images/backgrounds/자동차.png" id="33_uqgso"]
 [ext_resource type="PackedScene" uid="uid://u4k4gkvyyr56" path="res://scenes/obstacle_guide.tscn" id="34_qww0w"]
+[ext_resource type="PackedScene" uid="uid://tc6s2lmo1p3n" path="res://scenes/crash_ground.tscn" id="34_uqgso"]
 
 [sub_resource type="Curve2D" id="Curve2D_ya7al"]
 _data = {
@@ -315,11 +316,6 @@ position = Vector2(369, -532)
 scale = Vector2(1.4759358, 1.204)
 texture = ExtResource("9_1oc3a")
 
-[node name="나무1" type="Sprite2D" parent="." unique_id=1871066030]
-position = Vector2(380, -691)
-scale = Vector2(0.8836634, 0.8255659)
-texture = ExtResource("17_fgtu4")
-
 [node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("25_kdbgm")]
 
 [node name="SpeechBubble" parent="CanvasLayer" unique_id=1994342399 node_paths=PackedStringArray("talker") instance=ExtResource("26_a35se")]
@@ -328,7 +324,6 @@ offset_top = -24.0
 offset_right = 525.0
 offset_bottom = -1.0
 talker = NodePath("../../Player")
-offset = Vector2(-30, -75)
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("27_qoppm")]
@@ -354,6 +349,11 @@ position = Vector2(-3358, -897.25)
 scale = Vector2(0.8483146, 0.9503929)
 texture = ExtResource("31_nrsjh")
 
+[node name="나무1" type="Sprite2D" parent="아파트2" unique_id=1871066030]
+position = Vector2(4406.3843, 217.0155)
+scale = Vector2(1.0416695, 0.8686574)
+texture = ExtResource("17_fgtu4")
+
 [node name="아파트1" type="Sprite2D" parent="." unique_id=901336710]
 position = Vector2(-2769.0002, -884)
 scale = Vector2(0.97893256, 0.9243616)
@@ -378,5 +378,10 @@ z_index = 1
 position = Vector2(-3660, -203)
 texture = ExtResource("33_uqgso")
 
-[node name="ObstacleGuide" parent="." unique_id=812544508 instance=ExtResource("34_qww0w")]
+[node name="ObstacleGuide" parent="." unique_id=812544508 node_paths=PackedStringArray("path_up", "path_down") instance=ExtResource("34_qww0w")]
 position = Vector2(778, -395)
+path_up = NodePath("../PathUp")
+path_down = NodePath("../PathDown")
+
+[node name="CrashGround" parent="." unique_id=1598088047 instance=ExtResource("34_uqgso")]
+position = Vector2(-1682, -169)
