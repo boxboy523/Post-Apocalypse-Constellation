@@ -62,7 +62,9 @@ func _process(delta: float) -> void:
 			follow(next_path)
 			state = PlayerState.READY
 		PlayerState.READY:
-			pass
+			if not stop:
+				state = PlayerState.ON_PATH
+				anim_sprite.play('walk')
 		PlayerState.END:
 			pass
 
