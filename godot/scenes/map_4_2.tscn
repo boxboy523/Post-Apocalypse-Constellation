@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="2_ynub2"]
 [ext_resource type="PackedScene" uid="uid://d4mhcllvsytp5" path="res://scenes/map_base2.tscn" id="3_hgafl"]
 [ext_resource type="Texture2D" uid="uid://dbxqrspq56epv" path="res://images/backgrounds/sky.png" id="4_le2ek"]
+[ext_resource type="PackedScene" uid="uid://m385gsoi4ro8" path="res://scenes/end_happy.tscn" id="4_ynub2"]
 [ext_resource type="Texture2D" uid="uid://d2ft1hfkg72g8" path="res://images/backgrounds/farBackground.png" id="5_ux2rj"]
 [ext_resource type="PackedScene" uid="uid://bwcl3gt3hq10b" path="res://scenes/gizmos/ground1.tscn" id="6_3yd4j"]
 [ext_resource type="PackedScene" uid="uid://bbu1dt70fxiev" path="res://scenes/gizmos/ground2.tscn" id="7_b0gq6"]
@@ -63,6 +64,7 @@ z_index = 1
 scale = Vector2(1.0074867, 1)
 curve = SubResource("Curve2D_yg4uq")
 script = ExtResource("2_pu7uo")
+next_set = ExtResource("4_ynub2")
 next_paths = [NodePath("../PathUp")]
 metadata/_custom_type_script = "uid://bsg5drt3fprvl"
 

@@ -1,9 +1,10 @@
 extends Control
 
 @export_file("*.tscn")
-var game_scene_path: String = "res://scenes/main.tscn"
+var game_scene_path: String = "res://scenes/intro.tscn"
 
 func _ready() -> void:
+	EventBus.play_bgm.emit("title")
 	$StartButton.pressed.connect(_on_start_button_pressed)
 	$ExitButton.pressed.connect(_on_exit_button_pressed)
 	

@@ -11,3 +11,5 @@ func reset_alart():
 	alart.emit("지금은 안전합니다...
 아마도?"
 	)
+
+signal play_bgm(mode)

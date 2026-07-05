@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://57nxd88ew6wa" path="res://scripts/choice_map.gd" id="1_1f23l"]
 [ext_resource type="PackedScene" uid="uid://bjajumkpyxgwh" path="res://scenes/obstacle_enemy.tscn" id="2_hkcjs"]
+[ext_resource type="PackedScene" uid="uid://m385gsoi4ro8" path="res://scenes/end_happy.tscn" id="2_hkcjs"]
 [ext_resource type="Script" uid="uid://bsg5drt3fprvl" path="res://scripts/path_choice.gd" id="2_rxed8"]
 [ext_resource type="PackedScene" uid="uid://d4mhcllvsytp5" path="res://scenes/map_base2.tscn" id="3_cqiwq"]
 [ext_resource type="Texture2D" uid="uid://dbxqrspq56epv" path="res://images/backgrounds/sky.png" id="4_gkhli"]
