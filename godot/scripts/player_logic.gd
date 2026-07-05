@@ -51,6 +51,7 @@ func take_damage() -> void:
 			anim_sprite.play("fall")
 			await anim_sprite.animation_finished
 			print("game over")
+			EventBus.play_bgm.emit("failure")
 			EventBus.fade_out.emit(1.0)
 			await get_tree().create_timer(1.0).timeout
 			get_tree().change_scene_to_file.call_deferred("res://scenes/game_over.tscn")
