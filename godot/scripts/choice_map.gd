@@ -9,7 +9,6 @@ extends Node2D
 var object_list: Array[PackedScene] = [
 	preload("res://scenes/item_can.tscn"),
 	preload("res://scenes/item_glass.tscn"),
-	preload("res://scenes/item_lightbarrier.tscn"),
 	preload("res://scenes/item_pot.tscn"),
 	preload("res://scenes/item_signdown.tscn"),
 	preload("res://scenes/item_signmiddle.tscn"),

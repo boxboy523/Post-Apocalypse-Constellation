@@ -1,3 +1,8 @@
 .direnv/
 godot/.godot/
 todo.md
+*.zip
+*.exe
+*.pck
+*.sh
+*.x86_64

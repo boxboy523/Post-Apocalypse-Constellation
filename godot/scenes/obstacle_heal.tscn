@@ -15,5 +15,4 @@ shape = SubResource("RectangleShape2D_tipki")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1900618562]
 position = Vector2(0, -1)
-scale = Vector2(0.14265989, 0.1426599)
 texture = ExtResource("2_oa6qx")

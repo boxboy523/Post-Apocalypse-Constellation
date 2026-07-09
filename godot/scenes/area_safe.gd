@@ -8,6 +8,6 @@ func _ready() -> void:
 
 func warn():
 	EventBus.alart.emit(
-		"천사의 말: 이 길은 뒤는 안전해요
+		"천사의 말: 이 길 뒤는 안전해요
 		가도 될거같아요!"
 	)	

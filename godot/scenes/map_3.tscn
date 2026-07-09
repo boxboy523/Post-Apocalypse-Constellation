@@ -247,7 +247,7 @@ limit_left = -100000
 limit_right = 2000
 script = ExtResource("23_2qxq1")
 min_x = -1000.0
-max_x = 350.0
+max_x = 750.0
 
 [node name="CanvasLayer" parent="." unique_id=965002566 instance=ExtResource("24_tjit4")]
 
@@ -326,10 +326,9 @@ position = Vector2(10, -177)
 
 [node name="AreaWarn" type="Area2D" parent="." unique_id=264537339]
 position = Vector2(1120, -1263)
-script = ExtResource("2_422d7")
+script = ExtResource("30_u6yh3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaWarn" unique_id=714355282]
 z_index = 1
 position = Vector2(-192, 1215)
 shape = SubResource("RectangleShape2D_pm843")
-script = ExtResource("30_u6yh3")

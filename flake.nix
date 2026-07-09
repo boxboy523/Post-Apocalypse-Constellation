@@ -56,9 +56,13 @@
           libxcursor
           libxrandr
           libxi
+          dbus
+          alsa-lib
+          libpulseaudio
           libglvnd
           libGL
           vulkan-headers
+
         ];
 
       in

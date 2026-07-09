@@ -2,7 +2,7 @@ extends Area2D
 class_name ItemBase
 
 @export var item_res: ItemRes
-@export var move_cost: float = 10 
+@export var move_cost: float = 15
 
 var is_left_dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
