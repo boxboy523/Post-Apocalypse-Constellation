@@ -8,6 +8,7 @@
 size = Vector2(134, 127)
 
 [node name="ItemTrap" type="Area2D" unique_id=1102542396]
+z_index = 1
 script = ExtResource("1_swsh1")
 item_res = ExtResource("2_rnpub")
 

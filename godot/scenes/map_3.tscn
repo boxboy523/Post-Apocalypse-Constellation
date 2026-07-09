@@ -212,7 +212,7 @@ texture = ExtResource("17_tjit4")
 
 [node name="자동차" type="Sprite2D" parent="." unique_id=199955438]
 z_index = 1
-position = Vector2(-327, -215.75)
+position = Vector2(-327.00003, -134.75003)
 scale = Vector2(1, 0.9746544)
 texture = ExtResource("19_6dpta")
 

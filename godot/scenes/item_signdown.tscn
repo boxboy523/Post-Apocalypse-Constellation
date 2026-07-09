@@ -8,6 +8,7 @@
 size = Vector2(62, 64)
 
 [node name="ItemSignDown" type="Area2D" unique_id=528071890]
+z_index = 1
 script = ExtResource("1_nx6iw")
 sign_direction = "down"
 item_res = ExtResource("2_3x4pp")

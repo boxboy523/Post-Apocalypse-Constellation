@@ -55,6 +55,7 @@ animations = [{
 }]
 
 [node name="ObstacleScabbinzer" type="Area2D" unique_id=567913231]
+z_index = 1
 script = ExtResource("10_621xi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=439931599]

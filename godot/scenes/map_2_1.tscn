@@ -250,12 +250,12 @@ talker = NodePath("../../Player")
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1170953966 node_paths=PackedStringArray("current_path", "bubble") instance=ExtResource("20_shvnv")]
-position = Vector2(-500, -260)
+position = Vector2(-2734, -262)
 current_path = NodePath("../PathChoice")
 bubble = NodePath("../CanvasLayer/SpeechBubble")
 
 [node name="자동차" type="Sprite2D" parent="." unique_id=149334898]
 z_index = 1
-position = Vector2(-1134, -209.49998)
+position = Vector2(-1150, -139.00002)
 scale = Vector2(1, 0.9170507)
 texture = ExtResource("9_vux23")

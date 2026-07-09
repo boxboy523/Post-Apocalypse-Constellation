@@ -8,6 +8,7 @@
 size = Vector2(59, 44)
 
 [node name="ObstacleNoise" type="Area2D" unique_id=812544508]
+z_index = 1
 script = ExtResource("1_kxcwh")
 enemy_scene = ExtResource("2_e84i8")
 

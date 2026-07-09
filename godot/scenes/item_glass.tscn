@@ -5,17 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://dlv7owgd2os05" path="res://images/items/유리 조각.png" id="3_qi5s6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdfuw"]
-size = Vector2(1295.4545, 400)
+size = Vector2(97, 85)
 
 [node name="ItemGlass" type="Area2D" unique_id=1202927015]
-scale = Vector2(0.22, 0.22)
+z_index = 1
 script = ExtResource("1_kdfuw")
 item_res = ExtResource("2_qi5s6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=471701563]
-scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_qi5s6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1674451369]
-position = Vector2(2.2727616, 13.63637)
+position = Vector2(0.5, 2.5)
 shape = SubResource("RectangleShape2D_kdfuw")

@@ -127,12 +127,12 @@ texture = ExtResource("11_l2k3k")
 
 [node name="자동차" type="Sprite2D" parent="." unique_id=1870503709]
 z_index = 1
-position = Vector2(-348, -223.75)
+position = Vector2(-348, -130.75)
 scale = Vector2(1, 1.048387)
 texture = ExtResource("12_25yyy")
 
 [node name="실외기" type="Sprite2D" parent="." unique_id=122716925]
-position = Vector2(-232, -436)
+position = Vector2(-232, -440)
 scale = Vector2(0.7976191, 0.79761904)
 texture = ExtResource("14_vr3ls")
 

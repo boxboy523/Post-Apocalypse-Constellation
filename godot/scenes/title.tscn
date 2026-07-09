@@ -31,14 +31,6 @@ texture = ExtResource("2_p6dhs")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=1301638816]
-layout_mode = 0
-offset_left = 110.0
-offset_top = 35.0
-offset_right = 791.0
-offset_bottom = 476.0
-texture = ExtResource("3_pyl7j")
-
 [node name="StartButton" type="Button" parent="Control" unique_id=204956878]
 layout_mode = 1
 anchors_preset = -1
@@ -82,6 +74,14 @@ texture = ExtResource("4_b3w7a")
 [node name="별2" type="Sprite2D" parent="Control" unique_id=1064924175]
 position = Vector2(144, 704)
 texture = ExtResource("4_b3w7a")
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=1301638816]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 35.0
+offset_right = 791.0
+offset_bottom = 476.0
+texture = ExtResource("3_pyl7j")
 
 [node name="별3" type="Sprite2D" parent="Control" unique_id=914908695]
 position = Vector2(144, 784)

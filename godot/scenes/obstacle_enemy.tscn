@@ -63,6 +63,7 @@ animations = [{
 }]
 
 [node name="ObstacleEnemy" type="Area2D" unique_id=326172621]
+z_index = 1
 script = ExtResource("1_xipry")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=401879642]

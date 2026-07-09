@@ -383,7 +383,7 @@ texture = ExtResource("26_i6s2n")
 
 [node name="자동차" type="Sprite2D" parent="." unique_id=807389797]
 z_index = 1
-position = Vector2(-3660, -203)
+position = Vector2(-3660, -140)
 texture = ExtResource("33_uqgso")
 
 [node name="ObstacleGuide" parent="." unique_id=812544508 node_paths=PackedStringArray("path_up", "path_down") instance=ExtResource("34_qww0w")]

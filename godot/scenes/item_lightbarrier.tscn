@@ -8,6 +8,7 @@
 size = Vector2(108, 187)
 
 [node name="ItemLightBarrier" type="Area2D" unique_id=1584252908]
+z_index = 1
 script = ExtResource("1_irh61")
 item_res = ExtResource("2_3lvh4")
 

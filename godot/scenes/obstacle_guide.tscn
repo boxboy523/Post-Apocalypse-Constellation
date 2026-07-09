@@ -10,6 +10,7 @@ size = Vector2(25, 1292)
 size = Vector2(81, 417)
 
 [node name="ObstacleGuide" type="Area2D" unique_id=812544508]
+z_index = 1
 script = ExtResource("1_o34ef")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081822613]

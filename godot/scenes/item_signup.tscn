@@ -8,6 +8,7 @@
 size = Vector2(62, 64)
 
 [node name="ItemSignUp" type="Area2D" unique_id=528071890]
+z_index = 1
 script = ExtResource("1_fdko6")
 item_res = ExtResource("2_cbhhh")
 
