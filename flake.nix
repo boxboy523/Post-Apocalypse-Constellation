@@ -62,7 +62,7 @@
           libglvnd
           libGL
           vulkan-headers
-
+          libXext
         ];
 
       in
